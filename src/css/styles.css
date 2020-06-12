@@ -4,6 +4,7 @@
  * Copyright 2011-2020 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
+@import "//cloud.typography.com/7722678/6294412/css/fonts.css";
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -7326,6 +7327,47 @@ svg|a:hover, svg|a:active {
   -ms-background-size: cover;
   background-size: cover; }
 
+.top-left-nav {
+  position: fixed;
+  top: 3%;
+  left: 2%;
+  width: 250px; }
+
+.top-right-nav {
+  position: fixed;
+  top: 3%;
+  right: 3%; }
+  .top-right-nav a {
+    color: black !important; }
+
+.bottom-right-nav {
+  position: fixed;
+  bottom: 3%;
+  right: 2%;
+  display: flex;
+  width: 150px; }
+  .bottom-right-nav .icon-navlink {
+    width: 75px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    .bottom-right-nav .icon-navlink .icon {
+      width: 28px;
+      height: 28px;
+      margin-bottom: 6px;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -ms-background-size: cover;
+      background-size: cover; }
+  .bottom-right-nav .icon-trailer {
+    background-image: url("../assets/trailer-temp.png");
+    background-position: center center;
+    background-repeat: no-repeat; }
+  .bottom-right-nav .icon-book {
+    background-image: url("../assets/book-temp.png");
+    background-position: center center;
+    background-repeat: no-repeat; }
+
 .logo {
   width: 150px;
   padding-right: 16px;
@@ -7362,7 +7404,7 @@ svg|a:hover, svg|a:active {
 .character-tile {
   padding: 0; }
   .character-tile img {
-    width: 120px; }
+    height: 100px; }
 
 .gate-info {
   color: white; }
@@ -7391,6 +7433,60 @@ input.page-input {
   border: 1px solid white;
   background: transparent;
   color: white; }
+
+#character .full-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  margin: 0 auto;
+  max-width: 85%; }
+  #character .full-container .left-column {
+    width: 30%;
+    text-align: center; }
+    #character .full-container .left-column .character-select .tile {
+      padding: 0;
+      width: 100%;
+      height: 100%; }
+      #character .full-container .left-column .character-select .tile img {
+        width: 100%;
+        margin-bottom: 6px;
+        padding: 0 6px; }
+  #character .full-container .middle-column {
+    width: 69%; }
+    #character .full-container .middle-column .character-cutout {
+      display: flex;
+      justify-content: center; }
+      #character .full-container .middle-column .character-cutout img {
+        width: 100%;
+        max-width: 850px; }
+  #character .full-container .right-column {
+    width: 33%; }
+
+#characters .full-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 90%;
+  height: 100vh;
+  margin: 0 auto;
+  max-width: 85%; }
+  #characters .full-container .left-column {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+    #characters .full-container .left-column a {
+      color: black !important; }
+  #characters .full-container .right-column {
+    width: 75%;
+    flex-wrap: wrap;
+    padding: 6px; }
+    #characters .full-container .right-column a img {
+      max-width: 16%;
+      padding: 12px; }
 
 /* ----------- iPhone 4 and 4S ----------- */
 /* Portrait and Landscape */

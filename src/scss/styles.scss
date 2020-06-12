@@ -1,6 +1,9 @@
 $theme-colors: ( "primary": #FF69B4 );
 
 @import "node_modules/bootstrap/scss/bootstrap";
+@import "//cloud.typography.com/7722678/6294412/css/fonts.css";
+
+// =========== START MIXINS
 
 // == Prefixes
 // Prefix choosen declarations for browsers you want to support.
@@ -29,7 +32,9 @@ $theme-colors: ( "primary": #FF69B4 );
   @include _prefix((background-size: $size), (webkit moz ms));
 }
 
-// ===========================
+// =========== END MIXINS
+
+// =========== START TYPOGRAPHY
 
 h1, h3, a {
   font-family: "Gotham A", "Gotham B", sans-serif !important;
@@ -51,6 +56,8 @@ h1   { font-size: 4em; }
 h2   { font-size: 2.2em; }
 h3   { font-size: 1.5em; }
 
+
+// =========== END TYPOGRAPHY
 
 $home-bg: '../assets/home/home-temp.png';
 $characters-bg: '../assets/char/char-temp.png';
@@ -178,6 +185,45 @@ svg|a:hover, svg|a:active {
   @include bg-size(cover);
 }
 
+.top-left-nav {
+  position: fixed;
+  top: 3%;
+  left: 2%;
+  width: 250px;
+}
+.top-right-nav {
+  position: fixed;
+  top: 3%;
+  right: 3%;
+  a { color: black !important; }
+}
+.bottom-right-nav {
+  position: fixed;
+  bottom: 3%;
+  right: 2%;
+  // a { color: black !important; }
+  display: flex;
+  width: 150px;
+  .icon-navlink {
+    width: 75px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .icon {
+      width: 28px;
+      height: 28px;
+      margin-bottom: 6px;
+      @include bg-size(cover);
+    }
+  }
+  .icon-trailer {
+    @include img-bg('../assets/trailer-temp.png', center center);
+  }
+  .icon-book {
+    @include img-bg('../assets/book-temp.png', center center);
+  }
+}
+
 .logo {
   width: 150px;
   padding-right: 16px;
@@ -219,7 +265,7 @@ svg|a:hover, svg|a:active {
   padding: 0;
   // @include img-bg('../assets/char/char-tile-temp.png', center center);
   // @include bg-size(93%);
-  img { width: 120px; }
+  img { height: 100px; }
 }
 
 .gate-info {
@@ -247,6 +293,86 @@ input.page-input {
   background: transparent;
   color: white;
 }
+
+#character {
+  .full-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+    max-width: 85%;
+
+    .left-column {
+      width: 30%;
+      text-align: center;
+      .character-select {
+
+        .tile {
+          padding: 0;
+          width: 100%;
+          height: 100%;
+          img {
+            width: 100%;
+            margin-bottom: 6px;
+            padding: 0 6px;
+          }
+        }
+      }
+    }
+
+    .middle-column {
+      width: 69%;
+      .character-cutout {
+        display: flex;
+        justify-content: center;
+        img {
+          width: 100%;
+          max-width: 850px;
+
+        }
+      }
+    }
+
+    .right-column {
+      width: 33%;
+    }
+  }
+}
+
+#characters {
+  .full-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 90%;
+    height: 100vh;
+    margin: 0 auto;
+    max-width: 85%;
+
+    .left-column {
+      a { color: black !important; }
+      width: 25%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .right-column {
+      width: 75%;
+      flex-wrap: wrap;
+      padding: 6px;
+      a img {
+        max-width: 16%;
+        padding: 12px;
+      }
+    }
+  }
+}
+
+// =========== START MEDIA QUERIES
+
 
 /* ----------- iPhone 4 and 4S ----------- */
 
