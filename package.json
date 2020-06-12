@@ -1,0 +1,23 @@
+{
+  "name": "nima",
+  "version": "1.0.0",
+  "description": "NIMAVERSE - Ross Draws",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "bootstrap": "^4.5.0",
+    "rfs": "^9.0.3"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.1.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "gulp": "gulp",
+    "minify": "gulp minify"
+  },
+  "repository": {},
+  "author": "Rob",
+  "license": "ISC"
+}

@@ -1,0 +1,387 @@
+$theme-colors: ( "primary": #FF69B4 );
+
+@import "node_modules/bootstrap/scss/bootstrap";
+
+// == Prefixes
+// Prefix choosen declarations for browsers you want to support.
+// @param $declarations (map) - sass map of css declarations to prefix
+// @param $property-prefixes (list) - space separeted sass list of vendor prefixes (w/out dashes)
+@mixin _prefix ($declarations, $property-prefixes: webkit moz ms o) {
+  @each $property, $value in $declarations {          // Take property and value from each declaration
+    @each $property-prefix in $property-prefixes {    // Take each vendor prefix from list
+      -#{$property-prefix}-#{$property}: #{$value};   // Output each declaration with each property prefixed
+    }
+    #{$property}: #{$value};                          // Output declaration with unprefixed property (W3C standard)
+  }
+}
+
+// background image
+@mixin img-bg ($imgpath,$position,$repeat: no-repeat){
+  background: {
+      image: url($imgpath);
+      position: $position;
+      repeat: $repeat;
+  }
+}
+
+// background size
+@mixin bg-size ($size){
+  @include _prefix((background-size: $size), (webkit moz ms));
+}
+
+// ===========================
+
+h1, h3, a {
+  font-family: "Gotham A", "Gotham B", sans-serif !important;
+  font-style: normal;
+  font-weight: 700;
+}
+h2 {
+  font-family: "Gotham A", "Gotham B", sans-serif !important;
+  font-style: normal;
+  font-weight: 300;
+}
+p {
+  font-family: "Gotham A", "Gotham B", sans-serif !important;
+  font-style: normal;
+  font-weight: 400;
+}
+
+h1   { font-size: 4em; }
+h2   { font-size: 2.2em; }
+h3   { font-size: 1.5em; }
+
+
+$home-bg: '../assets/home/home-temp.png';
+$characters-bg: '../assets/char/char-temp.png';
+$about-bg: '../assets/about-temp.png';
+$nimbus-bg: '../assets/nimbus/nimbus-temp.png';
+$character-bg: '../assets/char-bg-temp.png';
+
+#home {
+  @include img-bg($home-bg, center center);
+  @include bg-size(cover);
+  height: 100vh;
+}
+
+#characters {
+  @include img-bg($characters-bg, center center);
+  @include bg-size(cover);
+  height: 100vh;
+}
+
+#character {
+  @include img-bg($character-bg, center center);
+  @include bg-size(cover);
+  height: 100vh;
+  color: white;
+}
+
+#about {
+  @include img-bg($about-bg, center center);
+  @include bg-size(cover);
+  height: 100vh;
+}
+
+#nimbus {
+  @include img-bg($nimbus-bg, center center);
+  @include bg-size(cover);
+  height: 100vh;
+}
+
+#book {
+  background-color: #0c1013;
+  color: white;
+  height: 100vh;
+}
+
+
+a {
+  font-size: 0.8em;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+a:hover {
+  text-decoration: none;
+}
+
+#home,
+#characters,
+#character,
+#nimbus,
+#book {
+  a { color: white; }
+  a:hover { color: white; }
+  .logo {
+    border-right: 0.5px white solid;
+  }
+}
+
+#about {
+  h1, p, a {
+    color: black;
+  }
+  a:hover {
+    color: black;
+    text-decoration: none;
+  }
+  .logo {
+    border-right: 0.5px black solid;
+  }
+}
+
+#axis-small {
+  z-index: 999;
+  width: 100px;
+  top: 10%;
+  left: 42px;
+}
+
+svg|a:link, svg|a:visited {
+  cursor: pointer;
+}
+
+svg|a text,
+text svg|a {
+  fill: blue; /* Even for text, SVG uses fill over color */
+  text-decoration: underline;
+}
+
+svg|a:hover, svg|a:active {
+  outline: dotted 1px blue;
+}
+
+.nav-row {
+  color: white;
+  height: 70px;
+  padding: 0 1%;
+  width: 100%;
+}
+
+.about-details {
+  color: white;
+  padding: 0 1%;
+  width: 100%;
+}
+
+.nav-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.account-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 24px;
+  border: 3px white double;
+  @include img-bg('../assets/logged-out.png', center center);
+  @include bg-size(cover);
+}
+
+.logo {
+  width: 150px;
+  padding-right: 16px;
+  margin-right: 20px;
+}
+
+.world-gates {
+  position: fixed;
+  width: 100%;
+  height: 99vh;
+  left: 0 !important;
+  pointer-events: bounding-box !important;
+}
+
+.world {
+  height: 100vh;
+}
+
+.character-grid {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  left: 0 !important;
+  .col { min-height: 200px; }
+}
+
+.profile-grid {
+  position: fixed;
+  width: 80%;
+  height: 100vh;
+  margin: 0 auto;
+  .col { min-height: 100px; }
+  .character-tile {
+    img { width: 60px; }
+  }
+}
+
+.character-tile {
+  padding: 0;
+  // @include img-bg('../assets/char/char-tile-temp.png', center center);
+  // @include bg-size(93%);
+  img { width: 120px; }
+}
+
+.gate-info {
+  color: white;
+  p { font-size: 0.8em; }
+}
+
+.gate-characters {
+  width: 55%;
+  margin: 0 auto;
+}
+
+.gate-character-tile {
+  padding: 0;
+  @include img-bg('../assets/char/char-tile-temp.png', center center);
+  @include bg-size(95%);
+  width: 140px;
+  min-height: 200px;
+}
+
+input.page-input {
+  width: 100px;
+  height: 40px;
+  border: 1px solid white;
+  background: transparent;
+  color: white;
+}
+
+/* ----------- iPhone 4 and 4S ----------- */
+
+/* Portrait and Landscape */
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+}
+
+/* Portrait */
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+}
+
+/* Landscape */
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) {
+
+}
+
+/* ----------- iPhone 5, 5S, 5C and 5SE ----------- */
+
+/* Portrait and Landscape */
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+}
+
+/* Portrait */
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+}
+
+/* Landscape */
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) {
+
+}
+
+/* ----------- iPhone 6, 6S, 7 and 8 ----------- */
+
+/* Portrait and Landscape */
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 667px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+}
+
+/* Portrait */
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 667px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+
+}
+
+/* Landscape */
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 667px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) {
+
+}
+
+/* ----------- iPhone 6+, 7+ and 8+ ----------- */
+
+/* Portrait and Landscape */
+@media only screen
+  and (min-device-width: 414px)
+  and (max-device-width: 736px)
+  and (-webkit-min-device-pixel-ratio: 3) {
+
+}
+
+/* Portrait */
+@media only screen
+  and (min-device-width: 414px)
+  and (max-device-width: 736px)
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: portrait) {
+
+}
+
+/* Landscape */
+@media only screen
+  and (min-device-width: 414px)
+  and (max-device-width: 736px)
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: landscape) {
+
+}
+
+/* ----------- iPhone X ----------- */
+
+/* Portrait and Landscape */
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 812px)
+  and (-webkit-min-device-pixel-ratio: 3) {
+
+}
+
+/* Portrait */
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 812px)
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: portrait) {
+
+}
+
+/* Landscape */
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 812px)
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: landscape) {
+
+}
