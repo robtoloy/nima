@@ -39,6 +39,7 @@ $theme-colors: ( "primary": #FF69B4 );
 h1, h3, a {
   font-family: "Gotham A", "Gotham B", sans-serif !important;
   font-style: normal;
+  text-transform: uppercase;
   font-weight: 700;
 }
 h2 {
@@ -52,10 +53,42 @@ p {
   font-weight: 400;
 }
 
-h1   { font-size: 4em; }
-h2   { font-size: 2.2em; }
+h1   { font-size: 4.2em; }
+h2   { font-size: 3em; }
 h3   { font-size: 1.5em; }
 
+// Fluid typography
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+@mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
+  $u1: unit($min-vw);
+  $u2: unit($max-vw);
+  $u3: unit($min-font-size);
+  $u4: unit($max-font-size);
+
+  @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+    & {
+      font-size: $min-font-size;
+      @media screen and (min-width: $min-vw){
+        font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+      }
+      @media screen and (min-width: $max-vw){
+        font-size: $max-font-size;
+      }
+    }
+  }
+}
+
+$min_width: 320px;
+$max_width: 1600px;
+$min_font: 12px;
+$max_font: 16px;
+
+html {
+  @include fluid-type($min_width, $max_width, $min_font, $max_font);
+}
 
 // =========== END TYPOGRAPHY
 
@@ -184,7 +217,14 @@ svg|a:hover, svg|a:active {
   @include img-bg('../assets/logged-out.png', center center);
   @include bg-size(cover);
 }
+.characters-icon {
+  width: 75px;
+  height: 75px;
+  @include img-bg('../assets/characters.png', center center);
+  @include bg-size(cover);
+}
 
+// Global navigation stuffs
 .nav-stuff { z-index: 101; }
 .top-left-nav {
   position: fixed;
@@ -197,6 +237,19 @@ svg|a:hover, svg|a:active {
   top: 3%;
   right: 3%;
   a { color: black !important; }
+}
+.mid-left-nav {
+  position: fixed;
+  top: 50%;
+  left: 2%;
+}
+.mid-right-nav {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  top: 50%;
+  right: 2%;
 }
 .bottom-right-nav {
   position: fixed;

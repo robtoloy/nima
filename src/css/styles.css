@@ -7165,6 +7165,7 @@ a.text-dark:hover, a.text-dark:focus {
 h1, h3, a {
   font-family: "Gotham A", "Gotham B", sans-serif !important;
   font-style: normal;
+  text-transform: uppercase;
   font-weight: 700; }
 
 h2 {
@@ -7178,13 +7179,22 @@ p {
   font-weight: 400; }
 
 h1 {
-  font-size: 4em; }
+  font-size: 4.2em; }
 
 h2 {
-  font-size: 2.2em; }
+  font-size: 3em; }
 
 h3 {
   font-size: 1.5em; }
+
+html {
+  font-size: 12px; }
+  @media screen and (min-width: 320px) {
+    html {
+      font-size: calc(12px + 4 * ((100vw - 320px) / 1280)); } }
+  @media screen and (min-width: 1600px) {
+    html {
+      font-size: 16px; } }
 
 #home {
   background-image: url("../assets/home/home-temp.png");
@@ -7327,6 +7337,17 @@ svg|a:hover, svg|a:active {
   -ms-background-size: cover;
   background-size: cover; }
 
+.characters-icon {
+  width: 75px;
+  height: 75px;
+  background-image: url("../assets/characters.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -ms-background-size: cover;
+  background-size: cover; }
+
 .nav-stuff {
   z-index: 101; }
 
@@ -7342,6 +7363,19 @@ svg|a:hover, svg|a:active {
   right: 3%; }
   .top-right-nav a {
     color: black !important; }
+
+.mid-left-nav {
+  position: fixed;
+  top: 50%;
+  left: 2%; }
+
+.mid-right-nav {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  top: 50%;
+  right: 2%; }
 
 .bottom-right-nav {
   position: fixed;
