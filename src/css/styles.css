@@ -7437,6 +7437,28 @@ input.page-input {
   background: transparent;
   color: white; }
 
+#about .full-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center; }
+  #about .full-container .right-column {
+    width: 45%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; }
+    #about .full-container .right-column .about-info {
+      display: flex;
+      flex-direction: column;
+      width: 80%; }
+    #about .full-container .right-column .about-title {
+      display: flex;
+      flex-direction: row;
+      align-items: center; }
+      #about .full-container .right-column .about-title img {
+        width: 48px;
+        height: 48px; }
+
 #character .full-container {
   display: flex;
   justify-content: center;

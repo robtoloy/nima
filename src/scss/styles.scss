@@ -295,6 +295,36 @@ input.page-input {
   color: white;
 }
 
+#about {
+  .full-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    .right-column {
+      width: 45%;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      .about-info {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+      }
+
+      .about-title {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        img {
+          width: 48px;
+          height: 48px;
+        }
+      }
+    }
+  }
+}
+
 #character {
   .full-container {
     display: flex;
