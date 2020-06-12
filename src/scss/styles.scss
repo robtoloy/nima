@@ -185,6 +185,7 @@ svg|a:hover, svg|a:active {
   @include bg-size(cover);
 }
 
+.nav-stuff { z-index: 101; }
 .top-left-nav {
   position: fixed;
   top: 3%;
@@ -231,7 +232,7 @@ svg|a:hover, svg|a:active {
 }
 
 .world-gates {
-  position: fixed;
+  z-index: 100;
   width: 100%;
   height: 99vh;
   left: 0 !important;
