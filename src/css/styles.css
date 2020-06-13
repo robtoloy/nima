@@ -7363,6 +7363,7 @@ svg|a:hover, svg|a:active {
   background-size: cover; }
 
 .nav-stuff {
+  position: absolute;
   z-index: 101; }
 
 .top-left-nav {
@@ -7432,7 +7433,8 @@ svg|a:hover, svg|a:active {
   pointer-events: bounding-box !important; }
 
 .world {
-  height: 100vh; }
+  height: 100vh;
+  margin: 0 auto; }
 
 .character-grid {
   position: fixed;
@@ -7536,6 +7538,8 @@ input.page-input {
         max-width: 850px; }
   #character .full-container .right-column {
     width: 33%; }
+    #character .full-container .right-column .character-icon {
+      min-width: 60px; }
 
 #characters .full-container {
   display: flex;
@@ -7561,6 +7565,72 @@ input.page-input {
       max-width: 16%;
       padding: 12px; }
 
+#characters-carousel {
+  z-index: 4; }
+
+.carousel {
+  position: relative;
+  width: 100%; }
+
+.carousel-container {
+  width: 100%;
+  height: 100vh; }
+
+.carousel-item .character-slide-cutout {
+  position: relative;
+  left: 55%; }
+
+.carousel-item img {
+  object-fit: cover;
+  max-height: 375px; }
+
+.carousel-item .carousel-caption {
+  right: 10%;
+  bottom: 30%;
+  left: 13%;
+  width: 80%; }
+
+.carousel-item .character-info {
+  text-align: right; }
+
+#carousel-thumbs {
+  background: transparent;
+  bottom: 15px;
+  left: 0;
+  padding: 0 40px;
+  right: 0;
+  width: 60%;
+  height: 120px; }
+  #carousel-thumbs .img-fluid {
+    max-width: 70px;
+    height: 100px; }
+
+#carousel-thumbs img {
+  border: 5px solid transparent;
+  cursor: pointer; }
+
+#carousel-thumbs img:hover {
+  border-color: rgba(255, 255, 255, 0.3); }
+
+#carousel-thumbs .selected img {
+  border-color: #fff; }
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 50px; }
+
+@media all and (max-width: 767px) {
+  .carousel-container #carousel-thumbs img {
+    border-width: 3px; } }
+
+@media all and (min-width: 576px) {
+  .carousel-container #carousel-thumbs {
+    position: absolute; } }
+
+@media all and (max-width: 576px) {
+  .carousel-container #carousel-thumbs {
+    background: #ccccce; } }
+
 /* ----------- iPhone 4 and 4S ----------- */
 /* Portrait and Landscape */
 /* Portrait */
@@ -7573,10 +7643,54 @@ input.page-input {
 /* Portrait and Landscape */
 /* Portrait */
 /* Landscape */
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+  h1 {
+    font-size: 3.1em; }
+  h2 {
+    font-size: 2.5em; }
+  h3 {
+    font-size: 1.3em; }
+  #carousel-thumbs {
+    padding: 0;
+    width: 50%;
+    bottom: 10%;
+    left: 2%;
+    height: 95px; }
+  #carousel-thumbs .img-fluid {
+    max-width: 55px;
+    height: 85px; }
+  .carousel-item .carousel-caption {
+    right: 0;
+    bottom: 32%;
+    left: 6%;
+    width: 46%;
+    padding: 0 0 16px; } }
+
 /* ----------- iPhone 6+, 7+ and 8+ ----------- */
 /* Portrait and Landscape */
 /* Portrait */
 /* Landscape */
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {
+  h1 {
+    font-size: 3.1em; }
+  h2 {
+    font-size: 2.5em; }
+  h3 {
+    font-size: 1.3em; }
+  #carousel-thumbs {
+    padding: 0 12px;
+    width: 55%;
+    bottom: 0; }
+  #carousel-thumbs .img-fluid {
+    max-width: 65px;
+    height: 95px; }
+  .carousel-item .carousel-caption {
+    right: 0;
+    bottom: 30%;
+    left: 2%;
+    width: 100%;
+    padding: 0 0 16px; } }
+
 /* ----------- iPhone X ----------- */
 /* Portrait and Landscape */
 @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) {
@@ -7588,6 +7702,10 @@ input.page-input {
     font-size: 1.1em; } }
 
 /* Portrait */
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait) {
+  .character-info p {
+    display: none; } }
+
 /* Landscape */
 @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {
   .top-left-nav,
@@ -7596,6 +7714,18 @@ input.page-input {
   .mid-left-nav {
     top: 17%;
     left: 3%; }
+  .mid-right-nav {
+    top: 42%; }
+    .mid-right-nav .characters-icon {
+      width: 55px;
+      height: 55px;
+      background-image: url("../assets/characters.png");
+      background-position: center center;
+      background-repeat: no-repeat;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -ms-background-size: cover;
+      background-size: cover; }
   .bottom-right-nav {
     bottom: 5%;
     right: 1%; }
@@ -7612,18 +7742,31 @@ input.page-input {
   #character .full-container {
     width: 100%; }
   #character .left-column {
-    width: 45% !important;
+    width: 50% !important;
     text-align: right !important; }
+    #character .left-column .carousel-control-prev,
+    #character .left-column .carousel-control-next {
+      width: 10%; }
     #character .left-column .character-select .character-row {
       width: 100%;
       max-width: 450px;
       height: 100px;
       border: 1px solid red; }
+      #character .left-column .character-select .character-row .carousel-control-next,
+      #character .left-column .character-select .character-row .carousel-control-prev {
+        height: 40px;
+        top: 40%; }
+      #character .left-column .character-select .character-row .carousel-indicators {
+        top: -11px;
+        margin: 0 auto; }
+        #character .left-column .character-select .character-row .carousel-indicators li {
+          width: 60px;
+          height: 100px; }
   #character .right-column {
-    width: 55% !important; }
+    width: 50% !important; }
     #character .right-column .character-cutout {
       display: flex;
       justify-content: center; }
       #character .right-column .character-cutout img {
         width: 100%;
-        max-width: 270px; } }
+        max-width: 280px; } }
