@@ -7188,10 +7188,10 @@ h3 {
   font-size: 1.5em; }
 
 html {
-  font-size: 12px; }
+  font-size: 11px; }
   @media screen and (min-width: 320px) {
     html {
-      font-size: calc(12px + 4 * ((100vw - 320px) / 1280)); } }
+      font-size: calc(11px + 5 * ((100vw - 320px) / 1280)); } }
   @media screen and (min-width: 1600px) {
     html {
       font-size: 16px; } }
@@ -7579,6 +7579,14 @@ input.page-input {
 /* Landscape */
 /* ----------- iPhone X ----------- */
 /* Portrait and Landscape */
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) {
+  h1 {
+    font-size: 3em; }
+  h2 {
+    font-size: 2em; }
+  h3 {
+    font-size: 1.1em; } }
+
 /* Portrait */
 /* Landscape */
 @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {
@@ -7600,4 +7608,22 @@ input.page-input {
     #characters .full-container .left-column {
       width: 20%; }
     #characters .full-container .right-column a img {
-      padding: 6px; } }
+      padding: 6px; }
+  #character .full-container {
+    width: 100%; }
+  #character .left-column {
+    width: 45% !important;
+    text-align: right !important; }
+    #character .left-column .character-select .character-row {
+      width: 100%;
+      max-width: 450px;
+      height: 100px;
+      border: 1px solid red; }
+  #character .right-column {
+    width: 55% !important; }
+    #character .right-column .character-cutout {
+      display: flex;
+      justify-content: center; }
+      #character .right-column .character-cutout img {
+        width: 100%;
+        max-width: 270px; } }
