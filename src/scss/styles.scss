@@ -104,6 +104,12 @@ $character-bg: '../assets/char-bg-temp.png';
   height: 100vh;
 }
 
+#home-mobile {
+  @include img-bg($home-bg, center center);
+  @include bg-size(cover);
+  height: 100vh;
+}
+
 #characters {
   @include img-bg($characters-bg, center center);
   @include bg-size(cover);
@@ -117,7 +123,8 @@ $character-bg: '../assets/char-bg-temp.png';
   color: white;
 }
 
-#about {
+#about,
+#about-mobile {
   @include img-bg($about-bg, center center);
   @include bg-size(cover);
   height: 100vh;
@@ -146,6 +153,7 @@ a:hover {
 }
 
 #home,
+#home-mobile,
 #characters,
 #character,
 #nimbus,
@@ -593,5 +601,32 @@ input.page-input {
   and (max-device-width: 812px)
   and (-webkit-min-device-pixel-ratio: 3)
   and (orientation: landscape) {
-
+  .top-left-nav,
+  .top-right-nav {
+    top: 5%;
+  }
+  .mid-left-nav {
+    top: 17%;
+    left: 3%;
+  }
+  .bottom-right-nav {
+    bottom: 5%;
+    right: 1%;
+  }
+  .characters-nav {
+    position: fixed;
+    left: 3%;
+    bottom: 5%;
+  }
+  #characters {
+    .full-container {
+      width: 80%;
+      .left-column {
+        width: 20%;
+      }
+      .right-column a img {
+        padding: 6px;
+      }
+    }
+  }
 }

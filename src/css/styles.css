@@ -7206,6 +7206,16 @@ html {
   background-size: cover;
   height: 100vh; }
 
+#home-mobile {
+  background-image: url("../assets/home/home-temp.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -ms-background-size: cover;
+  background-size: cover;
+  height: 100vh; }
+
 #characters {
   background-image: url("../assets/char/char-temp.png");
   background-position: center center;
@@ -7227,7 +7237,8 @@ html {
   height: 100vh;
   color: white; }
 
-#about {
+#about,
+#about-mobile {
   background-image: url("../assets/about-temp.png");
   background-position: center center;
   background-repeat: no-repeat;
@@ -7261,6 +7272,7 @@ a:hover {
   text-decoration: none; }
 
 #home a,
+#home-mobile a,
 #characters a,
 #character a,
 #nimbus a,
@@ -7268,6 +7280,7 @@ a:hover {
   color: white; }
 
 #home a:hover,
+#home-mobile a:hover,
 #characters a:hover,
 #character a:hover,
 #nimbus a:hover,
@@ -7275,6 +7288,7 @@ a:hover {
   color: white; }
 
 #home .logo,
+#home-mobile .logo,
 #characters .logo,
 #character .logo,
 #nimbus .logo,
@@ -7567,3 +7581,23 @@ input.page-input {
 /* Portrait and Landscape */
 /* Portrait */
 /* Landscape */
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {
+  .top-left-nav,
+  .top-right-nav {
+    top: 5%; }
+  .mid-left-nav {
+    top: 17%;
+    left: 3%; }
+  .bottom-right-nav {
+    bottom: 5%;
+    right: 1%; }
+  .characters-nav {
+    position: fixed;
+    left: 3%;
+    bottom: 5%; }
+  #characters .full-container {
+    width: 80%; }
+    #characters .full-container .left-column {
+      width: 20%; }
+    #characters .full-container .right-column a img {
+      padding: 6px; } }
