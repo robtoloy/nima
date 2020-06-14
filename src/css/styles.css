@@ -7629,7 +7629,7 @@ input.page-input {
 
 @media all and (max-width: 576px) {
   .carousel-container #carousel-thumbs {
-    background: #ccccce; } }
+    background: transparent; } }
 
 /* ----------- iPhone 4 and 4S ----------- */
 /* Portrait and Landscape */
@@ -7704,7 +7704,24 @@ input.page-input {
 /* Portrait */
 @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait) {
   .character-info p {
-    display: none; } }
+    display: none; }
+  .carousel-inner .carousel-item img {
+    object-fit: cover;
+    max-height: 600px; }
+  .carousel-inner .carousel-item .carousel-caption {
+    bottom: 0; }
+  .carousel-inner .character-slide-cutout {
+    left: 0; }
+  #carousel-thumbs {
+    background: transparent;
+    position: fixed;
+    padding: 0 20px;
+    bottom: 15%;
+    width: 100%;
+    height: 80px; }
+    #carousel-thumbs .img-fluid {
+      max-width: 55px;
+      height: 85px; } }
 
 /* Landscape */
 @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {
