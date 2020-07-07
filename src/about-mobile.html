@@ -11,16 +11,16 @@
 
     <title>N I M A V E R S E</title>
   </head>
-  <body id="book" class="mh-100">
+  <body id="about" class="mh-100">
 
     <!-- NAVIGATION CORNERS -->
     <div class="nav-stuff">
       <div class="top-left-nav">
         <div class="logo-nav">
-          <a href="/index.html">
-            <img src="/assets/logo-white.png" alt="NIMAVERSE Logo" class="logo" />
+          <a href="/index-mobile.html">
+            <img src="/assets/logo-dark.png" alt="NIMAVERSE Logo" class="logo" />
           </a>
-          <a href="/about.html">About</a>
+          <a href="/about-mobile.html">About</a>
         </div>
       </div>
       <div class="top-right-nav">
@@ -39,42 +39,31 @@
       </div>
     </div>
 
-    <div class="container-fluid">
-      <div class="row d-flex justify-content-center align-items-center character-grid position-absolute">
-
-        <!-- START Axis Navigation Small -->
-        <div id="axis-small" class="position-absolute">
-          <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-             viewBox="0 0 150 150" style="enable-background:new 0 0 150 150;" xml:space="preserve">
-          <style type="text/css">
-            .st0{fill:#FFFFFF;}
-          </style>
-          <circle id="skadi" class="st0" cx="20" cy="65.3" r="20"/>
-          <circle id="araan" class="st0" cx="40" cy="130" r="20"/>
-          <circle id="naga" class="st0" cx="110" cy="130" r="20"/>
-          <circle id="lione" class="st0" cx="130" cy="65.3" r="20"/>
-          <a href="/nimbus.html">
-            <circle id="nimbus" class="st0" cx="75" cy="20" r="20"/>
-          </a>
-          </svg>
+    <div class="full-container">
+      <div class="right-column">
+        <div class="about-info">
+          <div class="about-title mb-3">
+            <img src="/assets/book-temp.png" alt="Temp Book icon">
+            <h1 class="mb-0 ml-3">ABOUT</h1>
+          </div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eget volutpat purus. Cras semper est id ultrices tincidunt. Aenean luctus vitae justo vel egestas. Pellentesque ultrices tortor ut nisi ultrices, at vehicula arcu rutrum. Donec sed nisi vehicula, pretium nunc et, gravida tellus. Vivamus metus sapien, lacinia eget massa in, vulputate interdum turpis.</p>
         </div>
-        <!-- END Axis Navigation Small -->
-
-        <div class="col-12 d-flex flex-column justify-content-center align-items-center text-center">
-          <h3>The Exegensis</h3>
-          <p>A personal walkthrough of the entire NIMA book</p>
-          <img width="950" src="/assets/video-play.png" alt="Temp video">
-        </div>
-
       </div>
     </div>
-
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-
+    <!-- Parallax JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+    <script>
+      var scene = document.getElementById('scene');
+      var parallaxInstance = new Parallax(scene, {
+        frictionX: 0.35,
+        frictionY: 0.35
+      });
+    </script>
   </body>
 </html>

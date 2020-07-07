@@ -39,6 +39,7 @@ $theme-colors: ( "primary": #FF69B4 );
 h1, h3, a {
   font-family: "Gotham A", "Gotham B", sans-serif !important;
   font-style: normal;
+  text-transform: uppercase;
   font-weight: 700;
 }
 h2 {
@@ -52,10 +53,42 @@ p {
   font-weight: 400;
 }
 
-h1   { font-size: 4em; }
-h2   { font-size: 2.2em; }
+h1   { font-size: 4.2em; }
+h2   { font-size: 3em; }
 h3   { font-size: 1.5em; }
 
+// Fluid typography
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+@mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
+  $u1: unit($min-vw);
+  $u2: unit($max-vw);
+  $u3: unit($min-font-size);
+  $u4: unit($max-font-size);
+
+  @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+    & {
+      font-size: $min-font-size;
+      @media screen and (min-width: $min-vw){
+        font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+      }
+      @media screen and (min-width: $max-vw){
+        font-size: $max-font-size;
+      }
+    }
+  }
+}
+
+$min_width: 320px;
+$max_width: 1600px;
+$min_font: 11px;
+$max_font: 16px;
+
+html {
+  @include fluid-type($min_width, $max_width, $min_font, $max_font);
+}
 
 // =========== END TYPOGRAPHY
 
@@ -65,7 +98,14 @@ $about-bg: '../assets/about-temp.png';
 $nimbus-bg: '../assets/nimbus/nimbus-temp.png';
 $character-bg: '../assets/char-bg-temp.png';
 
+
 #home {
+  @include img-bg($home-bg, center center);
+  @include bg-size(cover);
+  height: 100vh;
+}
+
+#home-mobile {
   @include img-bg($home-bg, center center);
   @include bg-size(cover);
   height: 100vh;
@@ -84,7 +124,8 @@ $character-bg: '../assets/char-bg-temp.png';
   color: white;
 }
 
-#about {
+#about,
+#about-mobile {
   @include img-bg($about-bg, center center);
   @include bg-size(cover);
   height: 100vh;
@@ -113,6 +154,7 @@ a:hover {
 }
 
 #home,
+#home-mobile,
 #characters,
 #character,
 #nimbus,
@@ -184,7 +226,18 @@ svg|a:hover, svg|a:active {
   @include img-bg('../assets/logged-out.png', center center);
   @include bg-size(cover);
 }
+.characters-icon {
+  width: 75px;
+  height: 75px;
+  @include img-bg('../assets/characters.png', center center);
+  @include bg-size(cover);
+}
 
+// Global navigation stuffs
+.nav-stuff {
+  position: absolute;
+  z-index: 101;
+}
 .top-left-nav {
   position: fixed;
   top: 3%;
@@ -196,6 +249,19 @@ svg|a:hover, svg|a:active {
   top: 3%;
   right: 3%;
   a { color: black !important; }
+}
+.mid-left-nav {
+  position: fixed;
+  top: 50%;
+  left: 2%;
+}
+.mid-right-nav {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  top: 50%;
+  right: 2%;
 }
 .bottom-right-nav {
   position: fixed;
@@ -231,7 +297,7 @@ svg|a:hover, svg|a:active {
 }
 
 .world-gates {
-  position: fixed;
+  z-index: 100;
   width: 100%;
   height: 99vh;
   left: 0 !important;
@@ -240,6 +306,7 @@ svg|a:hover, svg|a:active {
 
 .world {
   height: 100vh;
+  margin: 0 auto;
 }
 
 .character-grid {
@@ -294,6 +361,36 @@ input.page-input {
   color: white;
 }
 
+#about {
+  .full-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    .right-column {
+      width: 45%;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      .about-info {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+      }
+
+      .about-title {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        img {
+          width: 48px;
+          height: 48px;
+        }
+      }
+    }
+  }
+}
+
 #character {
   .full-container {
     display: flex;
@@ -337,6 +434,9 @@ input.page-input {
 
     .right-column {
       width: 33%;
+      .character-icon {
+        min-width: 60px;
+      }
     }
   }
 }
@@ -371,8 +471,81 @@ input.page-input {
   }
 }
 
-// =========== START MEDIA QUERIES
+#characters-carousel {
+  z-index: 4;
+}
 
+.carousel {
+  position: relative;
+  width: 100%;
+}
+.carousel-container {
+  width: 100%;
+  height: 100vh;
+}
+.carousel-item {
+  .character-slide-cutout {
+    position: relative;
+    left: 55%;
+  }
+  img {
+    object-fit: cover;
+    max-height: 375px;
+  }
+  .carousel-caption {
+    right: 10%;
+    bottom: 30%;
+    left: 13%;
+    width: 80%;
+  }
+  .character-info {
+    text-align: right;
+  }
+}
+#carousel-thumbs {
+  background: transparent;
+  bottom: 15px;
+  left: 0;
+  padding: 0 40px;
+  right: 0;
+  width: 60%;
+  height: 120px;
+  .img-fluid {
+    max-width: 70px;
+    height: 100px;
+  }
+}
+#carousel-thumbs img {
+  border: 5px solid transparent;
+  cursor: pointer;
+}
+#carousel-thumbs img:hover {
+  border-color: rgba(255,255,255,.3);
+}
+#carousel-thumbs .selected img {
+  border-color: #fff;
+}
+.carousel-control-prev,
+.carousel-control-next {
+  width: 50px;
+}
+@media all and (max-width: 767px) {
+  .carousel-container #carousel-thumbs img {
+    border-width: 3px;
+  }
+}
+@media all and (min-width: 576px) {
+  .carousel-container #carousel-thumbs {
+    position: absolute;
+  }
+}
+@media all and (max-width: 576px) {
+  .carousel-container #carousel-thumbs {
+    background: transparent;
+  }
+}
+
+// =========== START MEDIA QUERIES
 
 /* ----------- iPhone 4 and 4S ----------- */
 
@@ -425,7 +598,32 @@ input.page-input {
   and (max-device-width: 568px)
   and (-webkit-min-device-pixel-ratio: 2)
   and (orientation: landscape) {
-
+    #carousel-thumbs {
+      position: absolute;
+      padding: 0;
+      width: 50%;
+      height: 120px;
+      top: 81% !important;
+      left: 2%;
+    }
+    #carousel-thumbs .img-fluid {
+      max-width: 48px !important;
+      height: 85px;
+    }
+    .carousel-container {
+      height: 245px;
+    }
+    .carousel-item img {
+      object-fit: cover;
+      max-height: 320px;
+    }
+    .carousel-item .carousel-caption {
+      right: 0;
+      bottom: 25%;
+      left: 6%;
+      width: 50%;
+      padding: 0;
+    }
 }
 
 /* ----------- iPhone 6, 6S, 7 and 8 ----------- */
@@ -454,6 +652,29 @@ input.page-input {
   and (-webkit-min-device-pixel-ratio: 2)
   and (orientation: landscape) {
 
+  h1   { font-size: 3.1em; }
+  h2   { font-size: 2.5em; }
+  h3   { font-size: 1.3em; }
+
+  #carousel-thumbs {
+    position: absolute;
+    padding: 0;
+    width: 50%;
+    height: 85px;
+    top: 65%;
+    left: 2%;
+  }
+  #carousel-thumbs .img-fluid {
+    max-width: 55px;
+    height: 85px;
+  }
+  .carousel-item .carousel-caption {
+    right: 0;
+    bottom: 32%;
+    left: 6%;
+    width: 46%;
+    padding: 0 0 16px;
+  }
 }
 
 /* ----------- iPhone 6+, 7+ and 8+ ----------- */
@@ -472,7 +693,9 @@ input.page-input {
   and (max-device-width: 736px)
   and (-webkit-min-device-pixel-ratio: 3)
   and (orientation: portrait) {
-
+  .carousel-inner .carousel-item .carousel-caption {
+      bottom: 40px !important;
+  }
 }
 
 /* Landscape */
@@ -482,6 +705,26 @@ input.page-input {
   and (-webkit-min-device-pixel-ratio: 3)
   and (orientation: landscape) {
 
+    h1   { font-size: 3.1em; }
+    h2   { font-size: 2.5em; }
+    h3   { font-size: 1.3em; }
+
+    #carousel-thumbs {
+      padding: 0 12px;
+      width: 55%;
+      bottom: 0;
+    }
+    #carousel-thumbs .img-fluid {
+      max-width: 65px;
+      height: 95px;
+    }
+    .carousel-item .carousel-caption {
+      right: 0;
+      bottom: 30%;
+      left: 2%;
+      width: 100%;
+      padding: 0 0 16px;
+    }
 }
 
 /* ----------- iPhone X ----------- */
@@ -491,7 +734,9 @@ input.page-input {
   and (min-device-width: 375px)
   and (max-device-width: 812px)
   and (-webkit-min-device-pixel-ratio: 3) {
-
+  h1   { font-size: 3em; }
+  h2   { font-size: 2em; }
+  h3   { font-size: 1.1em; }
 }
 
 /* Portrait */
@@ -500,7 +745,47 @@ input.page-input {
   and (max-device-width: 812px)
   and (-webkit-min-device-pixel-ratio: 3)
   and (orientation: portrait) {
-
+  .mid-left-nav {
+    top: 10%;
+    left: 5%;
+  }
+  .hub-container {
+    display: flex;
+    justify-content: center;
+  }
+  .world {
+    height: 45vh;
+    // need to update the world gates graphic
+  }
+  .character-info {
+    p { display: none; }
+  }
+  .carousel-inner {
+    .carousel-item {
+      img {
+        object-fit: cover;
+        max-height: 600px;
+      }
+      .carousel-caption {
+        bottom: 0;
+      }
+    }
+    .character-slide-cutout {
+      left: 0;
+    }
+  }
+  #carousel-thumbs {
+    background: transparent;
+    position: fixed;
+    padding: 0 20px;
+    bottom: 15%;
+    width: 100%;
+    height: 80px;
+    .img-fluid {
+      max-width: 55px;
+      height: 85px;
+    }
+  }
 }
 
 /* Landscape */
@@ -509,5 +794,91 @@ input.page-input {
   and (max-device-width: 812px)
   and (-webkit-min-device-pixel-ratio: 3)
   and (orientation: landscape) {
+  .top-left-nav,
+  .top-right-nav {
+    top: 5%;
+  }
+  .mid-left-nav {
+    top: 17%;
+    left: 3%;
+  }
+  .mid-right-nav {
+    top: 42%;
 
+    .characters-icon {
+      width: 55px;
+      height: 55px;
+      @include img-bg('../assets/characters.png', center center);
+      @include bg-size(cover);
+    }
+  }
+  .bottom-right-nav {
+    bottom: 5%;
+    right: 1%;
+  }
+  .characters-nav {
+    position: fixed;
+    left: 3%;
+    bottom: 5%;
+  }
+
+  #characters {
+    .full-container {
+      width: 80%;
+      .left-column {
+        width: 20%;
+      }
+      .right-column a img {
+        padding: 6px;
+      }
+    }
+  }
+
+  #character {
+    .full-container {
+      width: 100%;
+    }
+    .left-column {
+      width: 50% !important;
+      text-align: right !important;
+
+      .carousel-control-prev,
+      .carousel-control-next {
+        width: 10%;
+      }
+
+      .character-select {
+        .character-row {
+          width: 100%;
+          max-width: 450px;
+          height: 100px;
+          border: 1px solid red;
+          .carousel-control-next,
+          .carousel-control-prev {
+            height: 40px;
+            top: 40%;
+          }
+          .carousel-indicators {
+            top: -11px;
+            margin: 0 auto;
+            li {
+              width: 60px;
+              height: 100px;
+            }
+          }
+        }
+      }
+    }
+    .right-column {
+      width: 50% !important;
+      .character-cutout {
+        display: flex;
+        justify-content: center;
+        img {
+          width: 100%;
+          max-width: 280px;
+        }
+      }
+    }
+  }
 }
