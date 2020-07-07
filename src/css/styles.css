@@ -7731,6 +7731,14 @@ input.page-input {
 
 /* Portrait */
 @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait) {
+  .mid-left-nav {
+    top: 10%;
+    left: 5%; }
+  .hub-container {
+    display: flex;
+    justify-content: center; }
+  .world {
+    height: 45vh; }
   .character-info p {
     display: none; }
   .carousel-inner .carousel-item img {

@@ -745,6 +745,18 @@ input.page-input {
   and (max-device-width: 812px)
   and (-webkit-min-device-pixel-ratio: 3)
   and (orientation: portrait) {
+  .mid-left-nav {
+    top: 10%;
+    left: 5%;
+  }
+  .hub-container {
+    display: flex;
+    justify-content: center;
+  }
+  .world {
+    height: 45vh;
+    // need to update the world gates graphic
+  }
   .character-info {
     p { display: none; }
   }
