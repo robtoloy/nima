@@ -4,7 +4,7 @@
  * Copyright 2011-2020 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
-@import "//cloud.typography.com/7722678/6294412/css/fonts.css";
+@import url(https://cloud.typography.com/7722678/6294412/css/fonts.css);
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -7597,7 +7597,7 @@ input.page-input {
   background: transparent;
   bottom: 15px;
   left: 0;
-  padding: 0 40px;
+  padding: 0 55px;
   right: 0;
   width: 60%;
   height: 120px; }
@@ -7631,13 +7631,188 @@ input.page-input {
   .carousel-container #carousel-thumbs {
     background: transparent; } }
 
+@media all and (max-width: 812px) {
+  .carousel-item .carousel-caption p {
+    display: none; } }
+
 /* ----------- iPhone 4 and 4S ----------- */
 /* Portrait and Landscape */
 /* Portrait */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  #world {
+    height: 100vh;
+    background: grey;
+    display: flex;
+    align-items: center;
+    color: white; }
+    #world .row {
+      height: 75vh;
+      width: 300px;
+      margin: 0 auto;
+      justify-content: center; }
+      #world .row .world-info {
+        text-align: center;
+        margin-bottom: 12px;
+        padding: 0; }
+        #world .row .world-info p {
+          padding: 0 2%; }
+        #world .row .world-info .world-heading {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between; }
+          #world .row .world-info .world-heading .world-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 16px;
+            background: white; }
+      #world .row .world-video {
+        text-align: center;
+        margin-bottom: 12px; }
+        #world .row .world-video .world-video-container {
+          height: 135px;
+          border: 1px solid white;
+          margin: 0 auto; }
+      #world .row .world-characters {
+        text-align: center;
+        margin: 0 auto;
+        flex-direction: column;
+        height: 100px; }
+        #world .row .world-characters h3 {
+          margin-bottom: 12px; }
+        #world .row .world-characters .world-character-row {
+          width: 65%;
+          height: 75px;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          margin: 0 auto; }
+          #world .row .world-characters .world-character-row .character-tile {
+            width: 60px;
+            margin: 0 3px;
+            background-image: url("../assets/char/char-tile-temp.png");
+            background-position: center center;
+            background-repeat: no-repeat;
+            -webkit-background-size: 100%;
+            -moz-background-size: 100%;
+            -ms-background-size: 100%;
+            background-size: 100%; } }
+
 /* Landscape */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+  #world {
+    height: 100vh;
+    background: grey;
+    display: flex;
+    align-items: center;
+    color: white; }
+    #world .row {
+      height: 65vh;
+      width: 410px;
+      margin: 0 auto;
+      justify-content: center;
+      flex-direction: row; }
+      #world .row .world-info {
+        text-align: center;
+        margin-bottom: 12px;
+        padding: 0; }
+        #world .row .world-info p {
+          padding: 0 2%; }
+        #world .row .world-info .world-heading {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between; }
+          #world .row .world-info .world-heading .world-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 16px;
+            background: white; }
+      #world .row .world-video {
+        text-align: center;
+        margin-bottom: 12px; }
+        #world .row .world-video .world-video-container {
+          height: 135px;
+          border: 1px solid white;
+          margin: 0 auto; }
+      #world .row .world-characters {
+        text-align: center;
+        margin: 0 auto;
+        flex-direction: column;
+        height: 100px; }
+        #world .row .world-characters h3 {
+          margin-bottom: 12px; }
+        #world .row .world-characters .world-character-row {
+          width: 65%;
+          height: 75px;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          margin: 0 auto; }
+          #world .row .world-characters .world-character-row .character-tile {
+            width: 60px;
+            margin: 0 3px;
+            background-image: url("../assets/char/char-tile-temp.png");
+            background-position: center center;
+            background-repeat: no-repeat;
+            -webkit-background-size: 100%;
+            -moz-background-size: 100%;
+            -ms-background-size: 100%;
+            background-size: 100%; } }
+
 /* ----------- iPhone 5, 5S, 5C and 5SE ----------- */
 /* Portrait and Landscape */
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
+  h1 {
+    font-size: 3.1em; }
+  h2 {
+    font-size: 2.5em; }
+  h3 {
+    font-size: 1.3em; } }
+
 /* Portrait */
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  #world .row {
+    height: 70vh; }
+  #myCarousel .carousel-item .carousel-caption {
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    left: 0;
+    padding: 0 16px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    height: 74vh; }
+    #myCarousel .carousel-item .carousel-caption p {
+      display: none; }
+  #myCarousel .carousel-item .character-slide-cutout {
+    position: absolute;
+    max-height: 475px;
+    margin: 0 auto;
+    left: 0;
+    right: 0; }
+  #carousel-thumbs {
+    background: transparent;
+    bottom: 10px;
+    left: 0;
+    padding: 0 12px;
+    right: 0;
+    width: 100%;
+    height: 120px; }
+    #carousel-thumbs .carousel-control-prev,
+    #carousel-thumbs .carousel-control-next {
+      width: 25px; }
+    #carousel-thumbs .carousel-control-prev {
+      left: -15px; }
+    #carousel-thumbs .carousel-control-next {
+      right: -15px; }
+    #carousel-thumbs .carousel-inner {
+      text-align: center; }
+    #carousel-thumbs .img-fluid {
+      max-width: 45px;
+      height: 100px; } }
+
 /* Landscape */
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
   #carousel-thumbs {
@@ -7647,9 +7822,16 @@ input.page-input {
     height: 120px;
     top: 81% !important;
     left: 2%; }
-  #carousel-thumbs .img-fluid {
-    max-width: 48px !important;
-    height: 85px; }
+    #carousel-thumbs .img-fluid {
+      max-width: 45px !important;
+      height: 70px !important; }
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 25px; }
+  .carousel-control-prev {
+    left: -25px !important; }
+  .carousel-control-next {
+    right: -25px !important; }
   .carousel-container {
     height: 245px; }
   .carousel-item img {
@@ -7664,7 +7846,60 @@ input.page-input {
 
 /* ----------- iPhone 6, 6S, 7 and 8 ----------- */
 /* Portrait and Landscape */
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
+  h1 {
+    font-size: 3.1em; }
+  h2 {
+    font-size: 2.5em; }
+  h3 {
+    font-size: 1.3em; } }
+
 /* Portrait */
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  #world .row {
+    height: 70vh; }
+    #world .row .world-character-row {
+      width: 75%;
+      height: 105px; }
+  .carousel-inner {
+    height: 74vh; }
+  #carousel-thumbs {
+    width: 90%;
+    padding: 0;
+    bottom: 35px;
+    height: 90px;
+    margin: 0 auto; }
+    #carousel-thumbs .img-fluid {
+      max-width: 55px !important;
+      height: 90px !important; }
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 25px; }
+  .carousel-control-prev {
+    left: -30px !important; }
+  .carousel-control-next {
+    right: -30px !important; }
+  .carousel-item .carousel-caption {
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    left: 0;
+    padding: 0 16px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    height: 74vh; }
+    .carousel-item .carousel-caption p {
+      display: none; }
+  .carousel-item .character-slide-cutout {
+    position: absolute;
+    max-height: 475px;
+    margin: 0 auto;
+    left: 0;
+    right: 0; } }
+
 /* Landscape */
 @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
   h1 {
@@ -7694,8 +7929,34 @@ input.page-input {
 /* Portrait and Landscape */
 /* Portrait */
 @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait) {
-  .carousel-inner .carousel-item .carousel-caption {
-    bottom: 40px !important; } }
+  #world .row {
+    height: 60vh; }
+    #world .row .world-character-row {
+      width: 80% !important;
+      height: 105px; }
+      #world .row .world-character-row .character-tile {
+        width: 70px !important; }
+  .carousel-inner {
+    height: 580px; }
+    .carousel-inner .carousel-item .carousel-caption {
+      bottom: 160px !important; }
+  #carousel-thumbs {
+    position: fixed;
+    padding: 0 30px !important;
+    bottom: 10%;
+    width: 100%;
+    height: 100px; }
+    #carousel-thumbs .img-fluid {
+      max-width: 55px !important;
+      height: 100px !important; }
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 25px !important;
+    top: 20px; }
+  .carousel-control-prev {
+    left: 0 !important; }
+  .carousel-control-next {
+    right: 0 !important; } }
 
 /* Landscape */
 @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {
@@ -7707,14 +7968,25 @@ input.page-input {
     font-size: 1.3em; }
   #carousel-thumbs {
     padding: 0 12px;
-    width: 55%;
-    bottom: 0; }
-  #carousel-thumbs .img-fluid {
-    max-width: 65px;
-    height: 95px; }
+    width: 50%;
+    bottom: 50px;
+    left: 25px; }
+    #carousel-thumbs .img-fluid {
+      max-width: 55px !important;
+      height: 95px !important; }
+    #carousel-thumbs .carousel-control-prev,
+    #carousel-thumbs .carousel-control-next {
+      width: 25px !important;
+      top: 0; }
+    #carousel-thumbs .carousel-control-prev {
+      left: -15px !important; }
+    #carousel-thumbs .carousel-control-next {
+      right: -15px !important; }
+  .carousel-item .character-slide-cutout {
+    max-height: 400px; }
   .carousel-item .carousel-caption {
     right: 0;
-    bottom: 30%;
+    bottom: 36%;
     left: 2%;
     width: 100%;
     padding: 0 0 16px; } }
@@ -7731,6 +8003,13 @@ input.page-input {
 
 /* Portrait */
 @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait) {
+  #world .row {
+    height: 60vh; }
+    #world .row .world-character-row {
+      width: 80% !important;
+      height: 105px; }
+      #world .row .world-character-row .character-tile {
+        width: 70px !important; }
   .mid-left-nav {
     top: 10%;
     left: 5%; }
@@ -7741,23 +8020,39 @@ input.page-input {
     height: 45vh; }
   .character-info p {
     display: none; }
-  .carousel-inner .carousel-item img {
-    object-fit: cover;
-    max-height: 600px; }
-  .carousel-inner .carousel-item .carousel-caption {
-    bottom: 0; }
-  .carousel-inner .character-slide-cutout {
-    left: 0; }
+  .carousel-inner {
+    height: 75vh; }
+    .carousel-inner .carousel-item {
+      text-align: center; }
+      .carousel-inner .carousel-item img {
+        object-fit: cover;
+        max-height: 600px; }
+      .carousel-inner .carousel-item .carousel-caption {
+        bottom: 0 !important;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        height: 72vh; }
+    .carousel-inner .character-slide-cutout {
+      left: 0; }
   #carousel-thumbs {
     background: transparent;
     position: fixed;
-    padding: 0 20px;
+    padding: 0 24px;
     bottom: 15%;
     width: 100%;
     height: 80px; }
     #carousel-thumbs .img-fluid {
       max-width: 55px;
-      height: 85px; } }
+      height: 85px; }
+    #carousel-thumbs .carousel-control-prev,
+    #carousel-thumbs .carousel-control-next {
+      width: 25px !important;
+      top: 20px; }
+    #carousel-thumbs .carousel-control-prev {
+      left: 0 !important; }
+    #carousel-thumbs .carousel-control-next {
+      right: 0 !important; } }
 
 /* Landscape */
 @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {
@@ -7772,7 +8067,7 @@ input.page-input {
     .mid-right-nav .characters-icon {
       width: 55px;
       height: 55px;
-      background-image: url("../assets/characters.png");
+      background-image: url("http://nimapush-14dab.kxcdn.com/assets/characters.png");
       background-position: center center;
       background-repeat: no-repeat;
       -webkit-background-size: cover;
@@ -7786,6 +8081,9 @@ input.page-input {
     position: fixed;
     left: 3%;
     bottom: 5%; }
+  #carousel-thumbs .img-fluid {
+    max-width: 65px;
+    height: 100px; }
   #characters .full-container {
     width: 80%; }
     #characters .full-container .left-column {
