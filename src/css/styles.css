@@ -7619,6 +7619,24 @@ input.page-input {
 .carousel-control-next {
   width: 50px; }
 
+#world {
+  background-image: url("../assets/nimbus/nimbus-temp.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -ms-background-size: cover;
+  background-size: cover; }
+  #world .dark-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    opacity: 0.125; }
+
+.world-video-container {
+  background: black; }
+
 @media all and (max-width: 767px) {
   .carousel-container #carousel-thumbs img {
     border-width: 3px; } }
@@ -7637,17 +7655,26 @@ input.page-input {
 
 /* ----------- iPhone 4 and 4S ----------- */
 /* Portrait and Landscape */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+  p {
+    font-size: 11px !important; }
+  .device-iPhone4 {
+    display: block !important; } }
+
 /* Portrait */
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  .mobile-landscape {
+    display: none; }
+  .mobile-portrait {
+    display: block; }
   #world {
     height: 100vh;
-    background: grey;
     display: flex;
     align-items: center;
     color: white; }
     #world .row {
-      height: 75vh;
-      width: 300px;
+      height: 80vh !important;
+      width: 284px;
       margin: 0 auto;
       justify-content: center; }
       #world .row .world-info {
@@ -7669,9 +7696,10 @@ input.page-input {
         text-align: center;
         margin-bottom: 12px; }
         #world .row .world-video .world-video-container {
-          height: 135px;
+          height: 30vh;
           border: 1px solid white;
-          margin: 0 auto; }
+          margin: 0 auto;
+          width: 80vw; }
       #world .row .world-characters {
         text-align: center;
         margin: 0 auto;
@@ -7699,28 +7727,34 @@ input.page-input {
 
 /* Landscape */
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+  .mobile-landscape {
+    display: block; }
+  .mobile-portrait {
+    display: none; }
   #world {
     height: 100vh;
-    background: grey;
     display: flex;
     align-items: center;
     color: white; }
     #world .row {
-      height: 65vh;
+      height: 80vh;
       width: 410px;
       margin: 0 auto;
       justify-content: center;
       flex-direction: row; }
       #world .row .world-info {
         text-align: center;
-        margin-bottom: 12px;
-        padding: 0; }
-        #world .row .world-info p {
-          padding: 0 2%; }
+        margin-bottom: 8px;
+        padding: 0 24px; }
         #world .row .world-info .world-heading {
           display: flex;
           flex-direction: row;
-          justify-content: space-between; }
+          justify-content: center;
+          align-items: center;
+          margin-bottom: 8px; }
+          #world .row .world-info .world-heading h1 {
+            margin: 0;
+            font-size: 2.3em; }
           #world .row .world-info .world-heading .world-icon {
             width: 32px;
             height: 32px;
@@ -7728,20 +7762,23 @@ input.page-input {
             background: white; }
       #world .row .world-video {
         text-align: center;
-        margin-bottom: 12px; }
+        margin-bottom: 0; }
         #world .row .world-video .world-video-container {
-          height: 135px;
+          width: 64vw !important;
+          height: 55vh !important;
           border: 1px solid white;
           margin: 0 auto; }
       #world .row .world-characters {
         text-align: center;
         margin: 0 auto;
         flex-direction: column;
-        height: 100px; }
+        height: 100px;
+        bottom: 55px;
+        padding: 0; }
         #world .row .world-characters h3 {
-          margin-bottom: 12px; }
+          margin-bottom: 4px; }
         #world .row .world-characters .world-character-row {
-          width: 65%;
+          width: 40%;
           height: 75px;
           display: flex;
           flex-direction: row;
@@ -7766,12 +7803,27 @@ input.page-input {
   h2 {
     font-size: 2.5em; }
   h3 {
-    font-size: 1.3em; } }
+    font-size: 1.3em; }
+  p {
+    font-size: 11px !important; } }
 
 /* Portrait */
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  .mobile-landscape {
+    display: none; }
+  .mobile-portrait {
+    display: block; }
   #world .row {
-    height: 70vh; }
+    height: 70vh !important; }
+    #world .row .world-info {
+      margin-bottom: 0;
+      height: 15vh; }
+    #world .row .world-video {
+      margin-bottom: 0;
+      height: 25vh; }
+      #world .row .world-video .world-video-container {
+        height: 25vh;
+        width: 80vw; }
   #myCarousel .carousel-item .carousel-caption {
     right: 0;
     bottom: 0;
@@ -7842,7 +7894,85 @@ input.page-input {
     bottom: 25%;
     left: 6%;
     width: 50%;
-    padding: 0; } }
+    padding: 0; }
+  .mobile-landscape {
+    display: block; }
+  .mobile-portrait {
+    display: none; }
+  #world {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    color: white; }
+    #world .row {
+      height: 50vh;
+      width: 100%;
+      margin: 0;
+      justify-content: center;
+      flex-direction: row;
+      align-items: center; }
+      #world .row .world-info {
+        text-align: left;
+        margin-bottom: 8px;
+        padding: 0; }
+        #world .row .world-info .world-heading {
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-start;
+          align-items: center;
+          margin-bottom: 8px; }
+          #world .row .world-info .world-heading h1 {
+            margin: 0;
+            font-size: 2.3em;
+            min-width: 200px; }
+          #world .row .world-info .world-heading .world-icon {
+            width: 32px;
+            height: 32px;
+            min-width: 32px;
+            border-radius: 16px;
+            background: white;
+            margin-right: 8px; }
+        #world .row .world-info p {
+          background: rgba(0, 0, 0, 0.32);
+          padding: 12px 12px 12px 24px;
+          left: -18px;
+          position: relative; }
+      #world .row .world-video {
+        text-align: center;
+        margin-bottom: 0;
+        position: absolute;
+        z-index: -99;
+        align-self: center; }
+        #world .row .world-video .world-video-container {
+          width: 60vw !important;
+          height: 55vh !important;
+          border: 1px solid white;
+          margin: 0 auto; }
+      #world .row .world-characters {
+        text-align: center;
+        margin: 0;
+        flex-direction: column;
+        height: 100px;
+        bottom: 0; }
+        #world .row .world-characters h3 {
+          margin-bottom: 4px; }
+        #world .row .world-characters .world-character-row {
+          width: 100%;
+          height: 85px;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          margin: 0; }
+          #world .row .world-characters .world-character-row .character-tile {
+            width: 60px;
+            margin: 0 3px;
+            background-image: url("../assets/char/char-tile-temp.png");
+            background-position: center center;
+            background-repeat: no-repeat;
+            -webkit-background-size: 100%;
+            -moz-background-size: 100%;
+            -ms-background-size: 100%;
+            background-size: 100%; } }
 
 /* ----------- iPhone 6, 6S, 7 and 8 ----------- */
 /* Portrait and Landscape */
@@ -7852,15 +7982,26 @@ input.page-input {
   h2 {
     font-size: 2.5em; }
   h3 {
-    font-size: 1.3em; } }
+    font-size: 1.3em; }
+  p {
+    font-size: 13px !important; } }
 
 /* Portrait */
 @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  .mobile-landscape {
+    display: none; }
+  .mobile-portrait {
+    display: block; }
   #world .row {
-    height: 70vh; }
+    height: 75vh !important; }
+    #world .row .world-video {
+      height: 30vh; }
+      #world .row .world-video .world-video-container {
+        height: 30vh !important;
+        width: 85vw !important; }
     #world .row .world-character-row {
-      width: 75%;
-      height: 105px; }
+      width: 100% !important;
+      height: inherit !important; }
   .carousel-inner {
     height: 74vh; }
   #carousel-thumbs {
@@ -7923,10 +8064,92 @@ input.page-input {
     bottom: 32%;
     left: 6%;
     width: 46%;
-    padding: 0 0 16px; } }
+    padding: 0 0 16px; }
+  .mobile-landscape {
+    display: block; }
+  .mobile-portrait {
+    display: none; }
+  #world {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    color: white; }
+    #world .row {
+      height: 50vh;
+      width: 100%;
+      margin: 0;
+      justify-content: center;
+      flex-direction: row;
+      align-items: center; }
+      #world .row .world-info {
+        text-align: left;
+        margin-bottom: 8px;
+        padding: 0; }
+        #world .row .world-info .world-heading {
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-start;
+          align-items: center;
+          margin-bottom: 8px; }
+          #world .row .world-info .world-heading h1 {
+            margin: 0;
+            font-size: 2.3em;
+            min-width: 200px; }
+          #world .row .world-info .world-heading .world-icon {
+            width: 32px;
+            height: 32px;
+            min-width: 32px;
+            border-radius: 16px;
+            background: white;
+            margin-right: 8px; }
+        #world .row .world-info p {
+          background: rgba(0, 0, 0, 0.32);
+          padding: 12px 12px 12px 24px;
+          left: -18px;
+          position: relative; }
+      #world .row .world-video {
+        text-align: center;
+        margin-bottom: 0;
+        position: absolute;
+        z-index: -99;
+        align-self: center; }
+        #world .row .world-video .world-video-container {
+          width: 60vw !important;
+          height: 55vh !important;
+          border: 1px solid white;
+          margin: 0 auto; }
+      #world .row .world-characters {
+        text-align: center;
+        margin: 0;
+        flex-direction: column;
+        height: 100px;
+        bottom: 0; }
+        #world .row .world-characters h3 {
+          margin-bottom: 4px; }
+        #world .row .world-characters .world-character-row {
+          width: 100%;
+          height: 85px;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          margin: 0; }
+          #world .row .world-characters .world-character-row .character-tile {
+            width: 60px;
+            margin: 0 3px;
+            background-image: url("../assets/char/char-tile-temp.png");
+            background-position: center center;
+            background-repeat: no-repeat;
+            -webkit-background-size: 100%;
+            -moz-background-size: 100%;
+            -ms-background-size: 100%;
+            background-size: 100%; } }
 
 /* ----------- iPhone 6+, 7+ and 8+ ----------- */
 /* Portrait and Landscape */
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) {
+  p {
+    font-size: 13px !important; } }
+
 /* Portrait */
 @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait) {
   #world .row {
@@ -7989,7 +8212,85 @@ input.page-input {
     bottom: 36%;
     left: 2%;
     width: 100%;
-    padding: 0 0 16px; } }
+    padding: 0 0 16px; }
+  .mobile-landscape {
+    display: block; }
+  .mobile-portrait {
+    display: none; }
+  #world {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    color: white; }
+    #world .row {
+      height: 50vh;
+      width: 100%;
+      margin: 0;
+      justify-content: center;
+      flex-direction: row;
+      align-items: center; }
+      #world .row .world-info {
+        text-align: left;
+        margin-bottom: 8px;
+        padding: 0; }
+        #world .row .world-info .world-heading {
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-start;
+          align-items: center;
+          margin-bottom: 8px; }
+          #world .row .world-info .world-heading h1 {
+            margin: 0;
+            font-size: 2.3em;
+            min-width: 200px; }
+          #world .row .world-info .world-heading .world-icon {
+            width: 32px;
+            height: 32px;
+            min-width: 32px;
+            border-radius: 16px;
+            background: white;
+            margin-right: 8px; }
+        #world .row .world-info p {
+          background: rgba(0, 0, 0, 0.32);
+          padding: 12px 12px 12px 24px;
+          left: -18px;
+          position: relative; }
+      #world .row .world-video {
+        text-align: center;
+        margin-bottom: 0;
+        position: absolute;
+        z-index: -99;
+        align-self: center; }
+        #world .row .world-video .world-video-container {
+          width: 60vw !important;
+          height: 55vh !important;
+          border: 1px solid white;
+          margin: 0 auto; }
+      #world .row .world-characters {
+        text-align: center;
+        margin: 0;
+        flex-direction: column;
+        height: 100px;
+        bottom: 0; }
+        #world .row .world-characters h3 {
+          margin-bottom: 4px; }
+        #world .row .world-characters .world-character-row {
+          width: 100%;
+          height: 100px;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          margin: 0; }
+          #world .row .world-characters .world-character-row .character-tile {
+            width: 60px;
+            margin: 0 3px;
+            background-image: url("../assets/char/char-tile-temp.png");
+            background-position: center center;
+            background-repeat: no-repeat;
+            -webkit-background-size: 100%;
+            -moz-background-size: 100%;
+            -ms-background-size: 100%;
+            background-size: 100%; } }
 
 /* ----------- iPhone X ----------- */
 /* Portrait and Landscape */
@@ -7999,17 +8300,22 @@ input.page-input {
   h2 {
     font-size: 2em; }
   h3 {
-    font-size: 1.1em; } }
+    font-size: 1.1em; }
+  p {
+    font-size: 13px !important; } }
 
 /* Portrait */
 @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait) {
   #world .row {
-    height: 60vh; }
+    height: 56vh !important; }
+    #world .row .world-video .world-video-container {
+      height: 26vh !important;
+      width: 87vw !important; }
     #world .row .world-character-row {
-      width: 80% !important;
-      height: 105px; }
+      width: 86% !important;
+      height: inherit !important; }
       #world .row .world-character-row .character-tile {
-        width: 70px !important; }
+        width: 30vw !important; }
   .mid-left-nav {
     top: 10%;
     left: 5%; }
@@ -8120,4 +8426,78 @@ input.page-input {
       justify-content: center; }
       #character .right-column .character-cutout img {
         width: 100%;
-        max-width: 280px; } }
+        max-width: 280px; }
+  #world {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    color: white; }
+    #world .row {
+      height: 50vh;
+      width: 100%;
+      margin: 0;
+      justify-content: center;
+      flex-direction: row;
+      align-items: center; }
+      #world .row .world-info {
+        text-align: left;
+        margin-bottom: 8px;
+        padding: 0; }
+        #world .row .world-info .world-heading {
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-start;
+          align-items: center;
+          margin-bottom: 8px; }
+          #world .row .world-info .world-heading h1 {
+            margin: 0;
+            font-size: 2.3em;
+            min-width: 200px; }
+          #world .row .world-info .world-heading .world-icon {
+            width: 32px;
+            height: 32px;
+            min-width: 32px;
+            border-radius: 16px;
+            background: white;
+            margin-right: 8px; }
+        #world .row .world-info p {
+          background: rgba(0, 0, 0, 0.32);
+          padding: 12px 12px 12px 24px;
+          left: -18px;
+          position: relative; }
+      #world .row .world-video {
+        text-align: center;
+        margin-bottom: 0;
+        position: absolute;
+        z-index: -99;
+        align-self: center; }
+        #world .row .world-video .world-video-container {
+          width: 50vw !important;
+          height: 60vh !important;
+          border: 1px solid white;
+          margin: 0 auto; }
+      #world .row .world-characters {
+        text-align: center;
+        margin: 0;
+        flex-direction: column;
+        height: 100px;
+        bottom: 0; }
+        #world .row .world-characters h3 {
+          margin-bottom: 4px; }
+        #world .row .world-characters .world-character-row {
+          width: 100%;
+          height: 100px;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          margin: 0; }
+          #world .row .world-characters .world-character-row .character-tile {
+            width: 60px;
+            margin: 0 3px;
+            background-image: url("../assets/char/char-tile-temp.png");
+            background-position: center center;
+            background-repeat: no-repeat;
+            -webkit-background-size: 100%;
+            -moz-background-size: 100%;
+            -ms-background-size: 100%;
+            background-size: 100%; } }

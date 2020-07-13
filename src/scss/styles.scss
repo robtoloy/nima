@@ -529,6 +529,27 @@ input.page-input {
 .carousel-control-next {
   width: 50px;
 }
+
+// World gate styles
+
+#world {
+  @include img-bg($nimbus-bg, center center);
+  @include bg-size(cover);
+
+  .dark-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    opacity: 0.125;
+  }
+}
+.world-video-container {
+  background: black;
+}
+
+// Global media queires
+
 @media all and (max-width: 767px) {
   .carousel-container #carousel-thumbs img {
     border-width: 3px;
@@ -564,7 +585,12 @@ input.page-input {
   and (min-device-width: 320px)
   and (max-device-width: 480px)
   and (-webkit-min-device-pixel-ratio: 2) {
-
+    p {
+      font-size: 11px !important;
+    }
+    .device-iPhone4 {
+      display: block !important;
+    }
 }
 
 /* Portrait */
@@ -574,17 +600,24 @@ input.page-input {
   and (-webkit-min-device-pixel-ratio: 2)
   and (orientation: portrait) {
 
+    .mobile-landscape {
+      display: none;
+    }
+    .mobile-portrait {
+      display: block;
+    }
+
   // Worlds template styles
   #world {
     height: 100vh;
-    background: grey;
+    // background: grey;
     display: flex;
     align-items: center;
     color: white;
 
     .row {
-      height: 75vh;
-      width: 300px;
+      height: 80vh !important;
+      width: 284px;
       margin: 0 auto;
       justify-content: center;
 
@@ -616,9 +649,10 @@ input.page-input {
         margin-bottom: 12px;
 
         .world-video-container {
-          height: 135px;
+          height: 30vh;
           border: 1px solid white;
           margin: 0 auto;
+          width: 80vw;
         }
       }
 
@@ -662,16 +696,23 @@ input.page-input {
   and (-webkit-min-device-pixel-ratio: 2)
   and (orientation: landscape) {
 
+  .mobile-landscape {
+    display: block;
+  }
+  .mobile-portrait {
+    display: none;
+  }
+
   // Worlds template styles
   #world {
     height: 100vh;
-    background: grey;
+    // background: grey;
     display: flex;
     align-items: center;
     color: white;
 
     .row {
-      height: 65vh;
+      height: 80vh;
       width: 410px;
       margin: 0 auto;
       justify-content: center;
@@ -679,17 +720,20 @@ input.page-input {
 
       .world-info {
         text-align: center;
-        margin-bottom: 12px;
-        padding: 0;
-
-        p {
-          padding: 0 2%;
-        }
+        margin-bottom: 8px;
+        padding: 0 24px;
 
         .world-heading {
           display: flex;
           flex-direction: row;
-          justify-content: space-between;
+          justify-content: center;
+          align-items: center;
+          margin-bottom: 8px;
+
+          h1 {
+            margin: 0;
+            font-size: 2.3em;
+          }
 
           .world-icon {
             width: 32px;
@@ -702,10 +746,11 @@ input.page-input {
 
       .world-video {
         text-align: center;
-        margin-bottom: 12px;
+        margin-bottom: 0;
 
         .world-video-container {
-          height: 135px;
+          width: 64vw !important;
+          height: 55vh !important;
           border: 1px solid white;
           margin: 0 auto;
         }
@@ -717,13 +762,15 @@ input.page-input {
         // display: flex;
         flex-direction: column;
         height: 100px;
+        bottom: 55px;
+        padding: 0;
 
         h3 {
-          margin-bottom: 12px;
+          margin-bottom: 4px;
         }
 
         .world-character-row {
-          width: 65%;
+          width: 40%;
           height: 75px;
           // border: 1px solid white;
           display: flex;
@@ -752,9 +799,14 @@ input.page-input {
   and (min-device-width: 320px)
   and (max-device-width: 568px)
   and (-webkit-min-device-pixel-ratio: 2) {
+
     h1   { font-size: 3.1em; }
     h2   { font-size: 2.5em; }
     h3   { font-size: 1.3em; }
+
+    p {
+      font-size: 11px !important;
+    }
 }
 
 /* Portrait */
@@ -764,10 +816,30 @@ input.page-input {
   and (-webkit-min-device-pixel-ratio: 2)
   and (orientation: portrait) {
 
+    .mobile-landscape {
+      display: none;
+    }
+    .mobile-portrait {
+      display: block;
+    }
+
     // Worlds template styles
     #world {
       .row {
-        height: 70vh;
+        height: 70vh !important;
+
+        .world-info {
+          margin-bottom: 0;
+          height: 15vh;
+        }
+        .world-video {
+          margin-bottom: 0;
+          height: 25vh;
+          .world-video-container {
+            height: 25vh;
+            width: 80vw;
+          }
+        }
       }
     }
 
@@ -877,6 +949,112 @@ input.page-input {
       padding: 0;
     }
 
+
+    // Worlds template styles
+    .mobile-landscape {
+      display: block;
+    }
+    .mobile-portrait {
+      display: none;
+    }
+    #world {
+      height: 100vh;
+      // background: grey;
+      display: flex;
+      align-items: center;
+      color: white;
+
+      .row {
+        height: 50vh;
+        width: 100%;
+        margin: 0;
+        justify-content: center;
+        flex-direction: row;
+        align-items: center;
+
+        .world-info {
+          text-align: left;
+          margin-bottom: 8px;
+          padding: 0;
+
+          .world-heading {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            margin-bottom: 8px;
+
+            h1 {
+              margin: 0;
+              font-size: 2.3em;
+              min-width: 200px;
+            }
+
+            .world-icon {
+              width: 32px;
+              height: 32px;
+              min-width: 32px;
+              border-radius: 16px;
+              background: white;
+              margin-right: 8px;
+            }
+          }
+          p {
+            background: rgba(0, 0, 0, 0.32);
+            padding: 12px 12px 12px 24px;
+            left: -18px;
+            position: relative;
+          }
+        }
+
+        .world-video {
+          text-align: center;
+          margin-bottom: 0;
+          position: absolute;
+          z-index: -99;
+          align-self: center;
+
+          .world-video-container {
+            width: 60vw !important;
+            height: 55vh !important;
+            border: 1px solid white;
+            margin: 0 auto;
+          }
+        }
+
+        .world-characters {
+          text-align: center;
+          margin: 0;
+          flex-direction: column;
+          height: 100px;
+          bottom: 0;
+
+          h3 {
+            margin-bottom: 4px;
+          }
+
+          .world-character-row {
+            width: 100%;
+            height: 85px;
+            // border: 1px solid white;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            margin: 0;
+
+            .character-tile {
+              width: 60px;
+              margin: 0 3px;
+              // border: 1px solid white;
+              @include img-bg('../assets/char/char-tile-temp.png', center center);
+              @include bg-size(100%);
+            }
+          }
+        }
+      }
+    }
+
+
 }
 
 /* ----------- iPhone 6, 6S, 7 and 8 ----------- */
@@ -889,6 +1067,7 @@ input.page-input {
     h1   { font-size: 3.1em; }
     h2   { font-size: 2.5em; }
     h3   { font-size: 1.3em; }
+    p    { font-size: 13px !important; }
 }
 
 /* Portrait */
@@ -898,15 +1077,31 @@ input.page-input {
   and (-webkit-min-device-pixel-ratio: 2)
   and (orientation: portrait) {
 
+    .mobile-landscape {
+      display: none;
+    }
+    .mobile-portrait {
+      display: block;
+    }
+
     // World template styles
     #world {
       .row {
-        height: 70vh;
+        height: 75vh !important;
+        .world-video {
+          height: 30vh;
+
+          .world-video-container {
+            height: 30vh !important;
+            width: 85vw !important;
+          }
+        }
 
         .world-character-row {
-          width: 75%;
-          height: 105px;
+          width: 100% !important;
+          height: inherit !important;
         }
+
       }
     }
 
@@ -995,6 +1190,112 @@ input.page-input {
     width: 46%;
     padding: 0 0 16px;
   }
+
+  // Worlds template styles
+  .mobile-landscape {
+    display: block;
+  }
+  .mobile-portrait {
+    display: none;
+  }
+
+  #world {
+    height: 100vh;
+    // background: grey;
+    display: flex;
+    align-items: center;
+    color: white;
+
+    .row {
+      height: 50vh;
+      width: 100%;
+      margin: 0;
+      justify-content: center;
+      flex-direction: row;
+      align-items: center;
+
+      .world-info {
+        text-align: left;
+        margin-bottom: 8px;
+        padding: 0;
+
+        .world-heading {
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-start;
+          align-items: center;
+          margin-bottom: 8px;
+
+          h1 {
+            margin: 0;
+            font-size: 2.3em;
+            min-width: 200px;
+          }
+
+          .world-icon {
+            width: 32px;
+            height: 32px;
+            min-width: 32px;
+            border-radius: 16px;
+            background: white;
+            margin-right: 8px;
+          }
+        }
+        p {
+          background: rgba(0, 0, 0, 0.32);
+          padding: 12px 12px 12px 24px;
+          left: -18px;
+          position: relative;
+        }
+      }
+
+      .world-video {
+        text-align: center;
+        margin-bottom: 0;
+        position: absolute;
+        z-index: -99;
+        align-self: center;
+
+        .world-video-container {
+          width: 60vw !important;
+          height: 55vh !important;
+          border: 1px solid white;
+          margin: 0 auto;
+        }
+      }
+
+      .world-characters {
+        text-align: center;
+        margin: 0;
+        flex-direction: column;
+        height: 100px;
+        bottom: 0;
+
+        h3 {
+          margin-bottom: 4px;
+        }
+
+        .world-character-row {
+          width: 100%;
+          height: 85px;
+          // border: 1px solid white;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          margin: 0;
+
+          .character-tile {
+            width: 60px;
+            margin: 0 3px;
+            // border: 1px solid white;
+            @include img-bg('../assets/char/char-tile-temp.png', center center);
+            @include bg-size(100%);
+          }
+        }
+      }
+    }
+  }
+
 }
 
 /* ----------- iPhone 6+, 7+ and 8+ ----------- */
@@ -1004,7 +1305,7 @@ input.page-input {
   and (min-device-width: 414px)
   and (max-device-width: 736px)
   and (-webkit-min-device-pixel-ratio: 3) {
-
+    p    { font-size: 13px !important; }
 }
 
 /* Portrait */
@@ -1065,7 +1366,6 @@ input.page-input {
   }
 }
 
-
 /* Landscape */
 @media only screen
   and (min-device-width: 414px)
@@ -1113,6 +1413,113 @@ input.page-input {
         padding: 0 0 16px;
       }
     }
+
+    // Worlds template styles
+
+    .mobile-landscape {
+      display: block;
+    }
+    .mobile-portrait {
+      display: none;
+    }
+
+    #world {
+      height: 100vh;
+      // background: grey;
+      display: flex;
+      align-items: center;
+      color: white;
+
+      .row {
+        height: 50vh;
+        width: 100%;
+        margin: 0;
+        justify-content: center;
+        flex-direction: row;
+        align-items: center;
+
+        .world-info {
+          text-align: left;
+          margin-bottom: 8px;
+          padding: 0;
+
+          .world-heading {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            margin-bottom: 8px;
+
+            h1 {
+              margin: 0;
+              font-size: 2.3em;
+              min-width: 200px;
+            }
+
+            .world-icon {
+              width: 32px;
+              height: 32px;
+              min-width: 32px;
+              border-radius: 16px;
+              background: white;
+              margin-right: 8px;
+            }
+          }
+          p {
+            background: rgba(0, 0, 0, 0.32);
+            padding: 12px 12px 12px 24px;
+            left: -18px;
+            position: relative;
+          }
+        }
+
+        .world-video {
+          text-align: center;
+          margin-bottom: 0;
+          position: absolute;
+          z-index: -99;
+          align-self: center;
+
+          .world-video-container {
+            width: 60vw !important;
+            height: 55vh !important;
+            border: 1px solid white;
+            margin: 0 auto;
+          }
+        }
+
+        .world-characters {
+          text-align: center;
+          margin: 0;
+          flex-direction: column;
+          height: 100px;
+          bottom: 0;
+
+          h3 {
+            margin-bottom: 4px;
+          }
+
+          .world-character-row {
+            width: 100%;
+            height: 100px;
+            // border: 1px solid white;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            margin: 0;
+
+            .character-tile {
+              width: 60px;
+              margin: 0 3px;
+              // border: 1px solid white;
+              @include img-bg('../assets/char/char-tile-temp.png', center center);
+              @include bg-size(100%);
+            }
+          }
+        }
+      }
+    }
+
 }
 
 /* ----------- iPhone X ----------- */
@@ -1122,9 +1529,10 @@ input.page-input {
   and (min-device-width: 375px)
   and (max-device-width: 812px)
   and (-webkit-min-device-pixel-ratio: 3) {
-  h1   { font-size: 3em; }
-  h2   { font-size: 2em; }
-  h3   { font-size: 1.1em; }
+    h1   { font-size: 3em; }
+    h2   { font-size: 2em; }
+    h3   { font-size: 1.1em; }
+    p    { font-size: 13px !important; }
 }
 
 /* Portrait */
@@ -1137,14 +1545,20 @@ input.page-input {
     // World template styles
     #world {
       .row {
-        height: 60vh;
+        height: 56vh !important;
 
+        .world-video {
+          .world-video-container {
+            height: 26vh !important;
+            width: 87vw !important;
+          }
+        }
         .world-character-row {
-          width: 80% !important;
-          height: 105px;
+          width: 86% !important;
+          height: inherit !important;
 
           .character-tile {
-            width: 70px !important;
+            width: 30vw !important;
           }
         }
       }
@@ -1314,4 +1728,103 @@ input.page-input {
       }
     }
   }
+
+  // Worlds template styles
+  #world {
+    height: 100vh;
+    // background: grey;
+    display: flex;
+    align-items: center;
+    color: white;
+
+    .row {
+      height: 50vh;
+      width: 100%;
+      margin: 0;
+      justify-content: center;
+      flex-direction: row;
+      align-items: center;
+
+      .world-info {
+        text-align: left;
+        margin-bottom: 8px;
+        padding: 0;
+
+        .world-heading {
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-start;
+          align-items: center;
+          margin-bottom: 8px;
+
+          h1 {
+            margin: 0;
+            font-size: 2.3em;
+            min-width: 200px;
+          }
+
+          .world-icon {
+            width: 32px;
+            height: 32px;
+            min-width: 32px;
+            border-radius: 16px;
+            background: white;
+            margin-right: 8px;
+          }
+        }
+        p {
+          background: rgba(0, 0, 0, 0.32);
+          padding: 12px 12px 12px 24px;
+          left: -18px;
+          position: relative;
+        }
+      }
+
+      .world-video {
+        text-align: center;
+        margin-bottom: 0;
+        position: absolute;
+        z-index: -99;
+        align-self: center;
+
+        .world-video-container {
+          width: 50vw !important;
+          height: 60vh !important;
+          border: 1px solid white;
+          margin: 0 auto;
+        }
+      }
+
+      .world-characters {
+        text-align: center;
+        margin: 0;
+        flex-direction: column;
+        height: 100px;
+        bottom: 0;
+
+        h3 {
+          margin-bottom: 4px;
+        }
+
+        .world-character-row {
+          width: 100%;
+          height: 100px;
+          // border: 1px solid white;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          margin: 0;
+
+          .character-tile {
+            width: 60px;
+            margin: 0 3px;
+            // border: 1px solid white;
+            @include img-bg('../assets/char/char-tile-temp.png', center center);
+            @include bg-size(100%);
+          }
+        }
+      }
+    }
+  }
+
 }
