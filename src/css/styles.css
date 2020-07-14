@@ -7651,15 +7651,25 @@ input.page-input {
 
 @media all and (max-width: 812px) {
   .carousel-item .carousel-caption p {
+    display: none; }
+  #axis-small {
     display: none; } }
 
 /* ----------- iPhone 4 and 4S ----------- */
 /* Portrait and Landscape */
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+  h1 {
+    font-size: 2.1em !important; }
+  h2 {
+    font-size: 2.5em; }
+  h3 {
+    font-size: 1.3em; }
   p {
     font-size: 11px !important; }
   .device-iPhone4 {
-    display: block !important; } }
+    display: block !important; }
+  #book .character-grid {
+    margin: 0 auto; } }
 
 /* Portrait */
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
@@ -7667,6 +7677,9 @@ input.page-input {
     display: none; }
   .mobile-portrait {
     display: block; }
+  #book img.book-player {
+    width: 100% !important;
+    max-width: 950px; }
   #world {
     height: 100vh;
     display: flex;
@@ -7799,13 +7812,15 @@ input.page-input {
 /* Portrait and Landscape */
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
   h1 {
-    font-size: 3.1em; }
+    font-size: 2.1em !important; }
   h2 {
     font-size: 2.5em; }
   h3 {
     font-size: 1.3em; }
   p {
-    font-size: 11px !important; } }
+    font-size: 11px !important; }
+  #book .character-grid {
+    margin: 0 auto; } }
 
 /* Portrait */
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
@@ -7813,6 +7828,9 @@ input.page-input {
     display: none; }
   .mobile-portrait {
     display: block; }
+  #book img.book-player {
+    width: 100% !important;
+    max-width: 950px; }
   #world .row {
     height: 70vh !important; }
     #world .row .world-info {
@@ -7899,6 +7917,9 @@ input.page-input {
     display: block; }
   .mobile-portrait {
     display: none; }
+  #book img.book-player {
+    width: 60% !important;
+    max-width: 950px; }
   #world {
     height: 100vh;
     display: flex;
@@ -7978,13 +7999,15 @@ input.page-input {
 /* Portrait and Landscape */
 @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
   h1 {
-    font-size: 3.1em; }
+    font-size: 2.1em !important; }
   h2 {
-    font-size: 2.5em; }
+    font-size: 2em; }
   h3 {
     font-size: 1.3em; }
   p {
-    font-size: 13px !important; } }
+    font-size: 13px !important; }
+  #book .character-grid {
+    margin: 0 auto; } }
 
 /* Portrait */
 @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
@@ -8043,12 +8066,6 @@ input.page-input {
 
 /* Landscape */
 @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
-  h1 {
-    font-size: 3.1em; }
-  h2 {
-    font-size: 2.5em; }
-  h3 {
-    font-size: 1.3em; }
   #carousel-thumbs {
     position: absolute;
     padding: 0;
@@ -8069,6 +8086,9 @@ input.page-input {
     display: block; }
   .mobile-portrait {
     display: none; }
+  #book img.book-player {
+    width: 60% !important;
+    max-width: 950px; }
   #world {
     height: 100vh;
     display: flex;
@@ -8147,8 +8167,16 @@ input.page-input {
 /* ----------- iPhone 6+, 7+ and 8+ ----------- */
 /* Portrait and Landscape */
 @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) {
+  h1 {
+    font-size: 2.4em !important; }
+  h2 {
+    font-size: 2em; }
+  h3 {
+    font-size: 1.3em; }
   p {
-    font-size: 13px !important; } }
+    font-size: 13px !important; }
+  #book .character-grid {
+    margin: 0 auto; } }
 
 /* Portrait */
 @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait) {
@@ -8183,12 +8211,6 @@ input.page-input {
 
 /* Landscape */
 @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {
-  h1 {
-    font-size: 3.1em; }
-  h2 {
-    font-size: 2.5em; }
-  h3 {
-    font-size: 1.3em; }
   #carousel-thumbs {
     padding: 0 12px;
     width: 50%;
@@ -8213,6 +8235,9 @@ input.page-input {
     left: 2%;
     width: 100%;
     padding: 0 0 16px; }
+  #book img.book-player {
+    width: 60% !important;
+    max-width: 950px; }
   .mobile-landscape {
     display: block; }
   .mobile-portrait {

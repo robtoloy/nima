@@ -574,6 +574,11 @@ input.page-input {
       display: none;
     }
   }
+
+  // Small axis nav
+  #axis-small {
+    display: none;
+  }
 }
 
 // =========== START MEDIA QUERIES
@@ -585,12 +590,23 @@ input.page-input {
   and (min-device-width: 320px)
   and (max-device-width: 480px)
   and (-webkit-min-device-pixel-ratio: 2) {
-    p {
-      font-size: 11px !important;
-    }
+
+    h1   { font-size: 2.1em !important; }
+    h2   { font-size: 2.5em; }
+    h3   { font-size: 1.3em; }
+    p    { font-size: 11px !important; }
+
     .device-iPhone4 {
       display: block !important;
     }
+
+    // book.html
+    #book {
+      .character-grid {
+        margin: 0 auto;
+      }
+    }
+
 }
 
 /* Portrait */
@@ -606,6 +622,14 @@ input.page-input {
     .mobile-portrait {
       display: block;
     }
+
+  // book.html
+  #book {
+    img.book-player {
+      width: 100% !important;
+      max-width: 950px;
+    }
+  }
 
   // Worlds template styles
   #world {
@@ -800,13 +824,17 @@ input.page-input {
   and (max-device-width: 568px)
   and (-webkit-min-device-pixel-ratio: 2) {
 
-    h1   { font-size: 3.1em; }
+    h1   { font-size: 2.1em !important; }
     h2   { font-size: 2.5em; }
     h3   { font-size: 1.3em; }
+    p    { font-size: 11px !important; }
 
-    p {
-      font-size: 11px !important;
+    #book {
+      .character-grid {
+        margin: 0 auto;
+      }
     }
+
 }
 
 /* Portrait */
@@ -821,6 +849,14 @@ input.page-input {
     }
     .mobile-portrait {
       display: block;
+    }
+
+    // book.html
+    #book {
+      img.book-player {
+        width: 100% !important;
+        max-width: 950px;
+      }
     }
 
     // Worlds template styles
@@ -957,6 +993,16 @@ input.page-input {
     .mobile-portrait {
       display: none;
     }
+
+    // book.html
+    #book {
+      img.book-player {
+        width: 60% !important;
+        max-width: 950px;
+      }
+    }
+
+    // World template styles
     #world {
       height: 100vh;
       // background: grey;
@@ -1064,10 +1110,19 @@ input.page-input {
   and (min-device-width: 375px)
   and (max-device-width: 667px)
   and (-webkit-min-device-pixel-ratio: 2) {
-    h1   { font-size: 3.1em; }
-    h2   { font-size: 2.5em; }
+
+    h1   { font-size: 2.1em !important; }
+    h2   { font-size: 2em; }
     h3   { font-size: 1.3em; }
     p    { font-size: 13px !important; }
+
+    // book.html
+    #book {
+      .character-grid {
+        margin: 0 auto;
+      }
+    }
+
 }
 
 /* Portrait */
@@ -1167,10 +1222,6 @@ input.page-input {
   and (-webkit-min-device-pixel-ratio: 2)
   and (orientation: landscape) {
 
-  h1   { font-size: 3.1em; }
-  h2   { font-size: 2.5em; }
-  h3   { font-size: 1.3em; }
-
   #carousel-thumbs {
     position: absolute;
     padding: 0;
@@ -1199,6 +1250,15 @@ input.page-input {
     display: none;
   }
 
+  // book.html
+  #book {
+    img.book-player {
+      width: 60% !important;
+      max-width: 950px;
+    }
+  }
+
+  // World template styles
   #world {
     height: 100vh;
     // background: grey;
@@ -1305,7 +1365,19 @@ input.page-input {
   and (min-device-width: 414px)
   and (max-device-width: 736px)
   and (-webkit-min-device-pixel-ratio: 3) {
+
+    h1   { font-size: 2.4em !important; }
+    h2   { font-size: 2em; }
+    h3   { font-size: 1.3em; }
     p    { font-size: 13px !important; }
+
+    // book.html
+    #book {
+      .character-grid {
+        margin: 0 auto;
+      }
+    }
+
 }
 
 /* Portrait */
@@ -1373,10 +1445,6 @@ input.page-input {
   and (-webkit-min-device-pixel-ratio: 3)
   and (orientation: landscape) {
 
-    h1   { font-size: 3.1em; }
-    h2   { font-size: 2.5em; }
-    h3   { font-size: 1.3em; }
-
     #carousel-thumbs {
       padding: 0 12px;
       width: 50%;
@@ -1411,6 +1479,14 @@ input.page-input {
         left: 2%;
         width: 100%;
         padding: 0 0 16px;
+      }
+    }
+
+    // book.html
+    #book {
+      img.book-player {
+        width: 60% !important;
+        max-width: 950px;
       }
     }
 
