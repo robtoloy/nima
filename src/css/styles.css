@@ -7645,6 +7645,8 @@ input.page-input {
   #trailer .container {
     width: 80%;
     margin: 0 auto; }
+  #trailer .character-grid {
+    margin: 0 auto; }
   #trailer h1 {
     font-size: 3.0rem;
     line-height: 4.2rem;
@@ -7747,6 +7749,120 @@ input.page-input {
     -webkit-transform: rotateX(0deg);
     transform: rotateX(0deg); }
   #trailer .overlay-effect.close nav ul {
+    -webkit-transform: translateY(25%) rotateX(-35deg);
+    transform: translateY(25%) rotateX(-35deg); }
+
+#character-info-overlay {
+  background: grey; }
+  #character-info-overlay .overlay {
+    color: white; }
+  #character-info-overlay .container {
+    width: 80%;
+    margin: 0 auto; }
+  #character-info-overlay .character-grid {
+    margin: 0 auto;
+    top: 25%; }
+  #character-info-overlay section button {
+    margin: 0 auto;
+    font-size: 2.0rem;
+    padding: 1.25rem 2.5rem;
+    display: block;
+    background-color: #009ac9;
+    border: 1px solid transparent;
+    color: #ffffff;
+    font-weight: 300;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    transition: all 0.3s ease-in-out; }
+    @media (prefers-reduced-motion: reduce) {
+      #character-info-overlay section button {
+        transition: none; } }
+  #character-info-overlay section button:hover {
+    background-color: #ffffff;
+    color: #009ac9;
+    border-color: #009ac9; }
+  #character-info-overlay .overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.9); }
+    #character-info-overlay .overlay nav {
+      text-align: center;
+      position: relative;
+      top: 50%;
+      height: 60%;
+      font-size: 54px;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%); }
+    #character-info-overlay .overlay ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 auto;
+      display: inline-block;
+      height: 100%;
+      position: relative; }
+      #character-info-overlay .overlay ul li {
+        display: block;
+        height: 20%;
+        height: calc(100% / 5); }
+        #character-info-overlay .overlay ul li a {
+          font-weight: 300;
+          display: block;
+          color: #ffffff;
+          text-decoration: none;
+          transition: color 0.2s; }
+          @media (prefers-reduced-motion: reduce) {
+            #character-info-overlay .overlay ul li a {
+              transition: none; } }
+          #character-info-overlay .overlay ul li a:hover, #character-info-overlay .overlay ul li a:focus {
+            color: rgba(255, 255, 255, 0.7); }
+    #character-info-overlay .overlay .close {
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      overflow: hidden;
+      border: none;
+      background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/113212/cross.png) no-repeat center center;
+      text-indent: 200%;
+      outline: none;
+      color: white;
+      z-index: 100; }
+  #character-info-overlay .overlay-effect {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s, visibility 0s 0.2s; }
+    @media (prefers-reduced-motion: reduce) {
+      #character-info-overlay .overlay-effect {
+        transition: none; } }
+    #character-info-overlay .overlay-effect.open {
+      opacity: 1;
+      visibility: visible;
+      transition: opacity 0.2s;
+      z-index: 102;
+      display: flex;
+      justify-content: center;
+      flex-direction: column; }
+      @media (prefers-reduced-motion: reduce) {
+        #character-info-overlay .overlay-effect.open {
+          transition: none; } }
+    #character-info-overlay .overlay-effect nav {
+      -webkit-perspective: 1200px;
+      perspective: 1200px; }
+      #character-info-overlay .overlay-effect nav ul {
+        opacity: 0.4;
+        -webkit-transform: translateY(-25%) rotateX(35deg);
+        transform: translateY(-25%) rotateX(35deg);
+        -webkit-transition: -webkit-transform 0.5s, opacity 0.5s;
+        transition: transform 0.5s, opacity 0.5s; }
+  #character-info-overlay .overlay-effect.open nav ul {
+    opacity: 1;
+    -webkit-transform: rotateX(0deg);
+    transform: rotateX(0deg); }
+  #character-info-overlay .overlay-effect.close nav ul {
     -webkit-transform: translateY(25%) rotateX(-35deg);
     transform: translateY(25%) rotateX(-35deg); }
 
