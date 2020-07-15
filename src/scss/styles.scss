@@ -99,6 +99,12 @@ $about-bg: '../assets/about-temp.png';
 $nimbus-bg: '../assets/nimbus/nimbus-temp.png';
 $character-bg: '../assets/char-bg-temp.png';
 
+$account-bg: '../assets/account-bg.jpg';
+$passport-bg-portrait: '../assets/passport-bg-portrait.png';
+$avatar-user: '../assets/nima-avatar.png';
+$emblem1: '../assets/gate-emblem1.png';
+$emblem2: '../assets/cat-emblem.png';
+
 
 #home {
   @include img-bg($home-bg, center center);
@@ -144,6 +150,11 @@ $character-bg: '../assets/char-bg-temp.png';
   height: 100vh;
 }
 
+#account {
+  @include img-bg($account-bg, center center);
+  @include bg-size(cover);
+  height: 100vh;
+}
 
 a {
   font-size: 0.8em;
@@ -818,6 +829,88 @@ input.page-input {
   }
 }
 
+// Account page
+#account {
+  .account-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+
+    .axis-passport-card {
+      width: 85vw;
+      height: 75vh;
+      // max-height: 520px;
+      max-width: 85vw;
+      // border: 1px solid black;
+      // background: white;
+      @include img-bg($passport-bg-portrait, center center);
+      @include bg-size(cover);
+      border-radius: 15px;
+      box-shadow: #d6d6d6 2px 2px 16px;
+      justify-content: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 0;
+
+      &::after {
+        content: "";
+        width: 85vw;
+        height: 20%;
+        top: 0;
+        position: absolute;
+        background: grey;
+        z-index: -1;
+        border-radius: 15px 15px 0 0;
+      }
+
+      .axis-passport-user-avatar {
+        width: 75px;
+        height: 75px;
+        border-radius: 50%;
+        margin: 0 0 12px;
+        // border: 1px solid black;
+        @include img-bg($avatar-user, center center);
+        @include bg-size(cover);
+      }
+      .axis-passport-details {
+        width: 100%;
+
+        .row {
+          width: 100%;
+          margin: 0 auto;
+        }
+
+        .axis-passport-name {
+          text-align: center;
+          width: 100%;
+        }
+
+        .details-label { text-align: right; }
+
+        .axis-passport-gate-avatar {
+          width: 96px;
+          height: 96px;
+          border-radius: 50%;
+          margin: 12px;
+          // border: 1px solid black;
+          @include img-bg($emblem1, center center);
+          @include bg-size(cover);
+        }
+        .axis-passport-gate-avatar2 {
+          width: 48px;
+          height: 48px;
+          border-radius: 50%;
+          margin: 12px;
+          @include img-bg($emblem2, center center);
+          @include bg-size(cover);
+        }
+      }
+    }
+  }
+}
 
 // Global media queires
 
@@ -978,6 +1071,63 @@ input.page-input {
             @include img-bg('../assets/char/char-tile-temp.png', center center);
             @include bg-size(100%);
           }
+        }
+      }
+    }
+  }
+
+  // Account page
+  #account {
+    .account-container {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+
+      .axis-passport-card {
+        width: 85vw;
+        height: 75vh;
+        // max-height: 520px;
+        max-width: 85vw;
+        border-radius: 15px;
+        box-shadow: #d6d6d6 2px 2px 16px;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &::after {
+          content: "";
+          width: 85vw;
+          height: 20%;
+          top: 0;
+          position: absolute;
+          background: grey;
+          z-index: -1;
+          border-radius: 15px 15px 0 0;
+        }
+
+        .axis-passport-user-avatar {
+          width: 100px;
+          height: 100px;
+          border-radius: 50%;
+          margin: 0 0 12px;
+        }
+        .axis-passport-details {
+          width: 100%;
+
+          .row {
+            width: 100%;
+            margin: 0 auto;
+          }
+
+          .axis-passport-name {
+            text-align: center;
+            width: 100%;
+          }
+
+          .details-label { text-align: right; }
         }
       }
     }
@@ -1207,6 +1357,24 @@ input.page-input {
         }
     }
 
+    // Account
+    #account {
+      .axis-passport-card {
+        height: 85vh !important;
+
+        &:after {
+          height: 24%;
+          min-height: 125px;
+        }
+
+        .axis-passport-user-avatar {
+          width: 100px;
+          height: 100px;
+          border-radius: 50%;
+          margin: 0 0 12px;
+        }
+      }
+    }
 }
 
 /* Landscape */
@@ -1484,6 +1652,15 @@ input.page-input {
       left: 0;
       right: 0;
     }
+
+    // Account
+    #account {
+      .axis-passport-user-avatar {
+        width: 150px !important;
+        height: 150px !important;
+        margin: 24px !important;
+      }
+    }
 }
 
 /* Landscape */
@@ -1707,6 +1884,14 @@ input.page-input {
   .carousel-control-next {
     right: 0 !important;
   }
+
+  // Account
+  #account {
+    .axis-passport-card {
+      height: 80vh !important;
+    }
+  }
+
 }
 
 /* Landscape */
@@ -1864,6 +2049,13 @@ input.page-input {
             }
           }
         }
+      }
+    }
+
+    // Account
+    #account {
+      .axis-passport-card {
+        height: 80vh !important;
       }
     }
 
