@@ -841,31 +841,22 @@ input.page-input {
 
     .axis-passport-card {
       width: 85vw;
-      height: 75vh;
+      height: 65vh;
       // max-height: 520px;
       max-width: 85vw;
-      border-radius: 15px;
+      border-radius: 50px;
+      @include img-bg($passport-bg-landscape, center right);
+      @include bg-size(cover);
       box-shadow: #d6d6d6 2px 2px 16px;
       justify-content: center;
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       align-items: center;
       z-index: 0;
-      //
-      // &::after {
-      //   content: "";
-      //   width: 85vw;
-      //   height: 20%;
-      //   top: 0;
-      //   position: absolute;
-      //   background: grey;
-      //   z-index: -1;
-      //   border-radius: 15px 15px 0 0;
-      // }
 
       .axis-passport-user-avatar {
-        width: 75px;
-        height: 75px;
+        width: 240px;
+        height: 240px;
         border-radius: 50%;
         margin: 0 0 12px;
         // border: 1px solid black;
@@ -873,23 +864,36 @@ input.page-input {
         @include bg-size(cover);
       }
       .axis-passport-details {
-        width: 100%;
+        width: 40%;
+        margin-left: 64px;
+
+        .axis-passport-name {
+          color: white;
+        }
 
         .row {
           width: 100%;
-          margin: 0 auto;
+          margin: 10px auto 0;
+        }
+
+        .passport-email,
+        .passport-password {
+          color: white;
+          height: 36px;
         }
 
         .axis-passport-name {
-          text-align: center;
+          text-align: left;
           width: 100%;
         }
 
-        .details-label { text-align: right; }
+        .details-label {
+          text-align: left;
+        }
 
         .axis-passport-gate-avatar {
-          width: 96px;
-          height: 96px;
+          width: 120px;
+          height: 120px;
           border-radius: 50%;
           margin: 12px;
           // border: 1px solid black;
@@ -903,6 +907,10 @@ input.page-input {
           margin: 12px;
           @include img-bg($emblem2, center center);
           @include bg-size(cover);
+        }
+
+        .gate-avatar-name {
+          order: 1;
         }
       }
     }
@@ -1249,6 +1257,10 @@ input.page-input {
   // Account
   #account {
     .axis-passport-card {
+      width: 100% !important;
+      height: 80vh !important;
+      max-width: 92vw !important;
+      border-radius: 30px;
       flex-direction: row !important;
       @include img-bg($passport-bg-landscape, top right);
       @include bg-size(cover);
@@ -1613,6 +1625,7 @@ input.page-input {
         .axis-passport-details {
           width: 75% !important;
           padding-left: 24px;
+          margin-left: 0 !important;
         }
 
         .axis-passport-name {
@@ -1624,7 +1637,7 @@ input.page-input {
         .passport-email,
         .passport-password {
           color: white;
-          height: 27px;
+          height: 20px !important;
         }
 
         .details-label {
