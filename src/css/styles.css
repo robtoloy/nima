@@ -7881,7 +7881,7 @@ input.page-input {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 20px; }
+  padding-top: 20px; }
   #account .account-container .axis-passport-card {
     width: 85vw;
     height: 65vh;
@@ -7913,8 +7913,7 @@ input.page-input {
       -ms-background-size: cover;
       background-size: cover; }
     #account .account-container .axis-passport-card .axis-passport-details {
-      width: 40%;
-      margin-left: 64px; }
+      width: 40%; }
       #account .account-container .axis-passport-card .axis-passport-details .axis-passport-name {
         color: white; }
       #account .account-container .axis-passport-card .axis-passport-details .row {
@@ -7988,7 +7987,9 @@ input.page-input {
   .device-iPhone4 {
     display: block !important; }
   #book .character-grid {
-    margin: 0 auto; } }
+    margin: 0 auto; }
+  .passport-spacer {
+    display: none !important; } }
 
 /* Portrait */
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
@@ -8216,7 +8217,9 @@ input.page-input {
   p {
     font-size: 11px !important; }
   #book .character-grid {
-    margin: 0 auto; } }
+    margin: 0 auto; }
+  .passport-spacer {
+    display: none !important; } }
 
 /* Portrait */
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (device-aspect-ratio: 40 / 71) and (orientation: portrait) {
@@ -8401,6 +8404,7 @@ input.page-input {
   #account .axis-passport-card {
     width: 100% !important;
     height: 80vh !important;
+    min-height: 255px;
     max-width: 92vw !important;
     flex-direction: row !important;
     background-image: url("../assets/passport-bg-landscape.png");
@@ -8448,7 +8452,9 @@ input.page-input {
   p {
     font-size: 13px !important; }
   #book .character-grid {
-    margin: 0 auto; } }
+    margin: 0 auto; }
+  .passport-spacer {
+    display: none !important; } }
 
 /* Portrait */
 @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
@@ -8618,6 +8624,7 @@ input.page-input {
       width: 100%; }
     #account .account-container .axis-passport-card {
       width: 100% !important;
+      min-height: 300px;
       max-width: 82vw;
       flex-direction: row !important;
       background-image: url("../assets/passport-bg-landscape.png");
@@ -8665,7 +8672,9 @@ input.page-input {
   p {
     font-size: 13px !important; }
   #book .character-grid {
-    margin: 0 auto; } }
+    margin: 0 auto; }
+  .passport-spacer {
+    display: none !important; } }
 
 /* Portrait */
 @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait) {
@@ -8823,6 +8832,8 @@ input.page-input {
     #account .account-container .axis-passport-card {
       width: 100% !important;
       max-width: 82vw;
+      min-width: 550px;
+      min-height: 300px;
       flex-direction: row !important;
       background-image: url("../assets/passport-bg-landscape.png");
       background-position: center right;
@@ -8867,7 +8878,9 @@ input.page-input {
   h3 {
     font-size: 1.1em; }
   p {
-    font-size: 13px !important; } }
+    font-size: 13px !important; }
+  .passport-spacer {
+    display: none !important; } }
 
 /* Portrait */
 @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait) {
@@ -9077,6 +9090,8 @@ input.page-input {
     #account .account-container .axis-passport-card {
       width: 100% !important;
       max-width: 65vw;
+      min-width: 500px;
+      min-height: 280px;
       flex-direction: row !important;
       background-image: url("../assets/passport-bg-landscape.png");
       background-position: center right;

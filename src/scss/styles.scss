@@ -837,7 +837,7 @@ input.page-input {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
+    padding-top: 20px;
 
     .axis-passport-card {
       width: 85vw;
@@ -865,7 +865,6 @@ input.page-input {
       }
       .axis-passport-details {
         width: 40%;
-        margin-left: 64px;
 
         .axis-passport-name {
           color: white;
@@ -976,6 +975,9 @@ input.page-input {
       }
     }
 
+    .passport-spacer {
+      display: none !important;
+    }
 }
 
 /* Portrait */
@@ -1321,6 +1323,10 @@ input.page-input {
       }
     }
 
+    .passport-spacer {
+      display: none !important;
+    }
+
 }
 
 /* Portrait */
@@ -1611,6 +1617,7 @@ input.page-input {
       .axis-passport-card {
         width: 100% !important;
         height: 80vh !important;
+        min-height: 255px;
         max-width: 92vw !important;
         flex-direction: row !important;
         @include img-bg($passport-bg-landscape, top right);
@@ -1678,6 +1685,10 @@ input.page-input {
       .character-grid {
         margin: 0 auto;
       }
+    }
+
+    .passport-spacer {
+      display: none !important;
     }
 
 }
@@ -1938,6 +1949,7 @@ input.page-input {
       }
       .axis-passport-card {
         width: 100% !important;
+        min-height: 300px;
         max-width: 82vw;
         flex-direction: row !important;
         @include img-bg($passport-bg-landscape, center right);
@@ -2007,6 +2019,10 @@ input.page-input {
       .character-grid {
         margin: 0 auto;
       }
+    }
+
+    .passport-spacer {
+      display: none !important;
     }
 
 }
@@ -2259,6 +2275,8 @@ input.page-input {
         .axis-passport-card {
           width: 100% !important;
           max-width: 82vw;
+          min-width: 550px;
+          min-height: 300px;
           flex-direction: row !important;
           @include img-bg($passport-bg-landscape, center right);
           @include bg-size(cover);
@@ -2316,10 +2334,16 @@ input.page-input {
   and (min-device-width: 375px)
   and (max-device-width: 812px)
   and (-webkit-min-device-pixel-ratio: 3) {
+
     h1   { font-size: 3em; }
     h2   { font-size: 2em; }
     h3   { font-size: 1.1em; }
     p    { font-size: 13px !important; }
+
+    .passport-spacer {
+      display: none !important;
+    }
+    
 }
 
 /* Portrait */
@@ -2633,6 +2657,8 @@ input.page-input {
       .axis-passport-card {
         width: 100% !important;
         max-width: 65vw;
+        min-width: 500px;
+        min-height: 280px;
         flex-direction: row !important;
         @include img-bg($passport-bg-landscape, center right);
         @include bg-size(cover);
