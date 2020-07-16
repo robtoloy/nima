@@ -101,6 +101,7 @@ $character-bg: '../assets/char-bg-temp.png';
 
 $account-bg: '../assets/account-bg.jpg';
 $passport-bg-portrait: '../assets/passport-bg-portrait.png';
+$passport-bg-landscape: '../assets/passport-bg-landscape.png';
 $avatar-user: '../assets/nima-avatar.png';
 $emblem1: '../assets/gate-emblem1.png';
 $emblem2: '../assets/cat-emblem.png';
@@ -843,10 +844,6 @@ input.page-input {
       height: 75vh;
       // max-height: 520px;
       max-width: 85vw;
-      // border: 1px solid black;
-      // background: white;
-      @include img-bg($passport-bg-portrait, center center);
-      @include bg-size(cover);
       border-radius: 15px;
       box-shadow: #d6d6d6 2px 2px 16px;
       justify-content: center;
@@ -854,17 +851,17 @@ input.page-input {
       flex-direction: column;
       align-items: center;
       z-index: 0;
-
-      &::after {
-        content: "";
-        width: 85vw;
-        height: 20%;
-        top: 0;
-        position: absolute;
-        background: grey;
-        z-index: -1;
-        border-radius: 15px 15px 0 0;
-      }
+      //
+      // &::after {
+      //   content: "";
+      //   width: 85vw;
+      //   height: 20%;
+      //   top: 0;
+      //   position: absolute;
+      //   background: grey;
+      //   z-index: -1;
+      //   border-radius: 15px 15px 0 0;
+      // }
 
       .axis-passport-user-avatar {
         width: 75px;
@@ -1086,33 +1083,35 @@ input.page-input {
       margin-top: 20px;
 
       .axis-passport-card {
-        width: 85vw;
-        height: 75vh;
+        width: 80vw;
+        height: 87vh;
         // max-height: 520px;
         max-width: 85vw;
         border-radius: 15px;
+        @include img-bg($passport-bg-portrait, center center);
+        @include bg-size(cover);
         box-shadow: #d6d6d6 2px 2px 16px;
         justify-content: center;
         display: flex;
         flex-direction: column;
         align-items: center;
 
-        &::after {
-          content: "";
-          width: 85vw;
-          height: 20%;
-          top: 0;
-          position: absolute;
-          background: grey;
-          z-index: -1;
-          border-radius: 15px 15px 0 0;
-        }
+        // &::after {
+        //   content: "";
+        //   width: 85vw;
+        //   height: 20%;
+        //   top: 0;
+        //   position: absolute;
+        //   background: grey;
+        //   z-index: -1;
+        //   border-radius: 15px 15px 0 0;
+        // }
 
         .axis-passport-user-avatar {
-          width: 100px;
-          height: 100px;
+          width: 125px;
+          height: 125px;
           border-radius: 50%;
-          margin: 0 0 12px;
+          margin: 48px 12px 12px;
         }
         .axis-passport-details {
           width: 100%;
@@ -1127,7 +1126,19 @@ input.page-input {
             width: 100%;
           }
 
-          .details-label { text-align: right; }
+          .passport-email,
+          .passport-password {
+            color: black;;
+          }
+
+          .details-label {
+            text-align: right;
+          }
+
+          .axis-passport-gate-avatar {
+            width: 60px;
+            height: 60px;
+          }
         }
       }
     }
@@ -1235,6 +1246,48 @@ input.page-input {
     }
   }
 
+  // Account
+  #account {
+    .axis-passport-card {
+      flex-direction: row !important;
+      @include img-bg($passport-bg-landscape, top right);
+      @include bg-size(cover);
+      padding: 24px;
+
+      .axis-passport-user-avatar {
+        width: 100px !important;
+        height: 100px !important;
+      }
+
+      .axis-passport-details {
+        width: 75% !important;
+      }
+
+      .axis-passport-name {
+        color: white;
+        height: 27px;
+      }
+
+      .passport-email,
+      .passport-password {
+        color: white;
+        height: 25px;
+      }
+
+      .gate-avatars {
+        height: 90px;
+
+        .axis-passport-gate-avatar {
+          width: 64px !important;
+          height: 64px !important;
+        }
+
+        .gate-avatar-name {
+          order: 2;
+        }
+      }
+    }
+  }
 }
 
 /* ----------- iPhone 5, 5S, 5C and 5SE ----------- */
@@ -1263,6 +1316,7 @@ input.page-input {
   and (min-device-width: 320px)
   and (max-device-width: 568px)
   and (-webkit-min-device-pixel-ratio: 2)
+  and (device-aspect-ratio: 40/71)
   and (orientation: portrait) {
 
     .mobile-landscape {
@@ -1360,16 +1414,17 @@ input.page-input {
     // Account
     #account {
       .axis-passport-card {
+        width: 80vw;
         height: 85vh !important;
 
-        &:after {
-          height: 24%;
-          min-height: 125px;
-        }
+        // &:after {
+        //   height: 24%;
+        //   min-height: 125px;
+        // }
 
         .axis-passport-user-avatar {
-          width: 100px;
-          height: 100px;
+          width: 150px;
+          height: 150px;
           border-radius: 50%;
           margin: 0 0 12px;
         }
@@ -1539,7 +1594,57 @@ input.page-input {
       }
     }
 
+    // Account
+    #account {
+      .axis-passport-card {
+        width: 100% !important;
+        height: 80vh !important;
+        max-width: 92vw !important;
+        flex-direction: row !important;
+        @include img-bg($passport-bg-landscape, top right);
+        @include bg-size(cover);
+        padding: 24px;
 
+        .axis-passport-user-avatar {
+          width: 100px !important;
+          height: 100px !important;
+        }
+
+        .axis-passport-details {
+          width: 75% !important;
+          padding-left: 24px;
+        }
+
+        .axis-passport-name {
+          color: white;
+          height: 27px;
+          text-align: left !important;
+        }
+
+        .passport-email,
+        .passport-password {
+          color: white;
+          height: 27px;
+        }
+
+        .details-label {
+          text-align: left !important;
+        }
+
+        .gate-avatars {
+          height: 90px;
+
+          .axis-passport-gate-avatar {
+            width: 64px !important;
+            height: 64px !important;
+          }
+
+          .gate-avatar-name {
+            order: 2;
+          }
+        }
+      }
+    }
 }
 
 /* ----------- iPhone 6, 6S, 7 and 8 ----------- */
@@ -1659,6 +1764,11 @@ input.page-input {
         width: 150px !important;
         height: 150px !important;
         margin: 24px !important;
+      }
+
+      .axis-passport-gate-avatar {
+        width: 72px !important;
+        height: 72px !important;
       }
     }
 }
@@ -1804,6 +1914,66 @@ input.page-input {
     }
   }
 
+  // Account
+  #account {
+    .account-container {
+      width: 100%;
+      max-width: 100%;
+
+      .account-row {
+        width: 100%;
+      }
+      .axis-passport-card {
+        width: 100% !important;
+        max-width: 82vw;
+        flex-direction: row !important;
+        @include img-bg($passport-bg-landscape, center right);
+        @include bg-size(cover);
+        padding: 24px;
+        margin: 0 auto;
+
+        .axis-passport-user-avatar {
+          width: 115px !important;
+          height: 115px !important;
+        }
+
+        .axis-passport-details {
+          width: 75% !important;
+          padding-left: 24px;
+        }
+
+        .axis-passport-name {
+          color: white;
+          height: 27px;
+          text-align: left !important;
+        }
+
+        .passport-email,
+        .passport-password {
+          color: white;
+          height: 27px;
+        }
+
+        .details-label {
+          text-align: left !important;
+        }
+
+        .gate-avatars {
+          height: 90px;
+
+          .axis-passport-gate-avatar {
+            width: 64px !important;
+            height: 64px !important;
+          }
+
+          .gate-avatar-name {
+            order: 2;
+          }
+        }
+      }
+    }
+  }
+
 }
 
 /* ----------- iPhone 6+, 7+ and 8+ ----------- */
@@ -1888,7 +2058,19 @@ input.page-input {
   // Account
   #account {
     .axis-passport-card {
+      width: 75vw;
       height: 80vh !important;
+
+      .axis-passport-user-avatar {
+        width: 175px !important;
+        height: 175px !important;
+        margin: 24px !important;
+      }
+
+      .axis-passport-gate-avatar {
+        width: 96px !important;
+        height: 96px !important;
+      }
     }
   }
 
@@ -2054,8 +2236,61 @@ input.page-input {
 
     // Account
     #account {
-      .axis-passport-card {
-        height: 80vh !important;
+      .account-container {
+        width: 100%;
+        max-width: 100%;
+
+        .account-row {
+          width: 100%;
+        }
+        .axis-passport-card {
+          width: 100% !important;
+          max-width: 82vw;
+          flex-direction: row !important;
+          @include img-bg($passport-bg-landscape, center right);
+          @include bg-size(cover);
+          padding: 24px;
+          margin: 0 auto;
+
+          .axis-passport-user-avatar {
+            width: 115px !important;
+            height: 115px !important;
+          }
+
+          .axis-passport-details {
+            width: 75% !important;
+            padding-left: 24px;
+          }
+
+          .axis-passport-name {
+            color: white;
+            height: 27px;
+            text-align: left !important;
+          }
+
+          .passport-email,
+          .passport-password {
+            color: white;
+            height: 27px;
+          }
+
+          .details-label {
+            text-align: left !important;
+          }
+
+          .gate-avatars {
+            height: 90px;
+
+            .axis-passport-gate-avatar {
+              width: 64px !important;
+              height: 64px !important;
+            }
+
+            .gate-avatar-name {
+              order: 2;
+            }
+          }
+        }
       }
     }
 
@@ -2163,6 +2398,13 @@ input.page-input {
     }
     .carousel-control-next {
       right: 0 !important;
+    }
+  }
+
+  #account {
+    .axis-passport-card {
+      width: 85vw;
+      max-height: 75vh;
     }
   }
 }
@@ -2365,5 +2607,66 @@ input.page-input {
       }
     }
   }
+
+  // Account
+  #account {
+    .account-container {
+      width: 100%;
+      max-width: 100%;
+
+      .account-row {
+        width: 100%;
+      }
+      .axis-passport-card {
+        width: 100% !important;
+        max-width: 65vw;
+        flex-direction: row !important;
+        @include img-bg($passport-bg-landscape, center right);
+        @include bg-size(cover);
+        padding: 24px;
+        margin: 0 auto;
+
+        .axis-passport-user-avatar {
+          width: 115px !important;
+          height: 115px !important;
+        }
+
+        .axis-passport-details {
+          width: 75% !important;
+          padding-left: 24px;
+        }
+
+        .axis-passport-name {
+          color: white;
+          height: 27px;
+          text-align: left !important;
+        }
+
+        .passport-email,
+        .passport-password {
+          color: white;
+          height: 27px;
+        }
+
+        .details-label {
+          text-align: left !important;
+        }
+
+        .gate-avatars {
+          height: 90px;
+
+          .axis-passport-gate-avatar {
+            width: 64px !important;
+            height: 64px !important;
+          }
+
+          .gate-avatar-name {
+            order: 2;
+          }
+        }
+      }
+    }
+  }
+
 
 }

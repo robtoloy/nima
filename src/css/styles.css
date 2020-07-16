@@ -7886,13 +7886,6 @@ input.page-input {
     width: 85vw;
     height: 75vh;
     max-width: 85vw;
-    background-image: url("../assets/passport-bg-portrait.png");
-    background-position: center center;
-    background-repeat: no-repeat;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -ms-background-size: cover;
-    background-size: cover;
     border-radius: 15px;
     box-shadow: #d6d6d6 2px 2px 16px;
     justify-content: center;
@@ -7900,15 +7893,6 @@ input.page-input {
     flex-direction: column;
     align-items: center;
     z-index: 0; }
-    #account .account-container .axis-passport-card::after {
-      content: "";
-      width: 85vw;
-      height: 20%;
-      top: 0;
-      position: absolute;
-      background: grey;
-      z-index: -1;
-      border-radius: 15px 15px 0 0; }
     #account .account-container .axis-passport-card .axis-passport-user-avatar {
       width: 75px;
       height: 75px;
@@ -8063,29 +8047,27 @@ input.page-input {
     align-items: center;
     margin-top: 20px; }
     #account .account-container .axis-passport-card {
-      width: 85vw;
-      height: 75vh;
+      width: 80vw;
+      height: 87vh;
       max-width: 85vw;
       border-radius: 15px;
+      background-image: url("../assets/passport-bg-portrait.png");
+      background-position: center center;
+      background-repeat: no-repeat;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -ms-background-size: cover;
+      background-size: cover;
       box-shadow: #d6d6d6 2px 2px 16px;
       justify-content: center;
       display: flex;
       flex-direction: column;
       align-items: center; }
-      #account .account-container .axis-passport-card::after {
-        content: "";
-        width: 85vw;
-        height: 20%;
-        top: 0;
-        position: absolute;
-        background: grey;
-        z-index: -1;
-        border-radius: 15px 15px 0 0; }
       #account .account-container .axis-passport-card .axis-passport-user-avatar {
-        width: 100px;
-        height: 100px;
+        width: 125px;
+        height: 125px;
         border-radius: 50%;
-        margin: 0 0 12px; }
+        margin: 48px 12px 12px; }
       #account .account-container .axis-passport-card .axis-passport-details {
         width: 100%; }
         #account .account-container .axis-passport-card .axis-passport-details .row {
@@ -8094,8 +8076,14 @@ input.page-input {
         #account .account-container .axis-passport-card .axis-passport-details .axis-passport-name {
           text-align: center;
           width: 100%; }
+        #account .account-container .axis-passport-card .axis-passport-details .passport-email,
+        #account .account-container .axis-passport-card .axis-passport-details .passport-password {
+          color: black; }
         #account .account-container .axis-passport-card .axis-passport-details .details-label {
-          text-align: right; } }
+          text-align: right; }
+        #account .account-container .axis-passport-card .axis-passport-details .axis-passport-gate-avatar {
+          width: 60px;
+          height: 60px; } }
 
 /* Landscape */
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
@@ -8165,7 +8153,36 @@ input.page-input {
             -webkit-background-size: 100%;
             -moz-background-size: 100%;
             -ms-background-size: 100%;
-            background-size: 100%; } }
+            background-size: 100%; }
+  #account .axis-passport-card {
+    flex-direction: row !important;
+    background-image: url("../assets/passport-bg-landscape.png");
+    background-position: top right;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -ms-background-size: cover;
+    background-size: cover;
+    padding: 24px; }
+    #account .axis-passport-card .axis-passport-user-avatar {
+      width: 100px !important;
+      height: 100px !important; }
+    #account .axis-passport-card .axis-passport-details {
+      width: 75% !important; }
+    #account .axis-passport-card .axis-passport-name {
+      color: white;
+      height: 27px; }
+    #account .axis-passport-card .passport-email,
+    #account .axis-passport-card .passport-password {
+      color: white;
+      height: 25px; }
+    #account .axis-passport-card .gate-avatars {
+      height: 90px; }
+      #account .axis-passport-card .gate-avatars .axis-passport-gate-avatar {
+        width: 64px !important;
+        height: 64px !important; }
+      #account .axis-passport-card .gate-avatars .gate-avatar-name {
+        order: 2; } }
 
 /* ----------- iPhone 5, 5S, 5C and 5SE ----------- */
 /* Portrait and Landscape */
@@ -8182,7 +8199,7 @@ input.page-input {
     margin: 0 auto; } }
 
 /* Portrait */
-@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (device-aspect-ratio: 40 / 71) and (orientation: portrait) {
   .mobile-landscape {
     display: none; }
   .mobile-portrait {
@@ -8242,13 +8259,11 @@ input.page-input {
       max-width: 45px;
       height: 100px; }
   #account .axis-passport-card {
+    width: 80vw;
     height: 85vh !important; }
-    #account .axis-passport-card:after {
-      height: 24%;
-      min-height: 125px; }
     #account .axis-passport-card .axis-passport-user-avatar {
-      width: 100px;
-      height: 100px;
+      width: 150px;
+      height: 150px;
       border-radius: 50%;
       margin: 0 0 12px; } }
 
@@ -8362,7 +8377,43 @@ input.page-input {
             -webkit-background-size: 100%;
             -moz-background-size: 100%;
             -ms-background-size: 100%;
-            background-size: 100%; } }
+            background-size: 100%; }
+  #account .axis-passport-card {
+    width: 100% !important;
+    height: 80vh !important;
+    max-width: 92vw !important;
+    flex-direction: row !important;
+    background-image: url("../assets/passport-bg-landscape.png");
+    background-position: top right;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -ms-background-size: cover;
+    background-size: cover;
+    padding: 24px; }
+    #account .axis-passport-card .axis-passport-user-avatar {
+      width: 100px !important;
+      height: 100px !important; }
+    #account .axis-passport-card .axis-passport-details {
+      width: 75% !important;
+      padding-left: 24px; }
+    #account .axis-passport-card .axis-passport-name {
+      color: white;
+      height: 27px;
+      text-align: left !important; }
+    #account .axis-passport-card .passport-email,
+    #account .axis-passport-card .passport-password {
+      color: white;
+      height: 27px; }
+    #account .axis-passport-card .details-label {
+      text-align: left !important; }
+    #account .axis-passport-card .gate-avatars {
+      height: 90px; }
+      #account .axis-passport-card .gate-avatars .axis-passport-gate-avatar {
+        width: 64px !important;
+        height: 64px !important; }
+      #account .axis-passport-card .gate-avatars .gate-avatar-name {
+        order: 2; } }
 
 /* ----------- iPhone 6, 6S, 7 and 8 ----------- */
 /* Portrait and Landscape */
@@ -8435,7 +8486,10 @@ input.page-input {
   #account .axis-passport-user-avatar {
     width: 150px !important;
     height: 150px !important;
-    margin: 24px !important; } }
+    margin: 24px !important; }
+  #account .axis-passport-gate-avatar {
+    width: 72px !important;
+    height: 72px !important; } }
 
 /* Landscape */
 @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
@@ -8535,7 +8589,48 @@ input.page-input {
             -webkit-background-size: 100%;
             -moz-background-size: 100%;
             -ms-background-size: 100%;
-            background-size: 100%; } }
+            background-size: 100%; }
+  #account .account-container {
+    width: 100%;
+    max-width: 100%; }
+    #account .account-container .account-row {
+      width: 100%; }
+    #account .account-container .axis-passport-card {
+      width: 100% !important;
+      max-width: 82vw;
+      flex-direction: row !important;
+      background-image: url("../assets/passport-bg-landscape.png");
+      background-position: center right;
+      background-repeat: no-repeat;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -ms-background-size: cover;
+      background-size: cover;
+      padding: 24px;
+      margin: 0 auto; }
+      #account .account-container .axis-passport-card .axis-passport-user-avatar {
+        width: 115px !important;
+        height: 115px !important; }
+      #account .account-container .axis-passport-card .axis-passport-details {
+        width: 75% !important;
+        padding-left: 24px; }
+      #account .account-container .axis-passport-card .axis-passport-name {
+        color: white;
+        height: 27px;
+        text-align: left !important; }
+      #account .account-container .axis-passport-card .passport-email,
+      #account .account-container .axis-passport-card .passport-password {
+        color: white;
+        height: 27px; }
+      #account .account-container .axis-passport-card .details-label {
+        text-align: left !important; }
+      #account .account-container .axis-passport-card .gate-avatars {
+        height: 90px; }
+        #account .account-container .axis-passport-card .gate-avatars .axis-passport-gate-avatar {
+          width: 64px !important;
+          height: 64px !important; }
+        #account .account-container .axis-passport-card .gate-avatars .gate-avatar-name {
+          order: 2; } }
 
 /* ----------- iPhone 6+, 7+ and 8+ ----------- */
 /* Portrait and Landscape */
@@ -8582,7 +8677,15 @@ input.page-input {
   .carousel-control-next {
     right: 0 !important; }
   #account .axis-passport-card {
-    height: 80vh !important; } }
+    width: 75vw;
+    height: 80vh !important; }
+    #account .axis-passport-card .axis-passport-user-avatar {
+      width: 175px !important;
+      height: 175px !important;
+      margin: 24px !important; }
+    #account .axis-passport-card .axis-passport-gate-avatar {
+      width: 96px !important;
+      height: 96px !important; } }
 
 /* Landscape */
 @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {
@@ -8691,8 +8794,47 @@ input.page-input {
             -moz-background-size: 100%;
             -ms-background-size: 100%;
             background-size: 100%; }
-  #account .axis-passport-card {
-    height: 80vh !important; } }
+  #account .account-container {
+    width: 100%;
+    max-width: 100%; }
+    #account .account-container .account-row {
+      width: 100%; }
+    #account .account-container .axis-passport-card {
+      width: 100% !important;
+      max-width: 82vw;
+      flex-direction: row !important;
+      background-image: url("../assets/passport-bg-landscape.png");
+      background-position: center right;
+      background-repeat: no-repeat;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -ms-background-size: cover;
+      background-size: cover;
+      padding: 24px;
+      margin: 0 auto; }
+      #account .account-container .axis-passport-card .axis-passport-user-avatar {
+        width: 115px !important;
+        height: 115px !important; }
+      #account .account-container .axis-passport-card .axis-passport-details {
+        width: 75% !important;
+        padding-left: 24px; }
+      #account .account-container .axis-passport-card .axis-passport-name {
+        color: white;
+        height: 27px;
+        text-align: left !important; }
+      #account .account-container .axis-passport-card .passport-email,
+      #account .account-container .axis-passport-card .passport-password {
+        color: white;
+        height: 27px; }
+      #account .account-container .axis-passport-card .details-label {
+        text-align: left !important; }
+      #account .account-container .axis-passport-card .gate-avatars {
+        height: 90px; }
+        #account .account-container .axis-passport-card .gate-avatars .axis-passport-gate-avatar {
+          width: 64px !important;
+          height: 64px !important; }
+        #account .account-container .axis-passport-card .gate-avatars .gate-avatar-name {
+          order: 2; } }
 
 /* ----------- iPhone X ----------- */
 /* Portrait and Landscape */
@@ -8760,7 +8902,10 @@ input.page-input {
     #carousel-thumbs .carousel-control-prev {
       left: 0 !important; }
     #carousel-thumbs .carousel-control-next {
-      right: 0 !important; } }
+      right: 0 !important; }
+  #account .axis-passport-card {
+    width: 85vw;
+    max-height: 75vh; } }
 
 /* Landscape */
 @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {
@@ -8902,4 +9047,45 @@ input.page-input {
             -webkit-background-size: 100%;
             -moz-background-size: 100%;
             -ms-background-size: 100%;
-            background-size: 100%; } }
+            background-size: 100%; }
+  #account .account-container {
+    width: 100%;
+    max-width: 100%; }
+    #account .account-container .account-row {
+      width: 100%; }
+    #account .account-container .axis-passport-card {
+      width: 100% !important;
+      max-width: 65vw;
+      flex-direction: row !important;
+      background-image: url("../assets/passport-bg-landscape.png");
+      background-position: center right;
+      background-repeat: no-repeat;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -ms-background-size: cover;
+      background-size: cover;
+      padding: 24px;
+      margin: 0 auto; }
+      #account .account-container .axis-passport-card .axis-passport-user-avatar {
+        width: 115px !important;
+        height: 115px !important; }
+      #account .account-container .axis-passport-card .axis-passport-details {
+        width: 75% !important;
+        padding-left: 24px; }
+      #account .account-container .axis-passport-card .axis-passport-name {
+        color: white;
+        height: 27px;
+        text-align: left !important; }
+      #account .account-container .axis-passport-card .passport-email,
+      #account .account-container .axis-passport-card .passport-password {
+        color: white;
+        height: 27px; }
+      #account .account-container .axis-passport-card .details-label {
+        text-align: left !important; }
+      #account .account-container .axis-passport-card .gate-avatars {
+        height: 90px; }
+        #account .account-container .axis-passport-card .gate-avatars .axis-passport-gate-avatar {
+          width: 64px !important;
+          height: 64px !important; }
+        #account .account-container .axis-passport-card .gate-avatars .gate-avatar-name {
+          order: 2; } }
