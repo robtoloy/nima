@@ -4,7 +4,7 @@
  * Copyright 2011-2020 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
-@import "//cloud.typography.com/7722678/6294412/css/fonts.css";
+@import url(https://cloud.typography.com/7722678/6294412/css/fonts.css);
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -7178,6 +7178,9 @@ p {
   font-style: normal;
   font-weight: 400; }
 
+a, a:active, a:hover {
+  color: white; }
+
 h1 {
   font-size: 4.2em; }
 
@@ -7261,6 +7264,16 @@ html {
 #book {
   background-color: #0c1013;
   color: white;
+  height: 100vh; }
+
+#account {
+  background-image: url("../assets/account-bg.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -ms-background-size: cover;
+  background-size: cover;
   height: 100vh; }
 
 a {
@@ -7597,7 +7610,7 @@ input.page-input {
   background: transparent;
   bottom: 15px;
   left: 0;
-  padding: 0 40px;
+  padding: 0 55px;
   right: 0;
   width: 60%;
   height: 120px; }
@@ -7619,6 +7632,329 @@ input.page-input {
 .carousel-control-next {
   width: 50px; }
 
+#world {
+  background-image: url("../assets/nimbus/nimbus-temp.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -ms-background-size: cover;
+  background-size: cover; }
+  #world .dark-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    opacity: 0.125; }
+
+.world-video-container {
+  background: black; }
+
+#trailer {
+  background: grey; }
+  #trailer .container {
+    width: 80%;
+    margin: 0 auto; }
+  #trailer .character-grid {
+    margin: 0 auto; }
+  #trailer h1 {
+    font-size: 3.0rem;
+    line-height: 4.2rem;
+    text-align: center;
+    font-weight: 300; }
+  #trailer section button {
+    margin: 0 auto;
+    font-size: 2.0rem;
+    padding: 1.25rem 2.5rem;
+    display: block;
+    background-color: #009ac9;
+    border: 1px solid transparent;
+    color: #ffffff;
+    font-weight: 300;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    transition: all 0.3s ease-in-out; }
+    @media (prefers-reduced-motion: reduce) {
+      #trailer section button {
+        transition: none; } }
+  #trailer section button:hover {
+    background-color: #ffffff;
+    color: #009ac9;
+    border-color: #009ac9; }
+  #trailer .overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: black; }
+    #trailer .overlay nav {
+      text-align: center;
+      position: relative;
+      top: 50%;
+      height: 60%;
+      font-size: 54px;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%); }
+    #trailer .overlay ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 auto;
+      display: inline-block;
+      height: 100%;
+      position: relative; }
+      #trailer .overlay ul li {
+        display: block;
+        height: 20%;
+        height: calc(100% / 5); }
+        #trailer .overlay ul li a {
+          font-weight: 300;
+          display: block;
+          color: #ffffff;
+          text-decoration: none;
+          transition: color 0.2s; }
+          @media (prefers-reduced-motion: reduce) {
+            #trailer .overlay ul li a {
+              transition: none; } }
+          #trailer .overlay ul li a:hover, #trailer .overlay ul li a:focus {
+            color: rgba(255, 255, 255, 0.7); }
+    #trailer .overlay .close {
+      width: 80px;
+      height: 80px;
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      overflow: hidden;
+      border: none;
+      background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/113212/cross.png) no-repeat center center;
+      text-indent: 200%;
+      outline: none;
+      color: transparent;
+      z-index: 100; }
+  #trailer .overlay-effect {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s, visibility 0s 0.5s; }
+    @media (prefers-reduced-motion: reduce) {
+      #trailer .overlay-effect {
+        transition: none; } }
+    #trailer .overlay-effect.open {
+      opacity: 1;
+      visibility: visible;
+      transition: opacity 0.5s; }
+      @media (prefers-reduced-motion: reduce) {
+        #trailer .overlay-effect.open {
+          transition: none; } }
+    #trailer .overlay-effect nav {
+      -webkit-perspective: 1200px;
+      perspective: 1200px; }
+      #trailer .overlay-effect nav ul {
+        opacity: 0.4;
+        -webkit-transform: translateY(-25%) rotateX(35deg);
+        transform: translateY(-25%) rotateX(35deg);
+        -webkit-transition: -webkit-transform 0.5s, opacity 0.5s;
+        transition: transform 0.5s, opacity 0.5s; }
+  #trailer .overlay-effect.open nav ul {
+    opacity: 1;
+    -webkit-transform: rotateX(0deg);
+    transform: rotateX(0deg); }
+  #trailer .overlay-effect.close nav ul {
+    -webkit-transform: translateY(25%) rotateX(-35deg);
+    transform: translateY(25%) rotateX(-35deg); }
+
+#character-info-overlay {
+  background: grey; }
+  #character-info-overlay .overlay {
+    color: white; }
+  #character-info-overlay .container {
+    width: 80%;
+    margin: 0 auto; }
+  #character-info-overlay .character-grid {
+    margin: 0 auto;
+    top: 25%; }
+  #character-info-overlay section button {
+    margin: 0 auto;
+    font-size: 2.0rem;
+    padding: 1.25rem 2.5rem;
+    display: block;
+    background-color: #009ac9;
+    border: 1px solid transparent;
+    color: #ffffff;
+    font-weight: 300;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    transition: all 0.3s ease-in-out; }
+    @media (prefers-reduced-motion: reduce) {
+      #character-info-overlay section button {
+        transition: none; } }
+  #character-info-overlay section button:hover {
+    background-color: #ffffff;
+    color: #009ac9;
+    border-color: #009ac9; }
+  #character-info-overlay .overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.9); }
+    #character-info-overlay .overlay nav {
+      text-align: center;
+      position: relative;
+      top: 50%;
+      height: 60%;
+      font-size: 54px;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%); }
+    #character-info-overlay .overlay ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 auto;
+      display: inline-block;
+      height: 100%;
+      position: relative; }
+      #character-info-overlay .overlay ul li {
+        display: block;
+        height: 20%;
+        height: calc(100% / 5); }
+        #character-info-overlay .overlay ul li a {
+          font-weight: 300;
+          display: block;
+          color: #ffffff;
+          text-decoration: none;
+          transition: color 0.2s; }
+          @media (prefers-reduced-motion: reduce) {
+            #character-info-overlay .overlay ul li a {
+              transition: none; } }
+          #character-info-overlay .overlay ul li a:hover, #character-info-overlay .overlay ul li a:focus {
+            color: rgba(255, 255, 255, 0.7); }
+    #character-info-overlay .overlay .close {
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      overflow: hidden;
+      border: none;
+      background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/113212/cross.png) no-repeat center center;
+      text-indent: 200%;
+      outline: none;
+      color: white;
+      z-index: 100; }
+  #character-info-overlay .overlay-effect {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s, visibility 0s 0.2s; }
+    @media (prefers-reduced-motion: reduce) {
+      #character-info-overlay .overlay-effect {
+        transition: none; } }
+    #character-info-overlay .overlay-effect.open {
+      opacity: 1;
+      visibility: visible;
+      transition: opacity 0.2s;
+      z-index: 102;
+      display: flex;
+      justify-content: center;
+      flex-direction: column; }
+      @media (prefers-reduced-motion: reduce) {
+        #character-info-overlay .overlay-effect.open {
+          transition: none; } }
+    #character-info-overlay .overlay-effect nav {
+      -webkit-perspective: 1200px;
+      perspective: 1200px; }
+      #character-info-overlay .overlay-effect nav ul {
+        opacity: 0.4;
+        -webkit-transform: translateY(-25%) rotateX(35deg);
+        transform: translateY(-25%) rotateX(35deg);
+        -webkit-transition: -webkit-transform 0.5s, opacity 0.5s;
+        transition: transform 0.5s, opacity 0.5s; }
+  #character-info-overlay .overlay-effect.open nav ul {
+    opacity: 1;
+    -webkit-transform: rotateX(0deg);
+    transform: rotateX(0deg); }
+  #character-info-overlay .overlay-effect.close nav ul {
+    -webkit-transform: translateY(25%) rotateX(-35deg);
+    transform: translateY(25%) rotateX(-35deg); }
+
+#account .account-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px; }
+  #account .account-container .axis-passport-card {
+    width: 85vw;
+    height: 65vh;
+    max-width: 85vw;
+    border-radius: 50px;
+    background-image: url("../assets/passport-bg-landscape.png");
+    background-position: center right;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -ms-background-size: cover;
+    background-size: cover;
+    box-shadow: #d6d6d6 2px 2px 16px;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    z-index: 0; }
+    #account .account-container .axis-passport-card .axis-passport-user-avatar {
+      width: 240px;
+      height: 240px;
+      border-radius: 50%;
+      margin: 0 0 12px;
+      background-image: url("../assets/nima-avatar.png");
+      background-position: center center;
+      background-repeat: no-repeat;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -ms-background-size: cover;
+      background-size: cover; }
+    #account .account-container .axis-passport-card .axis-passport-details {
+      width: 40%; }
+      #account .account-container .axis-passport-card .axis-passport-details .axis-passport-name {
+        color: white; }
+      #account .account-container .axis-passport-card .axis-passport-details .row {
+        width: 100%;
+        margin: 10px auto 0; }
+      #account .account-container .axis-passport-card .axis-passport-details .passport-email,
+      #account .account-container .axis-passport-card .axis-passport-details .passport-password {
+        color: white;
+        height: 36px; }
+      #account .account-container .axis-passport-card .axis-passport-details .axis-passport-name {
+        text-align: left;
+        width: 100%; }
+      #account .account-container .axis-passport-card .axis-passport-details .details-label {
+        text-align: left; }
+      #account .account-container .axis-passport-card .axis-passport-details .axis-passport-gate-avatar {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        margin: 12px;
+        background-image: url("../assets/gate-emblem1.png");
+        background-position: center center;
+        background-repeat: no-repeat;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -ms-background-size: cover;
+        background-size: cover; }
+      #account .account-container .axis-passport-card .axis-passport-details .axis-passport-gate-avatar2 {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        margin: 12px;
+        background-image: url("../assets/cat-emblem.png");
+        background-position: center center;
+        background-repeat: no-repeat;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -ms-background-size: cover;
+        background-size: cover; }
+      #account .account-container .axis-passport-card .axis-passport-details .gate-avatar-name {
+        order: 1; }
+
 @media all and (max-width: 767px) {
   .carousel-container #carousel-thumbs img {
     border-width: 3px; } }
@@ -7631,13 +7967,329 @@ input.page-input {
   .carousel-container #carousel-thumbs {
     background: transparent; } }
 
+@media all and (max-width: 812px) {
+  .carousel-item .carousel-caption p {
+    display: none; }
+  #axis-small {
+    display: none; } }
+
 /* ----------- iPhone 4 and 4S ----------- */
 /* Portrait and Landscape */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+  h1 {
+    font-size: 2.1em !important; }
+  h2 {
+    font-size: 2.5em; }
+  h3 {
+    font-size: 1.3em; }
+  p {
+    font-size: 11px !important; }
+  .device-iPhone4 {
+    display: block !important; }
+  #book .character-grid {
+    margin: 0 auto; }
+  .passport-spacer {
+    display: none !important; } }
+
 /* Portrait */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  .mobile-landscape {
+    display: none; }
+  .mobile-portrait {
+    display: block; }
+  #book img.book-player {
+    width: 100% !important;
+    max-width: 950px; }
+  #world {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    color: white; }
+    #world .row {
+      height: 80vh !important;
+      width: 284px;
+      margin: 0 auto;
+      justify-content: center; }
+      #world .row .world-info {
+        text-align: center;
+        margin-bottom: 12px;
+        padding: 0; }
+        #world .row .world-info p {
+          padding: 0 2%; }
+        #world .row .world-info .world-heading {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between; }
+          #world .row .world-info .world-heading .world-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 16px;
+            background: white; }
+      #world .row .world-video {
+        text-align: center;
+        margin-bottom: 12px; }
+        #world .row .world-video .world-video-container {
+          height: 30vh;
+          border: 1px solid white;
+          margin: 0 auto;
+          width: 80vw; }
+      #world .row .world-characters {
+        text-align: center;
+        margin: 0 auto;
+        flex-direction: column;
+        height: 100px; }
+        #world .row .world-characters h3 {
+          margin-bottom: 12px; }
+        #world .row .world-characters .world-character-row {
+          width: 65%;
+          height: 75px;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          margin: 0 auto; }
+          #world .row .world-characters .world-character-row .character-tile {
+            width: 60px;
+            margin: 0 3px;
+            background-image: url("../assets/char/char-tile-temp.png");
+            background-position: center center;
+            background-repeat: no-repeat;
+            -webkit-background-size: 100%;
+            -moz-background-size: 100%;
+            -ms-background-size: 100%;
+            background-size: 100%; }
+  #account .account-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; }
+    #account .account-container .axis-passport-card {
+      width: 80vw;
+      height: 87vh;
+      max-width: 85vw;
+      border-radius: 15px;
+      background-image: url("../assets/passport-bg-portrait.png");
+      background-position: center center;
+      background-repeat: no-repeat;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -ms-background-size: cover;
+      background-size: cover;
+      box-shadow: #d6d6d6 2px 2px 16px;
+      justify-content: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center; }
+      #account .account-container .axis-passport-card .axis-passport-user-avatar {
+        width: 125px;
+        height: 125px;
+        border-radius: 50%;
+        margin: 48px 12px 12px; }
+      #account .account-container .axis-passport-card .axis-passport-details {
+        width: 100%; }
+        #account .account-container .axis-passport-card .axis-passport-details .row {
+          width: 100%;
+          margin: 0 auto; }
+        #account .account-container .axis-passport-card .axis-passport-details .axis-passport-name {
+          text-align: center;
+          width: 100%; }
+        #account .account-container .axis-passport-card .axis-passport-details .passport-email,
+        #account .account-container .axis-passport-card .axis-passport-details .passport-password {
+          color: black; }
+        #account .account-container .axis-passport-card .axis-passport-details .details-label {
+          text-align: right; }
+        #account .account-container .axis-passport-card .axis-passport-details .axis-passport-gate-avatar {
+          width: 60px;
+          height: 60px; } }
+
 /* Landscape */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+  .mobile-landscape {
+    display: block; }
+  .mobile-portrait {
+    display: none; }
+  #world {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    color: white; }
+    #world .row {
+      height: 80vh;
+      width: 410px;
+      margin: 0 auto;
+      justify-content: center;
+      flex-direction: row; }
+      #world .row .world-info {
+        text-align: center;
+        margin-bottom: 8px;
+        padding: 0 24px; }
+        #world .row .world-info .world-heading {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          margin-bottom: 8px; }
+          #world .row .world-info .world-heading h1 {
+            margin: 0;
+            font-size: 2.3em; }
+          #world .row .world-info .world-heading .world-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 16px;
+            background: white; }
+      #world .row .world-video {
+        text-align: center;
+        margin-bottom: 0; }
+        #world .row .world-video .world-video-container {
+          width: 64vw !important;
+          height: 55vh !important;
+          border: 1px solid white;
+          margin: 0 auto; }
+      #world .row .world-characters {
+        text-align: center;
+        margin: 0 auto;
+        flex-direction: column;
+        height: 100px;
+        bottom: 55px;
+        padding: 0; }
+        #world .row .world-characters h3 {
+          margin-bottom: 4px; }
+        #world .row .world-characters .world-character-row {
+          width: 40%;
+          height: 75px;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          margin: 0 auto; }
+          #world .row .world-characters .world-character-row .character-tile {
+            width: 60px;
+            margin: 0 3px;
+            background-image: url("../assets/char/char-tile-temp.png");
+            background-position: center center;
+            background-repeat: no-repeat;
+            -webkit-background-size: 100%;
+            -moz-background-size: 100%;
+            -ms-background-size: 100%;
+            background-size: 100%; }
+  #account .axis-passport-card {
+    width: 100% !important;
+    height: 80vh !important;
+    max-width: 92vw !important;
+    border-radius: 30px;
+    flex-direction: row !important;
+    background-image: url("../assets/passport-bg-landscape.png");
+    background-position: top right;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -ms-background-size: cover;
+    background-size: cover;
+    padding: 24px; }
+    #account .axis-passport-card .axis-passport-user-avatar {
+      width: 100px !important;
+      height: 100px !important; }
+    #account .axis-passport-card .axis-passport-details {
+      width: 75% !important; }
+    #account .axis-passport-card .axis-passport-name {
+      color: white;
+      height: 27px; }
+    #account .axis-passport-card .passport-email,
+    #account .axis-passport-card .passport-password {
+      color: white;
+      height: 25px; }
+    #account .axis-passport-card .gate-avatars {
+      height: 90px; }
+      #account .axis-passport-card .gate-avatars .axis-passport-gate-avatar {
+        width: 64px !important;
+        height: 64px !important; }
+      #account .axis-passport-card .gate-avatars .gate-avatar-name {
+        order: 2; } }
+
 /* ----------- iPhone 5, 5S, 5C and 5SE ----------- */
 /* Portrait and Landscape */
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
+  h1 {
+    font-size: 2.1em !important; }
+  h2 {
+    font-size: 2.5em; }
+  h3 {
+    font-size: 1.3em; }
+  p {
+    font-size: 11px !important; }
+  #book .character-grid {
+    margin: 0 auto; }
+  .passport-spacer {
+    display: none !important; } }
+
 /* Portrait */
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (device-aspect-ratio: 40 / 71) and (orientation: portrait) {
+  .mobile-landscape {
+    display: none; }
+  .mobile-portrait {
+    display: block; }
+  #book img.book-player {
+    width: 100% !important;
+    max-width: 950px; }
+  #world .row {
+    height: 70vh !important; }
+    #world .row .world-info {
+      margin-bottom: 0;
+      height: 15vh; }
+    #world .row .world-video {
+      margin-bottom: 0;
+      height: 25vh; }
+      #world .row .world-video .world-video-container {
+        height: 25vh;
+        width: 80vw; }
+  #myCarousel .carousel-item .carousel-caption {
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    left: 0;
+    padding: 0 16px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    height: 74vh; }
+    #myCarousel .carousel-item .carousel-caption p {
+      display: none; }
+  #myCarousel .carousel-item .character-slide-cutout {
+    position: absolute;
+    max-height: 475px;
+    margin: 0 auto;
+    left: 0;
+    right: 0; }
+  #carousel-thumbs {
+    background: transparent;
+    bottom: 10px;
+    left: 0;
+    padding: 0 12px;
+    right: 0;
+    width: 100%;
+    height: 120px; }
+    #carousel-thumbs .carousel-control-prev,
+    #carousel-thumbs .carousel-control-next {
+      width: 25px; }
+    #carousel-thumbs .carousel-control-prev {
+      left: -15px; }
+    #carousel-thumbs .carousel-control-next {
+      right: -15px; }
+    #carousel-thumbs .carousel-inner {
+      text-align: center; }
+    #carousel-thumbs .img-fluid {
+      max-width: 45px;
+      height: 100px; }
+  #account .axis-passport-card {
+    width: 80vw;
+    height: 85vh !important; }
+    #account .axis-passport-card .axis-passport-user-avatar {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      margin: 0 0 12px; } }
+
 /* Landscape */
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
   #carousel-thumbs {
@@ -7647,9 +8299,16 @@ input.page-input {
     height: 120px;
     top: 81% !important;
     left: 2%; }
-  #carousel-thumbs .img-fluid {
-    max-width: 48px !important;
-    height: 85px; }
+    #carousel-thumbs .img-fluid {
+      max-width: 45px !important;
+      height: 70px !important; }
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 25px; }
+  .carousel-control-prev {
+    left: -25px !important; }
+  .carousel-control-next {
+    right: -25px !important; }
   .carousel-container {
     height: 245px; }
   .carousel-item img {
@@ -7660,19 +8319,207 @@ input.page-input {
     bottom: 25%;
     left: 6%;
     width: 50%;
-    padding: 0; } }
+    padding: 0; }
+  .mobile-landscape {
+    display: block; }
+  .mobile-portrait {
+    display: none; }
+  #book img.book-player {
+    width: 60% !important;
+    max-width: 950px; }
+  #world {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    color: white; }
+    #world .row {
+      height: 50vh;
+      width: 100%;
+      margin: 0;
+      justify-content: center;
+      flex-direction: row;
+      align-items: center; }
+      #world .row .world-info {
+        text-align: left;
+        margin-bottom: 8px;
+        padding: 0; }
+        #world .row .world-info .world-heading {
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-start;
+          align-items: center;
+          margin-bottom: 8px; }
+          #world .row .world-info .world-heading h1 {
+            margin: 0;
+            font-size: 2.3em;
+            min-width: 200px; }
+          #world .row .world-info .world-heading .world-icon {
+            width: 32px;
+            height: 32px;
+            min-width: 32px;
+            border-radius: 16px;
+            background: white;
+            margin-right: 8px; }
+        #world .row .world-info p {
+          background: rgba(0, 0, 0, 0.32);
+          padding: 12px 12px 12px 24px;
+          left: -18px;
+          position: relative; }
+      #world .row .world-video {
+        text-align: center;
+        margin-bottom: 0;
+        position: absolute;
+        z-index: -99;
+        align-self: center; }
+        #world .row .world-video .world-video-container {
+          width: 60vw !important;
+          height: 55vh !important;
+          border: 1px solid white;
+          margin: 0 auto; }
+      #world .row .world-characters {
+        text-align: center;
+        margin: 0;
+        flex-direction: column;
+        height: 100px;
+        bottom: 0; }
+        #world .row .world-characters h3 {
+          margin-bottom: 4px; }
+        #world .row .world-characters .world-character-row {
+          width: 100%;
+          height: 85px;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          margin: 0; }
+          #world .row .world-characters .world-character-row .character-tile {
+            width: 60px;
+            margin: 0 3px;
+            background-image: url("../assets/char/char-tile-temp.png");
+            background-position: center center;
+            background-repeat: no-repeat;
+            -webkit-background-size: 100%;
+            -moz-background-size: 100%;
+            -ms-background-size: 100%;
+            background-size: 100%; }
+  #account .axis-passport-card {
+    width: 100% !important;
+    height: 80vh !important;
+    min-height: 255px;
+    max-width: 92vw !important;
+    flex-direction: row !important;
+    background-image: url("../assets/passport-bg-landscape.png");
+    background-position: top right;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -ms-background-size: cover;
+    background-size: cover;
+    padding: 24px; }
+    #account .axis-passport-card .axis-passport-user-avatar {
+      width: 100px !important;
+      height: 100px !important; }
+    #account .axis-passport-card .axis-passport-details {
+      width: 75% !important;
+      padding-left: 24px;
+      margin-left: 0 !important; }
+    #account .axis-passport-card .axis-passport-name {
+      color: white;
+      height: 27px;
+      text-align: left !important; }
+    #account .axis-passport-card .passport-email,
+    #account .axis-passport-card .passport-password {
+      color: white;
+      height: 20px !important; }
+    #account .axis-passport-card .details-label {
+      text-align: left !important; }
+    #account .axis-passport-card .gate-avatars {
+      height: 90px; }
+      #account .axis-passport-card .gate-avatars .axis-passport-gate-avatar {
+        width: 64px !important;
+        height: 64px !important; }
+      #account .axis-passport-card .gate-avatars .gate-avatar-name {
+        order: 2; } }
 
 /* ----------- iPhone 6, 6S, 7 and 8 ----------- */
 /* Portrait and Landscape */
-/* Portrait */
-/* Landscape */
-@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
   h1 {
-    font-size: 3.1em; }
+    font-size: 2.1em !important; }
   h2 {
-    font-size: 2.5em; }
+    font-size: 2em; }
   h3 {
     font-size: 1.3em; }
+  p {
+    font-size: 13px !important; }
+  #book .character-grid {
+    margin: 0 auto; }
+  .passport-spacer {
+    display: none !important; } }
+
+/* Portrait */
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  .mobile-landscape {
+    display: none; }
+  .mobile-portrait {
+    display: block; }
+  #world .row {
+    height: 75vh !important; }
+    #world .row .world-video {
+      height: 30vh; }
+      #world .row .world-video .world-video-container {
+        height: 30vh !important;
+        width: 85vw !important; }
+    #world .row .world-character-row {
+      width: 100% !important;
+      height: inherit !important; }
+  .carousel-inner {
+    height: 74vh; }
+  #carousel-thumbs {
+    width: 90%;
+    padding: 0;
+    bottom: 35px;
+    height: 90px;
+    margin: 0 auto; }
+    #carousel-thumbs .img-fluid {
+      max-width: 55px !important;
+      height: 90px !important; }
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 25px; }
+  .carousel-control-prev {
+    left: -30px !important; }
+  .carousel-control-next {
+    right: -30px !important; }
+  .carousel-item .carousel-caption {
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    left: 0;
+    padding: 0 16px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    height: 74vh; }
+    .carousel-item .carousel-caption p {
+      display: none; }
+  .carousel-item .character-slide-cutout {
+    position: absolute;
+    max-height: 475px;
+    margin: 0 auto;
+    left: 0;
+    right: 0; }
+  #account .axis-passport-user-avatar {
+    width: 150px !important;
+    height: 150px !important;
+    margin: 24px !important; }
+  #account .axis-passport-gate-avatar {
+    width: 72px !important;
+    height: 72px !important; } }
+
+/* Landscape */
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
   #carousel-thumbs {
     position: absolute;
     padding: 0;
@@ -7688,36 +8535,338 @@ input.page-input {
     bottom: 32%;
     left: 6%;
     width: 46%;
-    padding: 0 0 16px; } }
+    padding: 0 0 16px; }
+  .mobile-landscape {
+    display: block; }
+  .mobile-portrait {
+    display: none; }
+  #book img.book-player {
+    width: 60% !important;
+    max-width: 950px; }
+  #world {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    color: white; }
+    #world .row {
+      height: 50vh;
+      width: 100%;
+      margin: 0;
+      justify-content: center;
+      flex-direction: row;
+      align-items: center; }
+      #world .row .world-info {
+        text-align: left;
+        margin-bottom: 8px;
+        padding: 0; }
+        #world .row .world-info .world-heading {
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-start;
+          align-items: center;
+          margin-bottom: 8px; }
+          #world .row .world-info .world-heading h1 {
+            margin: 0;
+            font-size: 2.3em;
+            min-width: 200px; }
+          #world .row .world-info .world-heading .world-icon {
+            width: 32px;
+            height: 32px;
+            min-width: 32px;
+            border-radius: 16px;
+            background: white;
+            margin-right: 8px; }
+        #world .row .world-info p {
+          background: rgba(0, 0, 0, 0.32);
+          padding: 12px 12px 12px 24px;
+          left: -18px;
+          position: relative; }
+      #world .row .world-video {
+        text-align: center;
+        margin-bottom: 0;
+        position: absolute;
+        z-index: -99;
+        align-self: center; }
+        #world .row .world-video .world-video-container {
+          width: 60vw !important;
+          height: 55vh !important;
+          border: 1px solid white;
+          margin: 0 auto; }
+      #world .row .world-characters {
+        text-align: center;
+        margin: 0;
+        flex-direction: column;
+        height: 100px;
+        bottom: 0; }
+        #world .row .world-characters h3 {
+          margin-bottom: 4px; }
+        #world .row .world-characters .world-character-row {
+          width: 100%;
+          height: 85px;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          margin: 0; }
+          #world .row .world-characters .world-character-row .character-tile {
+            width: 60px;
+            margin: 0 3px;
+            background-image: url("../assets/char/char-tile-temp.png");
+            background-position: center center;
+            background-repeat: no-repeat;
+            -webkit-background-size: 100%;
+            -moz-background-size: 100%;
+            -ms-background-size: 100%;
+            background-size: 100%; }
+  #account .account-container {
+    width: 100%;
+    max-width: 100%; }
+    #account .account-container .account-row {
+      width: 100%; }
+    #account .account-container .axis-passport-card {
+      width: 100% !important;
+      min-height: 300px;
+      max-width: 82vw;
+      flex-direction: row !important;
+      background-image: url("../assets/passport-bg-landscape.png");
+      background-position: center right;
+      background-repeat: no-repeat;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -ms-background-size: cover;
+      background-size: cover;
+      padding: 24px;
+      margin: 0 auto; }
+      #account .account-container .axis-passport-card .axis-passport-user-avatar {
+        width: 115px !important;
+        height: 115px !important; }
+      #account .account-container .axis-passport-card .axis-passport-details {
+        width: 75% !important;
+        padding-left: 24px; }
+      #account .account-container .axis-passport-card .axis-passport-name {
+        color: white;
+        height: 27px;
+        text-align: left !important; }
+      #account .account-container .axis-passport-card .passport-email,
+      #account .account-container .axis-passport-card .passport-password {
+        color: white;
+        height: 27px; }
+      #account .account-container .axis-passport-card .details-label {
+        text-align: left !important; }
+      #account .account-container .axis-passport-card .gate-avatars {
+        height: 90px; }
+        #account .account-container .axis-passport-card .gate-avatars .axis-passport-gate-avatar {
+          width: 64px !important;
+          height: 64px !important; }
+        #account .account-container .axis-passport-card .gate-avatars .gate-avatar-name {
+          order: 2; } }
 
 /* ----------- iPhone 6+, 7+ and 8+ ----------- */
 /* Portrait and Landscape */
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) {
+  h1 {
+    font-size: 2.4em !important; }
+  h2 {
+    font-size: 2em; }
+  h3 {
+    font-size: 1.3em; }
+  p {
+    font-size: 13px !important; }
+  #book .character-grid {
+    margin: 0 auto; }
+  .passport-spacer {
+    display: none !important; } }
+
 /* Portrait */
 @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait) {
-  .carousel-inner .carousel-item .carousel-caption {
-    bottom: 40px !important; } }
+  #world .row {
+    height: 60vh; }
+    #world .row .world-character-row {
+      width: 80% !important;
+      height: 105px; }
+      #world .row .world-character-row .character-tile {
+        width: 70px !important; }
+  .carousel-inner {
+    height: 580px; }
+    .carousel-inner .carousel-item .carousel-caption {
+      bottom: 160px !important; }
+  #carousel-thumbs {
+    position: fixed;
+    padding: 0 30px !important;
+    bottom: 10%;
+    width: 100%;
+    height: 100px; }
+    #carousel-thumbs .img-fluid {
+      max-width: 55px !important;
+      height: 100px !important; }
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 25px !important;
+    top: 20px; }
+  .carousel-control-prev {
+    left: 0 !important; }
+  .carousel-control-next {
+    right: 0 !important; }
+  #account .axis-passport-card {
+    width: 75vw;
+    height: 80vh !important; }
+    #account .axis-passport-card .axis-passport-user-avatar {
+      width: 175px !important;
+      height: 175px !important;
+      margin: 24px !important; }
+    #account .axis-passport-card .axis-passport-gate-avatar {
+      width: 96px !important;
+      height: 96px !important; } }
 
 /* Landscape */
 @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {
-  h1 {
-    font-size: 3.1em; }
-  h2 {
-    font-size: 2.5em; }
-  h3 {
-    font-size: 1.3em; }
   #carousel-thumbs {
     padding: 0 12px;
-    width: 55%;
-    bottom: 0; }
-  #carousel-thumbs .img-fluid {
-    max-width: 65px;
-    height: 95px; }
+    width: 50%;
+    bottom: 50px;
+    left: 25px; }
+    #carousel-thumbs .img-fluid {
+      max-width: 55px !important;
+      height: 95px !important; }
+    #carousel-thumbs .carousel-control-prev,
+    #carousel-thumbs .carousel-control-next {
+      width: 25px !important;
+      top: 0; }
+    #carousel-thumbs .carousel-control-prev {
+      left: -15px !important; }
+    #carousel-thumbs .carousel-control-next {
+      right: -15px !important; }
+  .carousel-item .character-slide-cutout {
+    max-height: 400px; }
   .carousel-item .carousel-caption {
     right: 0;
-    bottom: 30%;
+    bottom: 36%;
     left: 2%;
     width: 100%;
-    padding: 0 0 16px; } }
+    padding: 0 0 16px; }
+  #book img.book-player {
+    width: 60% !important;
+    max-width: 950px; }
+  .mobile-landscape {
+    display: block; }
+  .mobile-portrait {
+    display: none; }
+  #world {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    color: white; }
+    #world .row {
+      height: 50vh;
+      width: 100%;
+      margin: 0;
+      justify-content: center;
+      flex-direction: row;
+      align-items: center; }
+      #world .row .world-info {
+        text-align: left;
+        margin-bottom: 8px;
+        padding: 0; }
+        #world .row .world-info .world-heading {
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-start;
+          align-items: center;
+          margin-bottom: 8px; }
+          #world .row .world-info .world-heading h1 {
+            margin: 0;
+            font-size: 2.3em;
+            min-width: 200px; }
+          #world .row .world-info .world-heading .world-icon {
+            width: 32px;
+            height: 32px;
+            min-width: 32px;
+            border-radius: 16px;
+            background: white;
+            margin-right: 8px; }
+        #world .row .world-info p {
+          background: rgba(0, 0, 0, 0.32);
+          padding: 12px 12px 12px 24px;
+          left: -18px;
+          position: relative; }
+      #world .row .world-video {
+        text-align: center;
+        margin-bottom: 0;
+        position: absolute;
+        z-index: -99;
+        align-self: center; }
+        #world .row .world-video .world-video-container {
+          width: 60vw !important;
+          height: 55vh !important;
+          border: 1px solid white;
+          margin: 0 auto; }
+      #world .row .world-characters {
+        text-align: center;
+        margin: 0;
+        flex-direction: column;
+        height: 100px;
+        bottom: 0; }
+        #world .row .world-characters h3 {
+          margin-bottom: 4px; }
+        #world .row .world-characters .world-character-row {
+          width: 100%;
+          height: 100px;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          margin: 0; }
+          #world .row .world-characters .world-character-row .character-tile {
+            width: 60px;
+            margin: 0 3px;
+            background-image: url("../assets/char/char-tile-temp.png");
+            background-position: center center;
+            background-repeat: no-repeat;
+            -webkit-background-size: 100%;
+            -moz-background-size: 100%;
+            -ms-background-size: 100%;
+            background-size: 100%; }
+  #account .account-container {
+    width: 100%;
+    max-width: 100%; }
+    #account .account-container .account-row {
+      width: 100%; }
+    #account .account-container .axis-passport-card {
+      width: 100% !important;
+      max-width: 82vw;
+      min-width: 550px;
+      min-height: 300px;
+      flex-direction: row !important;
+      background-image: url("../assets/passport-bg-landscape.png");
+      background-position: center right;
+      background-repeat: no-repeat;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -ms-background-size: cover;
+      background-size: cover;
+      padding: 24px;
+      margin: 0 auto; }
+      #account .account-container .axis-passport-card .axis-passport-user-avatar {
+        width: 115px !important;
+        height: 115px !important; }
+      #account .account-container .axis-passport-card .axis-passport-details {
+        width: 75% !important;
+        padding-left: 24px; }
+      #account .account-container .axis-passport-card .axis-passport-name {
+        color: white;
+        height: 27px;
+        text-align: left !important; }
+      #account .account-container .axis-passport-card .passport-email,
+      #account .account-container .axis-passport-card .passport-password {
+        color: white;
+        height: 27px; }
+      #account .account-container .axis-passport-card .details-label {
+        text-align: left !important; }
+      #account .account-container .axis-passport-card .gate-avatars {
+        height: 90px; }
+        #account .account-container .axis-passport-card .gate-avatars .axis-passport-gate-avatar {
+          width: 64px !important;
+          height: 64px !important; }
+        #account .account-container .axis-passport-card .gate-avatars .gate-avatar-name {
+          order: 2; } }
 
 /* ----------- iPhone X ----------- */
 /* Portrait and Landscape */
@@ -7727,10 +8876,24 @@ input.page-input {
   h2 {
     font-size: 2em; }
   h3 {
-    font-size: 1.1em; } }
+    font-size: 1.1em; }
+  p {
+    font-size: 13px !important; }
+  .passport-spacer {
+    display: none !important; } }
 
 /* Portrait */
 @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait) {
+  #world .row {
+    height: 56vh !important; }
+    #world .row .world-video .world-video-container {
+      height: 26vh !important;
+      width: 87vw !important; }
+    #world .row .world-character-row {
+      width: 86% !important;
+      height: inherit !important; }
+      #world .row .world-character-row .character-tile {
+        width: 30vw !important; }
   .mid-left-nav {
     top: 10%;
     left: 5%; }
@@ -7741,23 +8904,42 @@ input.page-input {
     height: 45vh; }
   .character-info p {
     display: none; }
-  .carousel-inner .carousel-item img {
-    object-fit: cover;
-    max-height: 600px; }
-  .carousel-inner .carousel-item .carousel-caption {
-    bottom: 0; }
-  .carousel-inner .character-slide-cutout {
-    left: 0; }
+  .carousel-inner {
+    height: 75vh; }
+    .carousel-inner .carousel-item {
+      text-align: center; }
+      .carousel-inner .carousel-item img {
+        object-fit: cover;
+        max-height: 600px; }
+      .carousel-inner .carousel-item .carousel-caption {
+        bottom: 0 !important;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        height: 72vh; }
+    .carousel-inner .character-slide-cutout {
+      left: 0; }
   #carousel-thumbs {
     background: transparent;
     position: fixed;
-    padding: 0 20px;
+    padding: 0 24px;
     bottom: 15%;
     width: 100%;
     height: 80px; }
     #carousel-thumbs .img-fluid {
       max-width: 55px;
-      height: 85px; } }
+      height: 85px; }
+    #carousel-thumbs .carousel-control-prev,
+    #carousel-thumbs .carousel-control-next {
+      width: 25px !important;
+      top: 20px; }
+    #carousel-thumbs .carousel-control-prev {
+      left: 0 !important; }
+    #carousel-thumbs .carousel-control-next {
+      right: 0 !important; }
+  #account .axis-passport-card {
+    width: 85vw;
+    max-height: 75vh; } }
 
 /* Landscape */
 @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {
@@ -7772,7 +8954,7 @@ input.page-input {
     .mid-right-nav .characters-icon {
       width: 55px;
       height: 55px;
-      background-image: url("../assets/characters.png");
+      background-image: url("http://nimapush-14dab.kxcdn.com/assets/characters.png");
       background-position: center center;
       background-repeat: no-repeat;
       -webkit-background-size: cover;
@@ -7786,6 +8968,9 @@ input.page-input {
     position: fixed;
     left: 3%;
     bottom: 5%; }
+  #carousel-thumbs .img-fluid {
+    max-width: 65px;
+    height: 100px; }
   #characters .full-container {
     width: 80%; }
     #characters .full-container .left-column {
@@ -7822,4 +9007,121 @@ input.page-input {
       justify-content: center; }
       #character .right-column .character-cutout img {
         width: 100%;
-        max-width: 280px; } }
+        max-width: 280px; }
+  #world {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    color: white; }
+    #world .row {
+      height: 50vh;
+      width: 100%;
+      margin: 0;
+      justify-content: center;
+      flex-direction: row;
+      align-items: center; }
+      #world .row .world-info {
+        text-align: left;
+        margin-bottom: 8px;
+        padding: 0; }
+        #world .row .world-info .world-heading {
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-start;
+          align-items: center;
+          margin-bottom: 8px; }
+          #world .row .world-info .world-heading h1 {
+            margin: 0;
+            font-size: 2.3em;
+            min-width: 200px; }
+          #world .row .world-info .world-heading .world-icon {
+            width: 32px;
+            height: 32px;
+            min-width: 32px;
+            border-radius: 16px;
+            background: white;
+            margin-right: 8px; }
+        #world .row .world-info p {
+          background: rgba(0, 0, 0, 0.32);
+          padding: 12px 12px 12px 24px;
+          left: -18px;
+          position: relative; }
+      #world .row .world-video {
+        text-align: center;
+        margin-bottom: 0;
+        position: absolute;
+        z-index: -99;
+        align-self: center; }
+        #world .row .world-video .world-video-container {
+          width: 50vw !important;
+          height: 60vh !important;
+          border: 1px solid white;
+          margin: 0 auto; }
+      #world .row .world-characters {
+        text-align: center;
+        margin: 0;
+        flex-direction: column;
+        height: 100px;
+        bottom: 0; }
+        #world .row .world-characters h3 {
+          margin-bottom: 4px; }
+        #world .row .world-characters .world-character-row {
+          width: 100%;
+          height: 100px;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          margin: 0; }
+          #world .row .world-characters .world-character-row .character-tile {
+            width: 60px;
+            margin: 0 3px;
+            background-image: url("../assets/char/char-tile-temp.png");
+            background-position: center center;
+            background-repeat: no-repeat;
+            -webkit-background-size: 100%;
+            -moz-background-size: 100%;
+            -ms-background-size: 100%;
+            background-size: 100%; }
+  #account .account-container {
+    width: 100%;
+    max-width: 100%; }
+    #account .account-container .account-row {
+      width: 100%; }
+    #account .account-container .axis-passport-card {
+      width: 100% !important;
+      max-width: 65vw;
+      min-width: 500px;
+      min-height: 280px;
+      flex-direction: row !important;
+      background-image: url("../assets/passport-bg-landscape.png");
+      background-position: center right;
+      background-repeat: no-repeat;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -ms-background-size: cover;
+      background-size: cover;
+      padding: 24px;
+      margin: 0 auto; }
+      #account .account-container .axis-passport-card .axis-passport-user-avatar {
+        width: 115px !important;
+        height: 115px !important; }
+      #account .account-container .axis-passport-card .axis-passport-details {
+        width: 75% !important;
+        padding-left: 24px; }
+      #account .account-container .axis-passport-card .axis-passport-name {
+        color: white;
+        height: 27px;
+        text-align: left !important; }
+      #account .account-container .axis-passport-card .passport-email,
+      #account .account-container .axis-passport-card .passport-password {
+        color: white;
+        height: 27px; }
+      #account .account-container .axis-passport-card .details-label {
+        text-align: left !important; }
+      #account .account-container .axis-passport-card .gate-avatars {
+        height: 90px; }
+        #account .account-container .axis-passport-card .gate-avatars .axis-passport-gate-avatar {
+          width: 64px !important;
+          height: 64px !important; }
+        #account .account-container .axis-passport-card .gate-avatars .gate-avatar-name {
+          order: 2; } }
