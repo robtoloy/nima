@@ -7955,6 +7955,202 @@ input.page-input {
       #account .account-container .axis-passport-card .axis-passport-details .gate-avatar-name {
         order: 1; }
 
+/* ----------- iPad 3, 4 and Pro 9.7" ----------- */
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
+  #home-tablet {
+    height: 100vh; } }
+
+/* Portrait */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+  #home-tablet {
+    background-image: url("../assets/tablet-bg-portrait.jpeg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -ms-background-size: cover;
+    background-size: cover; }
+    #home-tablet #tablet-landscape {
+      display: none; }
+    #home-tablet #tablet-portrait {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%; }
+      #home-tablet #tablet-portrait .col-12 {
+        min-height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center; }
+      #home-tablet #tablet-portrait .col-6 {
+        text-align: center;
+        min-height: 425px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center; }
+      #home-tablet #tablet-portrait .device-notice {
+        color: white;
+        text-align: center; }
+        #home-tablet #tablet-portrait .device-notice .purchase {
+          font-size: 1em;
+          letter-spacing: normal;
+          font-weight: bolder;
+          color: #f85851; }
+    #home-tablet img.logo {
+      width: 550px; }
+    #home-tablet img.book {
+      width: 250px; }
+    #home-tablet img.trailer {
+      width: 400px;
+      margin-top: 10%; } }
+
+/* Landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+  #home-tablet {
+    background-image: url("../assets/tablet-bg-landscape.jpeg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -ms-background-size: cover;
+    background-size: cover; }
+    #home-tablet #tablet-portrait {
+      display: none; }
+    #home-tablet #tablet-landscape {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100vh; }
+      #home-tablet #tablet-landscape .col-12 {
+        min-height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center; }
+      #home-tablet #tablet-landscape .col-5 {
+        text-align: center;
+        min-height: 425px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center; }
+      #home-tablet #tablet-landscape .device-notice {
+        color: white;
+        text-align: center; }
+        #home-tablet #tablet-landscape .device-notice .purchase {
+          font-size: 1em;
+          letter-spacing: normal;
+          font-weight: bolder;
+          color: #f85851; }
+    #home-tablet img.logo {
+      width: 550px; }
+    #home-tablet img.book {
+      width: 250px; }
+    #home-tablet img.trailer {
+      width: 400px;
+      margin-top: 10%; } }
+
+/* ----------- iPad Pro 10.5" ----------- */
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 834px) and (max-device-width: 1112px) and (-webkit-min-device-pixel-ratio: 2) {
+  #home-tablet {
+    height: 100vh; } }
+
+/* Portrait */
+/* Declare the same value for min- and max-width to avoid colliding with desktops */
+/* Source: https://medium.com/connect-the-dots/css-media-queries-for-ipad-pro-8cad10e17106*/
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+  #home-tablet {
+    background-image: url("../assets/tablet-bg-portrait.jpeg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -ms-background-size: cover;
+    background-size: cover; }
+    #home-tablet #tablet-landscape {
+      display: none; }
+    #home-tablet #tablet-portrait {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100vh; }
+      #home-tablet #tablet-portrait .col-12 {
+        min-height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center; }
+      #home-tablet #tablet-portrait .col-6 {
+        text-align: center;
+        min-height: 425px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center; }
+      #home-tablet #tablet-portrait img.logo {
+        width: 550px; }
+      #home-tablet #tablet-portrait img.book {
+        width: 250px; }
+      #home-tablet #tablet-portrait img.trailer {
+        width: 400px;
+        margin-top: 10%; }
+      #home-tablet #tablet-portrait .device-notice {
+        color: white;
+        text-align: center; }
+        #home-tablet #tablet-portrait .device-notice .purchase {
+          font-size: 1em;
+          letter-spacing: normal;
+          font-weight: bolder;
+          color: #f85851; } }
+
+/* Landscape */
+/* Declare the same value for min- and max-width to avoid colliding with desktops */
+/* Source: https://medium.com/connect-the-dots/css-media-queries-for-ipad-pro-8cad10e17106*/
+@media only screen and (min-device-width: 1366px) and (max-device-width: 1366px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+  #home-tablet {
+    background-image: url("../assets/tablet-bg-landscape.jpeg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -ms-background-size: cover;
+    background-size: cover; }
+    #home-tablet #tablet-portrait {
+      display: none; }
+    #home-tablet #tablet-landscape {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100vh; }
+      #home-tablet #tablet-landscape .col-12 {
+        min-height: 150px;
+        display: flex;
+        justify-content: center;
+        align-items: center; }
+      #home-tablet #tablet-landscape .col-5 {
+        text-align: center;
+        min-height: 425px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center; }
+      #home-tablet #tablet-landscape img.logo {
+        width: 550px; }
+      #home-tablet #tablet-landscape img.book {
+        width: 250px; }
+      #home-tablet #tablet-landscape img.trailer {
+        width: 400px;
+        margin-top: 10%; }
+      #home-tablet #tablet-landscape .device-notice {
+        color: white;
+        text-align: center; }
+        #home-tablet #tablet-landscape .device-notice .purchase {
+          font-size: 1em;
+          letter-spacing: normal;
+          font-weight: bolder;
+          color: #f85851; } }
+
 @media all and (max-width: 767px) {
   .carousel-container #carousel-thumbs img {
     border-width: 3px; } }

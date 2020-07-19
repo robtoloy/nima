@@ -93,7 +93,11 @@ html {
 
 // =========== END TYPOGRAPHY
 
+// Background images
+
 $home-bg: '../assets/home/home-temp.png';
+$tablet-bg-landscape: '../assets/tablet-bg-landscape.jpeg';
+$tablet-bg-portrait: '../assets/tablet-bg-portrait.jpeg';
 $characters-bg: '../assets/char/char-temp.png';
 $about-bg: '../assets/about-temp.png';
 $nimbus-bg: '../assets/nimbus/nimbus-temp.png';
@@ -914,6 +918,258 @@ input.page-input {
       }
     }
   }
+}
+
+// Tablet home page
+
+
+
+/* ----------- iPad 3, 4 and Pro 9.7" ----------- */
+
+/* Portrait and Landscape */
+@media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1024px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    #home-tablet {
+      height: 100vh;
+    }
+}
+
+/* Portrait */
+@media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1024px)
+  and (orientation: portrait)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    #home-tablet {
+      @include img-bg($tablet-bg-portrait, center center);
+      @include bg-size(cover);
+
+      #tablet-landscape { display: none; }
+      #tablet-portrait {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+
+        .col-12 {
+          min-height: 200px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        .col-6 {
+          text-align: center;
+          min-height: 425px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: center;
+        }
+        .device-notice {
+          color: white;
+          text-align: center;
+          .purchase {
+            font-size: 1em;
+            letter-spacing: normal;
+            font-weight: bolder;
+            color: #f85851;
+          }
+        }
+      }
+      img.logo {
+        width: 550px;
+      }
+      img.book {
+        width: 250px;
+      }
+      img.trailer {
+        width: 400px;
+        margin-top: 10%;
+      }
+    }
+}
+
+/* Landscape */
+@media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1024px)
+  and (orientation: landscape)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    #home-tablet {
+      @include img-bg($tablet-bg-landscape, center center);
+      @include bg-size(cover);
+
+      #tablet-portrait { display: none; }
+      #tablet-landscape {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100vh;
+
+        .col-12 {
+          min-height: 200px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        .col-5 {
+          text-align: center;
+          min-height: 425px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: center;
+        }
+        .device-notice {
+          color: white;
+          text-align: center;
+          .purchase {
+            font-size: 1em;
+            letter-spacing: normal;
+            font-weight: bolder;
+            color: #f85851;
+          }
+        }
+      }
+      img.logo {
+        width: 550px;
+      }
+      img.book {
+        width: 250px;
+      }
+      img.trailer {
+        width: 400px;
+        margin-top: 10%;
+      }
+    }
+}
+
+/* ----------- iPad Pro 10.5" ----------- */
+
+/* Portrait and Landscape */
+@media only screen
+  and (min-device-width: 834px)
+  and (max-device-width: 1112px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    #home-tablet {
+      height: 100vh;
+    }
+}
+
+/* Portrait */
+/* Declare the same value for min- and max-width to avoid colliding with desktops */
+/* Source: https://medium.com/connect-the-dots/css-media-queries-for-ipad-pro-8cad10e17106*/
+@media only screen
+  and (min-device-width: 1024px)
+  and (max-device-width: 1024px)
+  and (orientation: portrait)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    #home-tablet {
+      @include img-bg($tablet-bg-portrait, center center);
+      @include bg-size(cover);
+
+      #tablet-landscape { display: none; }
+      #tablet-portrait {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100vh;
+
+        .col-12 {
+          min-height: 200px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        .col-6 {
+          text-align: center;
+          min-height: 425px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: center;
+        }
+        img.logo {
+          width: 550px;
+        }
+        img.book {
+          width: 250px;
+        }
+        img.trailer {
+          width: 400px;
+          margin-top: 10%;
+        }
+        .device-notice {
+          color: white;
+          text-align: center;
+          .purchase {
+            font-size: 1em;
+            letter-spacing: normal;
+            font-weight: bolder;
+            color: #f85851;
+          }
+        }
+      }
+    }
+}
+
+/* Landscape */
+/* Declare the same value for min- and max-width to avoid colliding with desktops */
+/* Source: https://medium.com/connect-the-dots/css-media-queries-for-ipad-pro-8cad10e17106*/
+@media only screen
+  and (min-device-width: 1366px)
+  and (max-device-width: 1366px)
+  and (orientation: landscape)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    #home-tablet {
+      @include img-bg($tablet-bg-landscape, center center);
+      @include bg-size(cover);
+
+      #tablet-portrait { display: none; }
+      #tablet-landscape {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100vh;
+
+        .col-12 {
+          min-height: 150px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        .col-5 {
+          text-align: center;
+          min-height: 425px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: center;
+        }
+        img.logo {
+          width: 550px;
+        }
+        img.book {
+          width: 250px;
+        }
+        img.trailer {
+          width: 400px;
+          margin-top: 10%;
+        }
+        .device-notice {
+          color: white;
+          text-align: center;
+          .purchase {
+            font-size: 1em;
+            letter-spacing: normal;
+            font-weight: bolder;
+            color: #f85851;
+          }
+        }
+      }
+    }
 }
 
 // Global media queires
@@ -2343,7 +2599,7 @@ input.page-input {
     .passport-spacer {
       display: none !important;
     }
-    
+
 }
 
 /* Portrait */
