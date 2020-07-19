@@ -7261,7 +7261,7 @@ html {
   background-size: cover;
   height: 100vh; }
 
-#book {
+#read-thru {
   background-color: #0c1013;
   color: white;
   height: 100vh; }
@@ -7289,7 +7289,7 @@ a:hover {
 #characters a,
 #character a,
 #nimbus a,
-#book a {
+#read-thru a {
   color: white; }
 
 #home a:hover,
@@ -7297,7 +7297,7 @@ a:hover {
 #characters a:hover,
 #character a:hover,
 #nimbus a:hover,
-#book a:hover {
+#read-thru a:hover {
   color: white; }
 
 #home .logo,
@@ -7305,7 +7305,7 @@ a:hover {
 #characters .logo,
 #character .logo,
 #nimbus .logo,
-#book .logo {
+#read-thru .logo {
   border-right: 0.5px white solid; }
 
 #about h1, #about p, #about a {
@@ -8182,7 +8182,7 @@ input.page-input {
     font-size: 11px !important; }
   .device-iPhone4 {
     display: block !important; }
-  #book .character-grid {
+  #read-thru .character-grid {
     margin: 0 auto; }
   .passport-spacer {
     display: none !important; } }
@@ -8193,7 +8193,7 @@ input.page-input {
     display: none; }
   .mobile-portrait {
     display: block; }
-  #book img.book-player {
+  #read-thru img.book-player {
     width: 100% !important;
     max-width: 950px; }
   #world {
@@ -8412,7 +8412,7 @@ input.page-input {
     font-size: 1.3em; }
   p {
     font-size: 11px !important; }
-  #book .character-grid {
+  #read-thru .character-grid {
     margin: 0 auto; }
   .passport-spacer {
     display: none !important; } }
@@ -8423,7 +8423,7 @@ input.page-input {
     display: none; }
   .mobile-portrait {
     display: block; }
-  #book img.book-player {
+  #read-thru img.book-player {
     width: 100% !important;
     max-width: 950px; }
   #world .row {
@@ -8520,7 +8520,7 @@ input.page-input {
     display: block; }
   .mobile-portrait {
     display: none; }
-  #book img.book-player {
+  #read-thru img.book-player {
     width: 60% !important;
     max-width: 950px; }
   #world {
@@ -8647,7 +8647,7 @@ input.page-input {
     font-size: 1.3em; }
   p {
     font-size: 13px !important; }
-  #book .character-grid {
+  #read-thru .character-grid {
     margin: 0 auto; }
   .passport-spacer {
     display: none !important; } }
@@ -8736,7 +8736,7 @@ input.page-input {
     display: block; }
   .mobile-portrait {
     display: none; }
-  #book img.book-player {
+  #read-thru img.book-player {
     width: 60% !important;
     max-width: 950px; }
   #world {
@@ -8867,7 +8867,7 @@ input.page-input {
     font-size: 1.3em; }
   p {
     font-size: 13px !important; }
-  #book .character-grid {
+  #read-thru .character-grid {
     margin: 0 auto; }
   .passport-spacer {
     display: none !important; } }
@@ -8939,7 +8939,7 @@ input.page-input {
     left: 2%;
     width: 100%;
     padding: 0 0 16px; }
-  #book img.book-player {
+  #read-thru img.book-player {
     width: 60% !important;
     max-width: 950px; }
   .mobile-landscape {
@@ -9209,6 +9209,10 @@ input.page-input {
     display: flex;
     align-items: center;
     color: white; }
+    #world .mobile-landscape {
+      display: block; }
+    #world .mobile-portrait {
+      display: none; }
     #world .row {
       height: 50vh;
       width: 100%;

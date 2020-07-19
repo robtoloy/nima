@@ -149,7 +149,7 @@ $emblem2: '../assets/cat-emblem.png';
   height: 100vh;
 }
 
-#book {
+#read-thru {
   background-color: #0c1013;
   color: white;
   height: 100vh;
@@ -175,7 +175,7 @@ a:hover {
 #characters,
 #character,
 #nimbus,
-#book {
+#read-thru {
   a { color: white; }
   a:hover { color: white; }
   .logo {
@@ -1225,7 +1225,7 @@ input.page-input {
     }
 
     // book.html
-    #book {
+    #read-thru {
       .character-grid {
         margin: 0 auto;
       }
@@ -1251,7 +1251,7 @@ input.page-input {
     }
 
   // book.html
-  #book {
+  #read-thru {
     img.book-player {
       width: 100% !important;
       max-width: 950px;
@@ -1573,7 +1573,7 @@ input.page-input {
     h3   { font-size: 1.3em; }
     p    { font-size: 11px !important; }
 
-    #book {
+    #read-thru {
       .character-grid {
         margin: 0 auto;
       }
@@ -1601,7 +1601,7 @@ input.page-input {
     }
 
     // book.html
-    #book {
+    #read-thru {
       img.book-player {
         width: 100% !important;
         max-width: 950px;
@@ -1763,7 +1763,7 @@ input.page-input {
     }
 
     // book.html
-    #book {
+    #read-thru {
       img.book-player {
         width: 60% !important;
         max-width: 950px;
@@ -1937,7 +1937,7 @@ input.page-input {
     p    { font-size: 13px !important; }
 
     // book.html
-    #book {
+    #read-thru {
       .character-grid {
         margin: 0 auto;
       }
@@ -2089,7 +2089,7 @@ input.page-input {
   }
 
   // book.html
-  #book {
+  #read-thru {
     img.book-player {
       width: 60% !important;
       max-width: 950px;
@@ -2271,7 +2271,7 @@ input.page-input {
     p    { font-size: 13px !important; }
 
     // book.html
-    #book {
+    #read-thru {
       .character-grid {
         margin: 0 auto;
       }
@@ -2406,7 +2406,7 @@ input.page-input {
     }
 
     // book.html
-    #book {
+    #read-thru {
       img.book-player {
         width: 60% !important;
         max-width: 950px;
@@ -2805,6 +2805,14 @@ input.page-input {
 
   // Worlds template styles
   #world {
+
+    .mobile-landscape {
+      display: block;
+    }
+    .mobile-portrait {
+      display: none;
+    }
+
     height: 100vh;
     // background: grey;
     display: flex;
