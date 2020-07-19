@@ -7324,6 +7324,16 @@ a:hover {
   top: 10%;
   left: 42px; }
 
+.btn-outline-primary {
+  color: #ea452f;
+  border-color: #ea452f; }
+
+.btn {
+  border: 2px solid;
+  padding: 0.75rem 3rem;
+  border-radius: 3rem;
+  font-weight: bolder; }
+
 svg|a:link, svg|a:visited {
   cursor: pointer; }
 
@@ -7954,6 +7964,50 @@ input.page-input {
         background-size: cover; }
       #account .account-container .axis-passport-card .axis-passport-details .gate-avatar-name {
         order: 1; }
+
+#book .carousel-indicators {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 15;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding-left: 0;
+  margin-right: 0;
+  margin-left: 10%;
+  list-style: none;
+  width: 10%;
+  height: 100vh; }
+  #book .carousel-indicators li {
+    height: 7px;
+    background-color: black; }
+  #book .carousel-indicators .active {
+    background-color: #ea452f !important; }
+
+#book .book-icon {
+  background-image: url("../assets/book-icon-temp.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -ms-background-size: cover;
+  background-size: cover;
+  width: 72px;
+  height: 72px; }
+
+#book .carousel-item {
+  height: 100vh;
+  min-height: 350px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
+
+#book .carousel-slide2 {
+  height: 46vh; }
 
 /* ----------- iPad 3, 4 and Pro 9.7" ----------- */
 /* Portrait and Landscape */

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+  <!-- Gotham Typeface -->
+  <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/7722678/6294412/css/fonts.css" />
+
+  <link rel="stylesheet" href="css/styles.css">
+
+  <title>N I M A V E R S E</title>
+</head>
+<body id="book">
+
+  <div id="bookCarousel" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#bookCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#bookCarousel" data-slide-to="1"></li>
+      <li data-target="#bookCarousel" data-slide-to="2"></li>
+      <li data-target="#bookCarousel" data-slide-to="3"></li>
+      >
+
+    </ol>
+    <div class="carousel-inner" role="listbox">
+      <!-- Slide 1 - Set the background image for this slide in the line below -->
+      <div class="carousel-item active" style="background-image: url('/assets/book-eclipse-temp.jpeg')">
+        <div class="carousel-caption d-none d-md-block">
+          <div class="row">
+            <div class="col-1 px-0">
+              <div class="book-icon"></div>
+            </div>
+
+            <div class="col-6 text-left px-0">
+              <h1 class="display-1">NIMA</h1>
+              <div class="d-flex justify-content-start">
+                <h2 class="display-4">ECLIPSE EDITION</h2>
+              </div>
+              <p class="lead">Only 2600 copies produced signed and numbered</p>
+              <button type="button" class="btn btn-outline-primary">SHOP NOW</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Slide 2 - Set the background image for this slide in the line below -->
+      <div class="carousel-item" style="background-image: url('/assets/book-standard-temp.jpeg')">
+        <div class="carousel-caption carousel-slide2 d-none d-md-block">
+          <div class="col-4 offset-8 text-left px-0">
+            <h2 class="display-2">176 PAGES</h2>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3 - Set the background image for this slide in the line below -->
+      <div class="carousel-item" style="background-image: url('/assets/book-eclipse-temp.jpeg')">
+        <div class="carousel-caption carousel-slide2 d-none d-md-block">
+          <div class="col-4 offset-8 text-left px-0">
+            <h2 class="display-2">176 PAGES</h2>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 4 - Set the background image for this slide in the line below -->
+      <div class="carousel-item" style="background-image: url('/assets/book-standard-temp.jpeg')">
+        <div class="carousel-caption carousel-slide2 d-none d-md-block">
+          <div class="col-4 offset-8 text-left px-0">
+            <h2 class="display-2">176 PAGES</h2>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+    <a class="carousel-control-prev" href="#bookCarousel" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+    <a class="carousel-control-next" href="#bookCarousel" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+  </div>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+  <!-- Carousel stuff -->
+  <script>
+    $('#bookCarousel').carousel({
+      interval: false
+    });
+  </script>
+  <!-- <script>
+    $('#bookCarousel').carousel({
+      interval: false
+    });
+    $('#carousel-thumbs').carousel({
+      interval: false
+    });
+
+    // handles the carousel thumbnails
+    // https://stackoverflow.com/questions/25752187/bootstrap-carousel-with-thumbnails-multiple-carousel
+    $('[id^=carousel-selector-]').click(function() {
+      var id_selector = $(this).attr('id');
+      var id = parseInt( id_selector.substr(id_selector.lastIndexOf('-') + 1) );
+      $('#bookCarousel').carousel(id);
+    });
+    // Only display 3 items in nav on mobile.
+    // if ($(window).width() < 575) {
+    //   $('#carousel-thumbs .row div:nth-child(4)').each(function() {
+    //     var rowBoundary = $(this);
+    //     $('<div class="row mx-0">').insertAfter(rowBoundary.parent()).append(rowBoundary.nextAll().addBack());
+    //   });
+    //   $('#carousel-thumbs .carousel-item .row:nth-child(even)').each(function() {
+    //     var boundary = $(this);
+    //     $('<div class="carousel-item">').insertAfter(boundary.parent()).append(boundary.nextAll().addBack());
+    //   });
+    // }
+    // Hide slide arrows if too few items.
+    if ($('#carousel-thumbs .carousel-item').length < 2) {
+      $('#carousel-thumbs [class^=carousel-control-]').remove();
+      $('.machine-carousel-container #carousel-thumbs').css('padding','0 5px');
+    }
+    // when the carousel slides, auto update
+    $('#bookCarousel').on('slide.bs.carousel', function(e) {
+      var id = parseInt( $(e.relatedTarget).attr('data-slide-number') );
+      $('[id^=carousel-selector-]').removeClass('selected');
+      $('[id=carousel-selector-'+id+']').addClass('selected');
+    });
+    // when user swipes, go next or previous
+    $('#bookCarousel').swipe({
+      fallbackToMouseEvents: true,
+      swipeLeft: function(e) {
+        $('#bookCarousel').carousel('next');
+      },
+      swipeRight: function(e) {
+        $('#bookCarousel').carousel('prev');
+      },
+      allowPageScroll: 'vertical',
+      preventDefaultEvents: false,
+      threshold: 75
+    });
+    /*
+    $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+      event.preventDefault();
+      $(this).ekkoLightbox();
+    });
+    */
+
+    $('#bookCarousel .carousel-item img').on('click', function(e) {
+      var src = $(e.target).attr('data-remote');
+      if (src) $(this).ekkoLightbox();
+    });
+  </script> -->
+
+</body>
+</html>

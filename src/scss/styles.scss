@@ -203,6 +203,18 @@ a:hover {
   left: 42px;
 }
 
+// Button outline override
+.btn-outline-primary {
+  color: #ea452f;
+  border-color: #ea452f;
+}
+.btn {
+  border: 2px solid;
+  padding: 0.75rem 3rem;
+  border-radius: 3rem;
+  font-weight: bolder;
+}
+
 svg|a:link, svg|a:visited {
   cursor: pointer;
 }
@@ -920,9 +932,54 @@ input.page-input {
   }
 }
 
-// Tablet home page
+// Book page carousel
+#book {
+  .carousel-indicators {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 15;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-left: 0;
+    margin-right: 0;
+    margin-left: 10%;
+    list-style: none;
+    width: 10%;
+    height: 100vh;
+    li {
+      height: 7px;
+      background-color: black;
+    }
+    .active {
+      background-color: #ea452f !important;
+    }
+  }
 
 
+  .book-icon {
+    @include img-bg('../assets/book-icon-temp.png', center center);
+    @include bg-size(cover);
+    width: 72px;
+    height: 72px;
+  }
+
+  .carousel-item {
+    height: 100vh;
+    min-height: 350px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+  .carousel-slide2 {
+    height: 46vh;
+  }
+}
 
 /* ----------- iPad 3, 4 and Pro 9.7" ----------- */
 
