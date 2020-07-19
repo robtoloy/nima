@@ -502,61 +502,61 @@ input.page-input {
 
 #characters-carousel {
   z-index: 4;
-}
 
-.carousel {
-  position: relative;
-  width: 100%;
-}
-.carousel-container {
-  width: 100%;
-  height: 100vh;
-}
-.carousel-item {
-  .character-slide-cutout {
+  .carousel {
     position: relative;
-    left: 55%;
+    width: 100%;
   }
-  img {
-    object-fit: cover;
-    max-height: 375px;
+  .carousel-container {
+    width: 100%;
+    height: 100vh;
   }
-  .carousel-caption {
-    right: 10%;
-    bottom: 30%;
-    left: 13%;
-    width: 80%;
+  .carousel-item {
+    .character-slide-cutout {
+      position: relative;
+      left: 55%;
+    }
+    img {
+      object-fit: cover;
+      max-height: 375px;
+    }
+    .carousel-caption {
+      right: 10%;
+      bottom: 30%;
+      left: 13%;
+      width: 80%;
+    }
+    .character-info {
+      text-align: right;
+    }
   }
-  .character-info {
-    text-align: right;
+  #carousel-thumbs {
+    background: transparent;
+    bottom: 15px;
+    left: 0;
+    padding: 0 55px;
+    right: 0;
+    width: 60%;
+    height: 120px;
+    .img-fluid {
+      max-width: 70px;
+      height: 100px;
+    }
   }
-}
-#carousel-thumbs {
-  background: transparent;
-  bottom: 15px;
-  left: 0;
-  padding: 0 55px;
-  right: 0;
-  width: 60%;
-  height: 120px;
-  .img-fluid {
-    max-width: 70px;
-    height: 100px;
+  #carousel-thumbs img {
+    border: 5px solid transparent;
+    cursor: pointer;
   }
-}
-#carousel-thumbs img {
-  border: 5px solid transparent;
-  cursor: pointer;
-}
-#carousel-thumbs img:hover {
-  border-color: rgba(255,255,255,.3);
-}
-#carousel-thumbs .selected img {
-  border-color: #fff;
-}
-.carousel-control-prev,
-.carousel-control-next {
-  width: 50px;
+  #carousel-thumbs img:hover {
+    border-color: rgba(255,255,255,.3);
+  }
+  #carousel-thumbs .selected img {
+    border-color: #fff;
+  }
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 50px;
+  }
 }
 
 // World gate styles
@@ -981,6 +981,9 @@ input.page-input {
   }
 }
 
+
+// TABLET MEDIA QUERIES
+
 /* ----------- iPad 3, 4 and Pro 9.7" ----------- */
 
 /* Portrait and Landscape */
@@ -1248,11 +1251,14 @@ input.page-input {
 }
 
 @media all and (max-width: 812px) {
-  // Character info
-  .carousel-item .carousel-caption {
-    // hide paragraph text on mobile
-    p {
-      display: none;
+
+  #characters-carousel {
+    // Character info
+    .carousel-item .carousel-caption {
+      // hide paragraph text on mobile
+      p {
+        display: none;
+      }
     }
   }
 
@@ -1300,12 +1306,12 @@ input.page-input {
   and (-webkit-min-device-pixel-ratio: 2)
   and (orientation: portrait) {
 
-    .mobile-landscape {
-      display: none;
-    }
-    .mobile-portrait {
-      display: block;
-    }
+  .mobile-landscape {
+    display: none;
+  }
+  .mobile-portrait {
+    display: block;
+  }
 
   // book.html
   #read-thru {
@@ -1466,6 +1472,9 @@ input.page-input {
       }
     }
   }
+
+  // Book page
+
 }
 
 /* Landscape */
@@ -1615,6 +1624,56 @@ input.page-input {
       }
     }
   }
+
+  // Book page carousel
+  #book-mobile {
+    .carousel-indicators {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 15;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      padding-left: 0;
+      margin-right: 0;
+      margin-left: 10%;
+      list-style: none;
+      width: 10%;
+      height: 100vh;
+      li {
+        height: 7px;
+        background-color: black;
+      }
+      .active {
+        background-color: #ea452f !important;
+      }
+    }
+
+
+    .book-icon {
+      @include img-bg('../assets/book-icon-temp.png', center center);
+      @include bg-size(cover);
+      width: 72px;
+      height: 72px;
+    }
+
+    .carousel-item {
+      height: 100vh;
+      min-height: 350px;
+      background: no-repeat center center scroll;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+    }
+
+    .carousel-slide2 {
+      height: 46vh;
+    }
+  }
+
 }
 
 /* ----------- iPhone 5, 5S, 5C and 5SE ----------- */
@@ -1685,61 +1744,65 @@ input.page-input {
       }
     }
 
-    #myCarousel {
-      // Character info
-      .carousel-item .carousel-caption {
-        right: 0;
-        bottom: 0;
-        width: 100%;
-        margin: 0 auto;
-        position: relative;
-        left: 0;
-        padding: 0 16px;
-        display: flex;
-        justify-content: flex-end;
-        align-items: flex-end;
-        height: 74vh;
+    // Characters mobile
+    #characters-carousel {
+      #myCarousel {
+        // Character info
+        .carousel-item .carousel-caption {
+          right: 0;
+          bottom: 0;
+          width: 100%;
+          margin: 0 auto;
+          position: relative;
+          left: 0;
+          padding: 0 16px;
+          display: flex;
+          justify-content: flex-end;
+          align-items: flex-end;
+          height: 74vh;
 
-        // hide paragraph text on mobile
-        p { display: none; }
+          // hide paragraph text on mobile
+          p { display: none; }
+        }
+        // Character cutout image {
+        .carousel-item .character-slide-cutout {
+          position: absolute;
+          max-height: 475px;
+          margin: 0 auto;
+          left: 0;
+          right: 0;
+        }
       }
-      // Character cutout image {
-      .carousel-item .character-slide-cutout {
-        position: absolute;
-        max-height: 475px;
-        margin: 0 auto;
-        left: 0;
-        right: 0;
-      }
-    }
-    #carousel-thumbs {
-        background: transparent;
-        bottom: 10px;
-        left: 0;
-        padding: 0 12px;
-        right: 0;
-        width: 100%;
-        height: 120px;
+      #carousel-thumbs {
+          background: transparent;
+          bottom: 10px;
+          left: 0;
+          padding: 0 12px;
+          right: 0;
+          width: 100%;
+          height: 120px;
 
-        // Carousel arrows
-        .carousel-control-prev,
-        .carousel-control-next {
-            width: 25px;
-        }
-        .carousel-control-prev {
-          left: -15px;
-        }
-        .carousel-control-next {
-          right: -15px;
-        }
-        .carousel-inner {
-          text-align: center;
-        }
-        // Carousel thumbnail image size
-        .img-fluid {
-          max-width: 45px;
-          height: 100px;
-        }
+          // Carousel arrows
+          .carousel-control-prev,
+          .carousel-control-next {
+              width: 25px;
+          }
+          .carousel-control-prev {
+            left: -15px;
+          }
+          .carousel-control-next {
+            right: -15px;
+          }
+          .carousel-inner {
+            text-align: center;
+          }
+          // Carousel thumbnail image size
+          .img-fluid {
+            max-width: 45px;
+            height: 100px;
+          }
+      }
+
     }
 
     // Account
@@ -1761,6 +1824,65 @@ input.page-input {
         }
       }
     }
+
+    // Book page carousel
+    #book-mobile {
+      .carousel-indicators {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 15;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        padding-left: 0;
+        margin-right: 0;
+        margin-left: 10%;
+        list-style: none;
+        width: 10%;
+        height: 100vh;
+        li {
+          height: 7px;
+          background-color: black;
+        }
+        .active {
+          background-color: #ea452f !important;
+        }
+      }
+      .carousel-inner {
+        overflow: scroll;
+      }
+      .carousel-item {
+        height: 100vh;
+        background: no-repeat center center scroll;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        margin: 0 auto;
+
+        img { width: 100%; }
+      }
+      .carousel-caption {
+        width: 100%;
+        height: 100%;
+        margin: 0 auto;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        padding: 0;
+
+        .row {
+          color: black;
+          margin: 0;
+        }
+      }
+      .carousel-control-prev,
+      .carousel-control-next {
+        z-index: 10;
+      }
+    }
 }
 
 /* Landscape */
@@ -1769,45 +1891,47 @@ input.page-input {
   and (max-device-width: 568px)
   and (-webkit-min-device-pixel-ratio: 2)
   and (orientation: landscape) {
-    #carousel-thumbs {
-      position: absolute;
-      padding: 0;
-      width: 50%;
-      height: 120px;
-      top: 81% !important;
-      left: 2%;
 
-      .img-fluid {
-        max-width: 45px !important;
-        height: 70px !important;
+    #characters-carousel {
+      #carousel-thumbs {
+        position: absolute;
+        padding: 0;
+        width: 50%;
+        height: 120px;
+        top: 81% !important;
+        left: 2%;
+
+        .img-fluid {
+          max-width: 45px !important;
+          height: 70px !important;
+        }
       }
-    }
+      // Carousel arrows
+      .carousel-control-prev,
+      .carousel-control-next {
+        width: 25px;
+      }
+      .carousel-control-prev {
+        left: -25px !important;
+      }
+      .carousel-control-next {
+        right: -25px !important;
+      }
 
-    // Carousel arrows
-    .carousel-control-prev,
-    .carousel-control-next {
-      width: 25px;
-    }
-    .carousel-control-prev {
-      left: -25px !important;
-    }
-    .carousel-control-next {
-      right: -25px !important;
-    }
-
-    .carousel-container {
-      height: 245px;
-    }
-    .carousel-item img {
-      object-fit: cover;
-      max-height: 320px;
-    }
-    .carousel-item .carousel-caption {
-      right: 0;
-      bottom: 25%;
-      left: 6%;
-      width: 50%;
-      padding: 0;
+      .carousel-container {
+        height: 245px;
+      }
+      .carousel-item img {
+        object-fit: cover;
+        max-height: 320px;
+      }
+      .carousel-item .carousel-caption {
+        right: 0;
+        bottom: 25%;
+        left: 6%;
+        width: 50%;
+        padding: 0;
+      }
     }
 
 
@@ -1978,6 +2102,55 @@ input.page-input {
         }
       }
     }
+
+    // Book page carousel
+    #book-mobile {
+      .carousel-indicators {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 15;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        padding-left: 0;
+        margin-right: 0;
+        margin-left: 10%;
+        list-style: none;
+        width: 10%;
+        height: 100vh;
+        li {
+          height: 7px;
+          background-color: black;
+        }
+        .active {
+          background-color: #ea452f !important;
+        }
+      }
+
+
+      .book-icon {
+        @include img-bg('../assets/book-icon-temp.png', center center);
+        @include bg-size(cover);
+        width: 72px;
+        height: 72px;
+      }
+
+      .carousel-item {
+        height: 100vh;
+        min-height: 350px;
+        background: no-repeat center center scroll;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+      }
+
+      .carousel-slide2 {
+        height: 46vh;
+      }
+    }
 }
 
 /* ----------- iPhone 6, 6S, 7 and 8 ----------- */
@@ -2117,24 +2290,27 @@ input.page-input {
   and (-webkit-min-device-pixel-ratio: 2)
   and (orientation: landscape) {
 
-  #carousel-thumbs {
-    position: absolute;
-    padding: 0;
-    width: 50%;
-    height: 85px;
-    top: 65%;
-    left: 2%;
-  }
-  #carousel-thumbs .img-fluid {
-    max-width: 55px;
-    height: 85px;
-  }
-  .carousel-item .carousel-caption {
-    right: 0;
-    bottom: 32%;
-    left: 6%;
-    width: 46%;
-    padding: 0 0 16px;
+  #characters-carousel {
+    #carousel-thumbs {
+      position: absolute;
+      padding: 0;
+      width: 50%;
+      height: 85px;
+      top: 65%;
+      left: 2%;
+    }
+    #carousel-thumbs .img-fluid {
+      max-width: 55px;
+      height: 85px;
+    }
+    .carousel-item .carousel-caption {
+      right: 0;
+      bottom: 32%;
+      left: 6%;
+      width: 46%;
+      padding: 0 0 16px;
+    }
+
   }
 
   // Worlds template styles
@@ -2364,37 +2540,39 @@ input.page-input {
   }
 
   // Carousel
-  .carousel-inner {
-    height: 580px;
-    .carousel-item .carousel-caption {
-      bottom: 160px !important;
+  #characters-carousel {
+    .carousel-inner {
+      height: 580px;
+      .carousel-item .carousel-caption {
+        bottom: 160px !important;
+      }
     }
-  }
 
-  #carousel-thumbs {
-    position: fixed;
-    padding: 0 30px !important;
-    bottom: 10%;
-    width: 100%;
-    height: 100px;
+    #carousel-thumbs {
+      position: fixed;
+      padding: 0 30px !important;
+      bottom: 10%;
+      width: 100%;
+      height: 100px;
 
-    .img-fluid {
-        max-width: 55px !important;
-        height: 100px !important;
+      .img-fluid {
+          max-width: 55px !important;
+          height: 100px !important;
+      }
     }
-  }
 
-  // Carousel arrows
-  .carousel-control-prev,
-  .carousel-control-next {
-    width: 25px !important;
-    top: 20px;
-  }
-  .carousel-control-prev {
-    left: 0 !important;
-  }
-  .carousel-control-next {
-    right: 0 !important;
+    // Carousel arrows
+    .carousel-control-prev,
+    .carousel-control-next {
+      width: 25px !important;
+      top: 20px;
+    }
+    .carousel-control-prev {
+      left: 0 !important;
+    }
+    .carousel-control-next {
+      right: 0 !important;
+    }
   }
 
   // Account
@@ -2425,40 +2603,43 @@ input.page-input {
   and (-webkit-min-device-pixel-ratio: 3)
   and (orientation: landscape) {
 
-    #carousel-thumbs {
-      padding: 0 12px;
-      width: 50%;
-      bottom: 50px;
-      left: 25px;
+    // Character carousel
+    #character-carousel {
+      #carousel-thumbs {
+        padding: 0 12px;
+        width: 50%;
+        bottom: 50px;
+        left: 25px;
 
-      .img-fluid {
-        max-width: 55px !important;
-        height: 95px !important;
-      }
+        .img-fluid {
+          max-width: 55px !important;
+          height: 95px !important;
+        }
 
-      // Carousel arrows
-      .carousel-control-prev,
-      .carousel-control-next {
-        width: 25px !important;
-        top: 0;
+        // Carousel arrows
+        .carousel-control-prev,
+        .carousel-control-next {
+          width: 25px !important;
+          top: 0;
+        }
+        .carousel-control-prev {
+          left: -15px !important;
+        }
+        .carousel-control-next {
+          right: -15px !important;
+        }
       }
-      .carousel-control-prev {
-        left: -15px !important;
-      }
-      .carousel-control-next {
-        right: -15px !important;
-      }
-    }
-    .carousel-item {
-      .character-slide-cutout {
-        max-height: 400px;
-      }
-      .carousel-caption {
-        right: 0;
-        bottom: 36%;
-        left: 2%;
-        width: 100%;
-        padding: 0 0 16px;
+      .carousel-item {
+        .character-slide-cutout {
+          max-height: 400px;
+        }
+        .carousel-caption {
+          right: 0;
+          bottom: 36%;
+          left: 2%;
+          width: 100%;
+          padding: 0 0 16px;
+        }
       }
     }
 

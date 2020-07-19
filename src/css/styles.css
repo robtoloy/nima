@@ -7590,57 +7590,46 @@ input.page-input {
 
 #characters-carousel {
   z-index: 4; }
-
-.carousel {
-  position: relative;
-  width: 100%; }
-
-.carousel-container {
-  width: 100%;
-  height: 100vh; }
-
-.carousel-item .character-slide-cutout {
-  position: relative;
-  left: 55%; }
-
-.carousel-item img {
-  object-fit: cover;
-  max-height: 375px; }
-
-.carousel-item .carousel-caption {
-  right: 10%;
-  bottom: 30%;
-  left: 13%;
-  width: 80%; }
-
-.carousel-item .character-info {
-  text-align: right; }
-
-#carousel-thumbs {
-  background: transparent;
-  bottom: 15px;
-  left: 0;
-  padding: 0 55px;
-  right: 0;
-  width: 60%;
-  height: 120px; }
-  #carousel-thumbs .img-fluid {
-    max-width: 70px;
-    height: 100px; }
-
-#carousel-thumbs img {
-  border: 5px solid transparent;
-  cursor: pointer; }
-
-#carousel-thumbs img:hover {
-  border-color: rgba(255, 255, 255, 0.3); }
-
-#carousel-thumbs .selected img {
-  border-color: #fff; }
-
-.carousel-control-prev,
-.carousel-control-next {
-  width: 50px; }
+  #characters-carousel .carousel {
+    position: relative;
+    width: 100%; }
+  #characters-carousel .carousel-container {
+    width: 100%;
+    height: 100vh; }
+  #characters-carousel .carousel-item .character-slide-cutout {
+    position: relative;
+    left: 55%; }
+  #characters-carousel .carousel-item img {
+    object-fit: cover;
+    max-height: 375px; }
+  #characters-carousel .carousel-item .carousel-caption {
+    right: 10%;
+    bottom: 30%;
+    left: 13%;
+    width: 80%; }
+  #characters-carousel .carousel-item .character-info {
+    text-align: right; }
+  #characters-carousel #carousel-thumbs {
+    background: transparent;
+    bottom: 15px;
+    left: 0;
+    padding: 0 55px;
+    right: 0;
+    width: 60%;
+    height: 120px; }
+    #characters-carousel #carousel-thumbs .img-fluid {
+      max-width: 70px;
+      height: 100px; }
+  #characters-carousel #carousel-thumbs img {
+    border: 5px solid transparent;
+    cursor: pointer; }
+  #characters-carousel #carousel-thumbs img:hover {
+    border-color: rgba(255, 255, 255, 0.3); }
+  #characters-carousel #carousel-thumbs .selected img {
+    border-color: #fff; }
+  #characters-carousel .carousel-control-prev,
+  #characters-carousel .carousel-control-next {
+    width: 50px; }
 
 #world {
   background-image: url("../assets/nimbus/nimbus-temp.png");
@@ -8218,7 +8207,7 @@ input.page-input {
     background: transparent; } }
 
 @media all and (max-width: 812px) {
-  .carousel-item .carousel-caption p {
+  #characters-carousel .carousel-item .carousel-caption p {
     display: none; }
   #axis-small {
     display: none; } }
@@ -8453,7 +8442,47 @@ input.page-input {
         width: 64px !important;
         height: 64px !important; }
       #account .axis-passport-card .gate-avatars .gate-avatar-name {
-        order: 2; } }
+        order: 2; }
+  #book-mobile .carousel-indicators {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 15;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-left: 0;
+    margin-right: 0;
+    margin-left: 10%;
+    list-style: none;
+    width: 10%;
+    height: 100vh; }
+    #book-mobile .carousel-indicators li {
+      height: 7px;
+      background-color: black; }
+    #book-mobile .carousel-indicators .active {
+      background-color: #ea452f !important; }
+  #book-mobile .book-icon {
+    background-image: url("../assets/book-icon-temp.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -ms-background-size: cover;
+    background-size: cover;
+    width: 72px;
+    height: 72px; }
+  #book-mobile .carousel-item {
+    height: 100vh;
+    min-height: 350px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; }
+  #book-mobile .carousel-slide2 {
+    height: 46vh; } }
 
 /* ----------- iPhone 5, 5S, 5C and 5SE ----------- */
 /* Portrait and Landscape */
@@ -8491,7 +8520,7 @@ input.page-input {
       #world .row .world-video .world-video-container {
         height: 25vh;
         width: 80vw; }
-  #myCarousel .carousel-item .carousel-caption {
+  #characters-carousel #myCarousel .carousel-item .carousel-caption {
     right: 0;
     bottom: 0;
     width: 100%;
@@ -8503,15 +8532,15 @@ input.page-input {
     justify-content: flex-end;
     align-items: flex-end;
     height: 74vh; }
-    #myCarousel .carousel-item .carousel-caption p {
+    #characters-carousel #myCarousel .carousel-item .carousel-caption p {
       display: none; }
-  #myCarousel .carousel-item .character-slide-cutout {
+  #characters-carousel #myCarousel .carousel-item .character-slide-cutout {
     position: absolute;
     max-height: 475px;
     margin: 0 auto;
     left: 0;
     right: 0; }
-  #carousel-thumbs {
+  #characters-carousel #carousel-thumbs {
     background: transparent;
     bottom: 10px;
     left: 0;
@@ -8519,16 +8548,16 @@ input.page-input {
     right: 0;
     width: 100%;
     height: 120px; }
-    #carousel-thumbs .carousel-control-prev,
-    #carousel-thumbs .carousel-control-next {
+    #characters-carousel #carousel-thumbs .carousel-control-prev,
+    #characters-carousel #carousel-thumbs .carousel-control-next {
       width: 25px; }
-    #carousel-thumbs .carousel-control-prev {
+    #characters-carousel #carousel-thumbs .carousel-control-prev {
       left: -15px; }
-    #carousel-thumbs .carousel-control-next {
+    #characters-carousel #carousel-thumbs .carousel-control-next {
       right: -15px; }
-    #carousel-thumbs .carousel-inner {
+    #characters-carousel #carousel-thumbs .carousel-inner {
       text-align: center; }
-    #carousel-thumbs .img-fluid {
+    #characters-carousel #carousel-thumbs .img-fluid {
       max-width: 45px;
       height: 100px; }
   #account .axis-passport-card {
@@ -8538,33 +8567,79 @@ input.page-input {
       width: 150px;
       height: 150px;
       border-radius: 50%;
-      margin: 0 0 12px; } }
+      margin: 0 0 12px; }
+  #book-mobile .carousel-indicators {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 15;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-left: 0;
+    margin-right: 0;
+    margin-left: 10%;
+    list-style: none;
+    width: 10%;
+    height: 100vh; }
+    #book-mobile .carousel-indicators li {
+      height: 7px;
+      background-color: black; }
+    #book-mobile .carousel-indicators .active {
+      background-color: #ea452f !important; }
+  #book-mobile .carousel-inner {
+    overflow: scroll; }
+  #book-mobile .carousel-item {
+    height: 100vh;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    margin: 0 auto; }
+    #book-mobile .carousel-item img {
+      width: 100%; }
+  #book-mobile .carousel-caption {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    padding: 0; }
+    #book-mobile .carousel-caption .row {
+      color: black;
+      margin: 0; }
+  #book-mobile .carousel-control-prev,
+  #book-mobile .carousel-control-next {
+    z-index: 10; } }
 
 /* Landscape */
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
-  #carousel-thumbs {
+  #characters-carousel #carousel-thumbs {
     position: absolute;
     padding: 0;
     width: 50%;
     height: 120px;
     top: 81% !important;
     left: 2%; }
-    #carousel-thumbs .img-fluid {
+    #characters-carousel #carousel-thumbs .img-fluid {
       max-width: 45px !important;
       height: 70px !important; }
-  .carousel-control-prev,
-  .carousel-control-next {
+  #characters-carousel .carousel-control-prev,
+  #characters-carousel .carousel-control-next {
     width: 25px; }
-  .carousel-control-prev {
+  #characters-carousel .carousel-control-prev {
     left: -25px !important; }
-  .carousel-control-next {
+  #characters-carousel .carousel-control-next {
     right: -25px !important; }
-  .carousel-container {
+  #characters-carousel .carousel-container {
     height: 245px; }
-  .carousel-item img {
+  #characters-carousel .carousel-item img {
     object-fit: cover;
     max-height: 320px; }
-  .carousel-item .carousel-caption {
+  #characters-carousel .carousel-item .carousel-caption {
     right: 0;
     bottom: 25%;
     left: 6%;
@@ -8688,7 +8763,47 @@ input.page-input {
         width: 64px !important;
         height: 64px !important; }
       #account .axis-passport-card .gate-avatars .gate-avatar-name {
-        order: 2; } }
+        order: 2; }
+  #book-mobile .carousel-indicators {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 15;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-left: 0;
+    margin-right: 0;
+    margin-left: 10%;
+    list-style: none;
+    width: 10%;
+    height: 100vh; }
+    #book-mobile .carousel-indicators li {
+      height: 7px;
+      background-color: black; }
+    #book-mobile .carousel-indicators .active {
+      background-color: #ea452f !important; }
+  #book-mobile .book-icon {
+    background-image: url("../assets/book-icon-temp.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -ms-background-size: cover;
+    background-size: cover;
+    width: 72px;
+    height: 72px; }
+  #book-mobile .carousel-item {
+    height: 100vh;
+    min-height: 350px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; }
+  #book-mobile .carousel-slide2 {
+    height: 46vh; } }
 
 /* ----------- iPhone 6, 6S, 7 and 8 ----------- */
 /* Portrait and Landscape */
@@ -8770,17 +8885,17 @@ input.page-input {
 
 /* Landscape */
 @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
-  #carousel-thumbs {
+  #characters-carousel #carousel-thumbs {
     position: absolute;
     padding: 0;
     width: 50%;
     height: 85px;
     top: 65%;
     left: 2%; }
-  #carousel-thumbs .img-fluid {
+  #characters-carousel #carousel-thumbs .img-fluid {
     max-width: 55px;
     height: 85px; }
-  .carousel-item .carousel-caption {
+  #characters-carousel .carousel-item .carousel-caption {
     right: 0;
     bottom: 32%;
     left: 6%;
@@ -8935,26 +9050,26 @@ input.page-input {
       height: 105px; }
       #world .row .world-character-row .character-tile {
         width: 70px !important; }
-  .carousel-inner {
+  #characters-carousel .carousel-inner {
     height: 580px; }
-    .carousel-inner .carousel-item .carousel-caption {
+    #characters-carousel .carousel-inner .carousel-item .carousel-caption {
       bottom: 160px !important; }
-  #carousel-thumbs {
+  #characters-carousel #carousel-thumbs {
     position: fixed;
     padding: 0 30px !important;
     bottom: 10%;
     width: 100%;
     height: 100px; }
-    #carousel-thumbs .img-fluid {
+    #characters-carousel #carousel-thumbs .img-fluid {
       max-width: 55px !important;
       height: 100px !important; }
-  .carousel-control-prev,
-  .carousel-control-next {
+  #characters-carousel .carousel-control-prev,
+  #characters-carousel .carousel-control-next {
     width: 25px !important;
     top: 20px; }
-  .carousel-control-prev {
+  #characters-carousel .carousel-control-prev {
     left: 0 !important; }
-  .carousel-control-next {
+  #characters-carousel .carousel-control-next {
     right: 0 !important; }
   #account .axis-passport-card {
     width: 75vw;
@@ -8969,25 +9084,25 @@ input.page-input {
 
 /* Landscape */
 @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {
-  #carousel-thumbs {
+  #character-carousel #carousel-thumbs {
     padding: 0 12px;
     width: 50%;
     bottom: 50px;
     left: 25px; }
-    #carousel-thumbs .img-fluid {
+    #character-carousel #carousel-thumbs .img-fluid {
       max-width: 55px !important;
       height: 95px !important; }
-    #carousel-thumbs .carousel-control-prev,
-    #carousel-thumbs .carousel-control-next {
+    #character-carousel #carousel-thumbs .carousel-control-prev,
+    #character-carousel #carousel-thumbs .carousel-control-next {
       width: 25px !important;
       top: 0; }
-    #carousel-thumbs .carousel-control-prev {
+    #character-carousel #carousel-thumbs .carousel-control-prev {
       left: -15px !important; }
-    #carousel-thumbs .carousel-control-next {
+    #character-carousel #carousel-thumbs .carousel-control-next {
       right: -15px !important; }
-  .carousel-item .character-slide-cutout {
+  #character-carousel .carousel-item .character-slide-cutout {
     max-height: 400px; }
-  .carousel-item .carousel-caption {
+  #character-carousel .carousel-item .carousel-caption {
     right: 0;
     bottom: 36%;
     left: 2%;
