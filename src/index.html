@@ -55,11 +55,40 @@
 
     <!-- WORLD GATE COMPONENT -->
     <div class="container" style="z-index: 99">
-      <div class="d-flex justify-content-center align-items-center world-gates">
+      <!-- <div class="d-flex justify-content-center align-items-center world-gates">
         <div data-depth="0.03" class="w-100 text-center">
           <a href="/nimbus.html">
             <img src="/assets/world-temp.png" alt="Gate selection" class="world">
           </a>
+        </div>
+      </div> -->
+      <div id="axisGate" class="row">
+        <div class="col-12">
+          <lottie-player class="position-absolute" src="/assets/gate-lottie-v2.json" background="transparent"  speed="1"  style="width: 100%; height: 100vh; z-index: 51;" autoplay></lottie-player>
+        </div>
+      </div>
+
+      <div id="outerCircle" class="row">
+        <div class="col-12">
+          <lottie-player class="bm position-absolute" src="/assets/gate-lottie-outer-circle.json" background="transparent"  speed="0.8"  style="width: 100%; height: 100vh; z-index: 50;" loop autoplay></lottie-player>
+        </div>
+      </div>
+
+      <div id="innerFidelity" class="row">
+        <div class="col-12">
+          <lottie-player class="position-absolute" src="/assets/gate-lottie-inner-fidelity.json" background="transparent"  speed="0.15"  style="width: 100%; height: 100vh; z-index: 50;" loop autoplay></lottie-player>
+        </div>
+      </div>
+
+      <div id="orbit1" class="row">
+        <div class="col-12">
+          <lottie-player class="position-absolute" src="/assets/gate-lottie-orbit-1.json" background="transparent"  speed="0.3"  style="width: 100%; height: 100vh; z-index: 50;" loop autoplay></lottie-player>
+        </div>
+      </div>
+
+      <div id="orbit2" class="row">
+        <div class="col-12">
+          <lottie-player class="position-absolute" src="/assets/gate-lottie-orbit-2.json" background="transparent"  speed="0.2"  style="width: 100%; height: 100vh; z-index: 50;" loop autoplay></lottie-player>
         </div>
       </div>
     </div>
@@ -69,14 +98,12 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+    <!-- LottieFiles web player -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
     <!-- Parallax JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
-    <script>
-      var scene = document.getElementById('scene');
-      var parallaxInstance = new Parallax(scene, {
-        frictionX: 0.35,
-        frictionY: 0.35
-      });
-    </script>
+
   </body>
 </html>
