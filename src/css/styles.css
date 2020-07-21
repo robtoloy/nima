@@ -7248,18 +7248,23 @@ html {
 .gate-element {
   transform-origin: 50% 50%;
   transform-box: fill-box;
-  transition: all .3s ease;
-  -webkit-transition: all .3s ease;
-  -moz-transition: all .3s ease;
-  -ms-transition: all .3s ease;
-  -o-transition: all .3s ease; }
+  transition: all .25s ease;
+  -webkit-transition: all .25s ease-in-out;
+  -moz-transition: all .25s ease-in-out;
+  -ms-transition: all .25s ease-in-out;
+  -o-transition: all .25s ease-in-out; }
 
 .gate-element:hover {
-  transform: scale(1.2, 1.2);
-  -webkit-transform: scale(1.2, 1.2);
-  -moz-transform: scale(1.2, 1.2);
-  -ms-transform: scale(1.2, 1.2);
-  -o-transform: scale(1.2, 1.2); }
+  transform: scale(1.15, 1.15);
+  -webkit-transform: scale(1.15, 1.15);
+  -moz-transform: scale(1.15, 1.15);
+  -ms-transform: scale(1.15, 1.15);
+  -o-transform: scale(1.15, 1.15);
+  transition: all .25s ease-in-out;
+  -webkit-transition: all .25s ease-in-out;
+  -moz-transition: all .25s ease-in-out;
+  -ms-transition: all .25s ease-in-out;
+  -o-transition: all .25s ease-in-out; }
 
 #home-mobile {
   background-image: url("../assets/home/home-temp.png");
