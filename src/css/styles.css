@@ -7209,6 +7209,42 @@ html {
   background-size: cover;
   height: 100vh; }
 
+#homeVideo {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden; }
+  #homeVideo .homeVideo {
+    object-fit: cover;
+    width: 105vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0; }
+
+.st1 {
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+  fill: transparent; }
+
+.st2 {
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+  fill: transparent;
+  transition: all .2s ease-in-out;
+  -webkit-transition: all .2s ease-in-out;
+  -moz-transition: all .2s ease-in-out;
+  -ms-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out; }
+
+#opusClick:hover .st2 {
+  fill: #FFFFFF;
+  transition: all .2s ease-in-out;
+  -webkit-transition: all .2s ease-in-out;
+  -moz-transition: all .2s ease-in-out;
+  -ms-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out; }
+
 .gate-element {
   transform-origin: 50% 50%;
   transform-box: fill-box;
