@@ -1064,6 +1064,93 @@ input.page-input {
   }
 }
 
+// Start Quiz styles
+#quiz {
+  height: 100vh;
+
+  $quiz-bg: '../assets/quiz-bg.jpg';
+  @include img-bg($quiz-bg, center center);
+  @include bg-size(cover);
+
+  .quiz-slide {
+    height: 100vh;
+
+    #answerSelection .btn {
+      border: none;
+      border-radius: 12px;
+      box-shadow: 1px 1px 6px #d8d8d8;
+      text-align: left;
+      padding: 36px 24px;
+      margin: 0;
+    }
+
+    #quizBtnNext {
+      background-color: #2099f6;
+      border-color: #2099f6;
+      color: #FFF;
+      // Animate on hover
+      transform-origin: 50% 50%;
+      transform-box: fill-box;
+      transition: all .25s ease;
+      -webkit-transition: all .25s ease-in-out;
+      -moz-transition: all .25s ease-in-out;
+      -ms-transition: all .25s ease-in-out;
+      -o-transition: all .25s ease-in-out;
+
+      &:hover {
+        background-color: #FFF;
+        border-color: #FFF;
+        color: #2099f6;
+        // Animate on hover
+        transform: scale(1.1, 1.1);
+        -webkit-transform: scale(1.1, 1.1);
+        -moz-transform: scale(1.1, 1.1);
+        -ms-transform: scale(1.1, 1.1);
+        -o-transform: scale(1.1, 1.1);
+        transition: all .25s ease-in-out;
+        -webkit-transition: all .25s ease-in-out;
+        -moz-transition: all .25s ease-in-out;
+        -ms-transition: all .25s ease-in-out;
+        -o-transition: all .25s ease-in-out;
+      }
+    }
+  }
+
+  .overlay {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    margin: 0 auto;
+    background: white;
+    opacity: 0.6;
+    display: block;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+  }
+
+  .container {
+    z-index: 3;
+    position: relative;
+
+    .row {
+      text-align: center;
+    }
+  }
+}
+@media all and (max-width: 767px) {
+  #answerSelection {
+    display: flex;
+    flex-direction: column;
+
+    .btn {
+      padding: 16px !important;
+      margin: 6px 0;
+    }
+  }
+}
+// End Quiz styles
+
 
 // Animation classes
 @-webkit-keyframes rotating {
@@ -1390,7 +1477,18 @@ animation: fadeIn ease 4s;
   .carousel-container #carousel-thumbs img {
     border-width: 3px;
   }
+
+  #answerSelection {
+    display: flex;
+    flex-direction: column;
+
+    .btn {
+      padding: 16px !important;
+      margin: 6px 0;
+    }
+  }
 }
+
 @media all and (min-width: 576px) {
   .carousel-container #carousel-thumbs {
     position: absolute;
