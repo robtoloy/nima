@@ -1535,6 +1535,47 @@ animation: fadeIn ease 4s;
 @media all and (max-width: 812px) {
 
   #characters-carousel {
+    // Character overlay - Mobile portrait only
+    .menu {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      cursor: pointer;
+      opacity: 0.8;
+      color: #000;
+      text-decoration: none;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #666;
+      color: #fff;
+      visibility: hidden;
+      opacity: 0;
+      overflow: auto;
+      transition: all .35s;
+      transform: scale(3);
+
+      a {
+        color: #fff;
+        text-decoration: none;
+      }
+
+      &:target {
+        visibility: visible;
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
     // Character info
     .carousel-item .carousel-caption {
       // hide paragraph text on mobile
@@ -1548,6 +1589,7 @@ animation: fadeIn ease 4s;
   #axis-small {
     display: none;
   }
+
 }
 
 // =========== START MEDIA QUERIES
@@ -2041,10 +2083,16 @@ animation: fadeIn ease 4s;
           display: flex;
           justify-content: flex-end;
           align-items: flex-end;
-          height: 74vh;
+          height: 100vh;
+          z-index: -1;
 
           // hide paragraph text on mobile
           p { display: none; }
+
+          .right-column {
+            position: fixed;
+            bottom: 165px;
+          }
         }
         // Character cutout image {
         .carousel-item .character-slide-cutout {
@@ -2053,16 +2101,20 @@ animation: fadeIn ease 4s;
           margin: 0 auto;
           left: 0;
           right: 0;
+          z-index: -2;
         }
       }
       #carousel-thumbs {
           background: transparent;
-          bottom: 10px;
+          position: absolute;
+          bottom: 60px;
           left: 0;
           padding: 0 12px;
           right: 0;
-          width: 100%;
-          height: 120px;
+          width: 90%;
+          height: 100px;
+          margin: 0 auto;
+          z-index: 2;
 
           // Carousel arrows
           .carousel-control-prev,
@@ -2080,8 +2132,8 @@ animation: fadeIn ease 4s;
           }
           // Carousel thumbnail image size
           .img-fluid {
-            max-width: 45px;
-            height: 100px;
+            max-width: 50px;
+            height: 85px;
           }
       }
 
@@ -2178,10 +2230,10 @@ animation: fadeIn ease 4s;
       #carousel-thumbs {
         position: absolute;
         padding: 0;
-        width: 50%;
-        height: 120px;
-        top: 81% !important;
-        left: 2%;
+        width: 45% !important;
+        height: 85px;
+        top: 80% !important;
+        left: 5% !important;
 
         .img-fluid {
           max-width: 45px !important;
@@ -2209,10 +2261,12 @@ animation: fadeIn ease 4s;
       }
       .carousel-item .carousel-caption {
         right: 0;
-        bottom: 25%;
-        left: 6%;
-        width: 50%;
+        bottom: 37% !important;
+        left: 8% !important;
+        width: 42% !important;
         padding: 0;
+
+        p {font-size: 0.8em !important;}
       }
     }
 
@@ -2496,60 +2550,75 @@ animation: fadeIn ease 4s;
       }
     }
 
-    #character-carousel {
-      .carousel-inner {
-        height: 74vh;
-      }
+    // Characters mobile
+    #characters-carousel {
+      #myCarousel {
+        // Character info
+        .carousel-item .carousel-caption {
+          right: 0;
+          bottom: 0;
+          width: 100%;
+          margin: 0 auto;
+          position: relative;
+          left: 0;
+          padding: 0 30px;
+          display: flex;
+          justify-content: flex-end;
+          align-items: flex-end;
+          height: 100vh;
+          z-index: -1;
 
-      // Character thumbnails
-      #carousel-thumbs {
-        width: 90%;
-        padding: 0;
-        bottom: 35px;
-        height: 90px;
-        margin: 0 auto;
+          // hide paragraph text on mobile
+          p { display: none; }
 
-        .img-fluid {
-          max-width: 55px !important;
-          height: 90px !important;
+          .right-column {
+            position: fixed;
+            bottom: 165px;
+          }
+        }
+        // Character cutout image {
+        .carousel-item .character-slide-cutout {
+          position: absolute;
+          max-height: 555px;
+          margin: 0 auto;
+          left: 0;
+          right: 0;
+          z-index: -2;
         }
       }
-      // Carousel arrows
-      .carousel-control-prev,
-      .carousel-control-next {
-        width: 25px;
-      }
-      .carousel-control-prev {
-        left: -30px !important;
-      }
-      .carousel-control-next {
-        right: -30px !important;
-      }
-      // Character info
-      .carousel-item .carousel-caption {
-        right: 0;
-        bottom: 0;
-        width: 100%;
-        margin: 0 auto;
-        position: relative;
-        left: 0;
-        padding: 0 16px;
-        display: flex;
-        justify-content: flex-end;
-        align-items: flex-end;
-        height: 74vh;
+      #carousel-thumbs {
+          background: transparent;
+          position: absolute;
+          bottom: 60px;
+          left: 0;
+          padding: 0 8px;
+          right: 0;
+          width: 87%;
+          height: 100px;
+          margin: 0 auto;
+          z-index: 2;
 
-        // hide paragraph text on mobile
-        p { display: none; }
+          // Carousel arrows
+          .carousel-control-prev,
+          .carousel-control-next {
+              width: 25px;
+          }
+          .carousel-control-prev {
+            left: -15px;
+          }
+          .carousel-control-next {
+            right: -15px;
+          }
+          .carousel-inner {
+            text-align: center;
+          }
+          // Carousel thumbnail image size
+          .img-fluid {
+            max-width: 57px;
+            height: 95px;
+          }
       }
-      // Character cutout image {
-      .carousel-item .character-slide-cutout {
-        position: absolute;
-        max-height: 475px;
-        margin: 0 auto;
-        left: 0;
-        right: 0;
-      }
+
     }
 
     // Account
@@ -2637,10 +2706,22 @@ animation: fadeIn ease 4s;
     #carousel-thumbs {
       position: absolute;
       padding: 0;
-      width: 50%;
-      height: 85px;
-      top: 65%;
-      left: 2%;
+      width: 44%;
+      height: 95px;
+      top: 60%;
+      left: 7%;
+
+      // Carousel arrows
+      .carousel-control-prev,
+      .carousel-control-next {
+        width: 18px;
+      }
+      .carousel-control-prev {
+        left: -25px !important;
+      }
+      .carousel-control-next {
+        right: -25px !important;
+      }
     }
     #carousel-thumbs .img-fluid {
       max-width: 55px;
@@ -2648,10 +2729,12 @@ animation: fadeIn ease 4s;
     }
     .carousel-item .carousel-caption {
       right: 0;
-      bottom: 32%;
-      left: 6%;
-      width: 46%;
-      padding: 0 0 16px;
+      bottom: 38%;
+      left: 3%;
+      width: 48%;
+      padding: 0 0 8px 8px;
+
+      p { display: block; }
     }
 
   }
@@ -2882,40 +2965,75 @@ animation: fadeIn ease 4s;
     }
   }
 
-  // Carousel
+  // Characters mobile
   #characters-carousel {
-    .carousel-inner {
-      height: 580px;
+    #myCarousel {
+      // Character info
       .carousel-item .carousel-caption {
-        bottom: 160px !important;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        margin: 0 auto;
+        position: relative;
+        left: 0;
+        padding: 0 30px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        height: 100vh;
+        z-index: -1;
+
+        // hide paragraph text on mobile
+        p { display: none; }
+
+        .right-column {
+          position: fixed;
+          bottom: 165px;
+        }
+      }
+      // Character cutout image {
+      .carousel-item .character-slide-cutout {
+        position: absolute;
+        max-height: 615px;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+        z-index: -2;
       }
     }
-
     #carousel-thumbs {
-      position: fixed;
-      padding: 0 30px !important;
-      bottom: 10%;
-      width: 100%;
-      height: 100px;
+        background: transparent;
+        position: absolute;
+        bottom: 60px;
+        left: 0;
+        padding: 0 10px;
+        right: 0;
+        width: 90%;
+        height: 100px;
+        margin: 0 auto;
+        z-index: 2;
 
-      .img-fluid {
-          max-width: 55px !important;
-          height: 100px !important;
-      }
+        // Carousel arrows
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 25px;
+        }
+        .carousel-control-prev {
+          left: -17px !important;
+        }
+        .carousel-control-next {
+          right: -17px !important;
+        }
+        .carousel-inner {
+          text-align: center;
+        }
+        // Carousel thumbnail image size
+        .img-fluid {
+          max-width: 65px;
+          height: 105px;
+        }
     }
 
-    // Carousel arrows
-    .carousel-control-prev,
-    .carousel-control-next {
-      width: 25px !important;
-      top: 20px;
-    }
-    .carousel-control-prev {
-      left: 0 !important;
-    }
-    .carousel-control-next {
-      right: 0 !important;
-    }
   }
 
   // Account
@@ -3004,42 +3122,44 @@ animation: fadeIn ease 4s;
   and (-webkit-min-device-pixel-ratio: 3)
   and (orientation: landscape) {
 
-    // Character carousel
-    #character-carousel {
+    #characters-carousel {
       #carousel-thumbs {
-        padding: 0 12px;
-        width: 50%;
-        bottom: 50px;
-        left: 25px;
-
-        .img-fluid {
-          max-width: 55px !important;
-          height: 95px !important;
-        }
+        position: absolute;
+        padding: 0;
+        width: 44%;
+        height: 95px;
+        top: 60% !important;
+        left: 5%;
 
         // Carousel arrows
         .carousel-control-prev,
         .carousel-control-next {
-          width: 25px !important;
-          top: 0;
+          width: 18px;
         }
         .carousel-control-prev {
-          left: -15px !important;
+          left: -25px !important;
         }
         .carousel-control-next {
-          right: -15px !important;
+          right: -25px !important;
         }
+      }
+      #carousel-thumbs .img-fluid {
+        max-width: 55px;
+        height: 85px;
       }
       .carousel-item {
         .character-slide-cutout {
-          max-height: 400px;
+          max-height: 400px !important;
+          left: 57% !important;
         }
         .carousel-caption {
-          right: 0;
-          bottom: 36%;
-          left: 2%;
-          width: 100%;
-          padding: 0 0 16px;
+        right: 0;
+        bottom: 35% !important;
+        left: 5% !important;
+        width: 44% !important;
+        padding: 0 0 8px 8px;
+
+        p { display: block; }
         }
       }
     }
@@ -3248,27 +3368,27 @@ animation: fadeIn ease 4s;
   and (-webkit-min-device-pixel-ratio: 3)
   and (orientation: portrait) {
 
-    // World template styles
-    #world {
-      .row {
-        height: 56vh !important;
+  // World template styles
+  #world {
+    .row {
+      height: 56vh !important;
 
-        .world-video {
-          .world-video-container {
-            height: 26vh !important;
-            width: 87vw !important;
-          }
+      .world-video {
+        .world-video-container {
+          height: 26vh !important;
+          width: 87vw !important;
         }
-        .world-character-row {
-          width: 86% !important;
-          height: inherit !important;
+      }
+      .world-character-row {
+        width: 86% !important;
+        height: inherit !important;
 
-          .character-tile {
-            width: 30vw !important;
-          }
+        .character-tile {
+          width: 30vw !important;
         }
       }
     }
+  }
 
   .mid-left-nav {
     top: 10%;
@@ -3282,55 +3402,76 @@ animation: fadeIn ease 4s;
     height: 45vh;
     // need to update the world gates graphic
   }
-  .character-info {
-    p { display: none; }
-  }
-  .carousel-inner {
-    height: 75vh;
 
-
-    .carousel-item {
-      text-align: center;
-      img {
-        object-fit: cover;
-        max-height: 600px;
-      }
-      .carousel-caption {
-        bottom: 0 !important;
+  // Characters mobile
+  #characters-carousel {
+    #myCarousel {
+      // Character info
+      .carousel-item .carousel-caption {
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        margin: 0 auto;
+        position: relative;
+        left: 0;
+        padding: 0 30px;
         display: flex;
         justify-content: flex-end;
         align-items: flex-end;
-        height: 72vh;
+        height: 100vh;
+        z-index: -1;
+
+        // hide paragraph text on mobile
+        p { display: none; }
+
+        .right-column {
+          position: fixed;
+          bottom: 165px;
+        }
+      }
+      // Character cutout image {
+      .carousel-item .character-slide-cutout {
+        position: absolute;
+        max-height: 615px;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+        z-index: -2;
       }
     }
-    // Character cutout
-    .character-slide-cutout {
-      left: 0;
+    #carousel-thumbs {
+        background: transparent;
+        position: absolute;
+        bottom: 75px;
+        left: 0;
+        padding: 0 10px;
+        right: 0;
+        width: 90%;
+        height: 90px;
+        margin: 0 auto;
+        z-index: 2;
+
+        // Carousel arrows
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 25px;
+        }
+        .carousel-control-prev {
+          left: -17px !important;
+        }
+        .carousel-control-next {
+          right: -17px !important;
+        }
+        .carousel-inner {
+          text-align: center;
+        }
+        // Carousel thumbnail image size
+        .img-fluid {
+          max-width: 60px;
+          height: 95px;
+        }
     }
-  }
-  #carousel-thumbs {
-    background: transparent;
-    position: fixed;
-    padding: 0 24px;
-    bottom: 15%;
-    width: 100%;
-    height: 80px;
-    .img-fluid {
-      max-width: 55px;
-      height: 85px;
-    }
-    // Carousel arrows
-    .carousel-control-prev,
-    .carousel-control-next {
-      width: 25px !important;
-      top: 20px;
-    }
-    .carousel-control-prev {
-      left: 0 !important;
-    }
-    .carousel-control-next {
-      right: 0 !important;
-    }
+
   }
 
   #account {
@@ -3434,13 +3575,6 @@ animation: fadeIn ease 4s;
     bottom: 5%;
   }
 
-  #carousel-thumbs {
-    .img-fluid {
-      max-width: 65px;
-      height: 100px;
-    }
-  }
-
   #characters {
     .full-container {
       width: 80%;
@@ -3453,52 +3587,45 @@ animation: fadeIn ease 4s;
     }
   }
 
-  #character {
-    .full-container {
-      width: 100%;
-    }
-    .left-column {
-      width: 50% !important;
-      text-align: right !important;
+  // Mobile characters
+  #characters-carousel {
+    #carousel-thumbs {
+      position: absolute;
+      padding: 0;
+      width: 40%;
+      height: 95px;
+      top: 65%;
+      left: 9%;
 
+      // Carousel arrows
       .carousel-control-prev,
       .carousel-control-next {
-        width: 10%;
+        width: 18px;
       }
+      .carousel-control-prev {
+        left: -25px !important;
+      }
+      .carousel-control-next {
+        right: -25px !important;
+      }
+    }
+    #carousel-thumbs .img-fluid {
+      max-width: 55px;
+      height: 85px;
+    }
+    .carousel-item .carousel-caption {
+      right: 0;
+      bottom: 37%;
+      left: 9%;
+      width: 40%;
+      padding: 0 0 8px 8px;
 
-      .character-select {
-        .character-row {
-          width: 100%;
-          max-width: 450px;
-          height: 100px;
-          border: 1px solid red;
-          .carousel-control-next,
-          .carousel-control-prev {
-            height: 40px;
-            top: 40%;
-          }
-          .carousel-indicators {
-            top: -11px;
-            margin: 0 auto;
-            li {
-              width: 60px;
-              height: 100px;
-            }
-          }
-        }
-      }
+      p { display: block; }
     }
-    .right-column {
-      width: 50% !important;
-      .character-cutout {
-        display: flex;
-        justify-content: center;
-        img {
-          width: 100%;
-          max-width: 280px;
-        }
-      }
+    .carousel-item .character-slide-cutout {
+      left: 60%;
     }
+
   }
 
   // Worlds template styles
