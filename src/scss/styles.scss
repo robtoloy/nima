@@ -567,6 +567,7 @@ input.page-input {
   }
 }
 
+// Characters desktop
 #characters-carousel {
   z-index: 4;
 
@@ -1534,6 +1535,7 @@ animation: fadeIn ease 4s;
 
 @media all and (max-width: 812px) {
 
+  // Characters mobile
   #characters-carousel {
     // Character overlay - Mobile portrait only
     .menu {
@@ -1563,6 +1565,7 @@ animation: fadeIn ease 4s;
       overflow: auto;
       transition: all .35s;
       transform: scale(3);
+      z-index: 5;
 
       a {
         color: #fff;
